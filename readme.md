@@ -33,10 +33,10 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
 -   [ ] mainPage
 
     -   [x] userMain
-    -   [ ] visitorMain
+    -   [x] visitorMain
     -   [x] groupMain
-    -   [x] userSettingsSearch
-    -   [ ] groupMSettingsSearch
+    -   [х] userSettingsSearch - коммерческий проект и зп
+    -   [х] groupMSettingsSearch - указание зп
 
 -   [ ] searchPage
 
