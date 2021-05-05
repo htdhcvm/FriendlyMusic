@@ -52,7 +52,7 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
     -   [ ] visitorGroupPage
     -   [ ] groupGroupPage
 
--   [ ] userPage +-
+-   [ ] userPage
 
     -   [ ] visitorSearch
     -   [ ] userUserPage
