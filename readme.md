@@ -41,10 +41,12 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
 -   [ ] searchPage
 
     -   [x] visitorSearch
-    -   [ ] userSearch
-    -   [ ] userSearchRoll
+
+    -   [x] userSearch
+    -   [x] userSearchRoll
+
     -   [ ] groupSearch
-    -   [ ] groupSearchRoll
+    -   [x] groupSearchRoll
 
 -   [ ] groupPage
 
