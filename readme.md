@@ -30,7 +30,7 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
     -   [x] signInForm
     -   [x] signUpForm
 
--   [x] mainPage
+-   [x] mainPage Доделать слайдер из категорий по вакансиям ( например барабанщик 225 вакансий )
 
     -   [x] userMain
     -   [x] visitorMain
@@ -45,6 +45,17 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
     -   [x] userSearchRoll
     -   [x] groupSearch
     -   [x] groupSearchRoll
+
+-   [x] vacancyCreator
+
+    -   [x] vacancyCreatorUser
+    -   [x] vacancyCreatorGroup
+
+-   [ ] vacancyPage
+
+    -   [x] vacancyPageVisitor
+    -   [x] vacancyPageGroup
+    -   [ ] vacancyPageUser
 
 -   [ ] groupPage
 
