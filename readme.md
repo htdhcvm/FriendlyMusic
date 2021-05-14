@@ -51,11 +51,16 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
     -   [x] vacancyCreatorUser
     -   [x] vacancyCreatorGroup
 
--   [ ] vacancyPage
+-   [x] vacancyPage
 
     -   [x] vacancyPageVisitor
     -   [x] vacancyPageGroup
-    -   [ ] vacancyPageUser
+    -   [x] vacancyPageUser
+
+-   [ ] settingsPage +-
+
+    -   [ ] userSettingsPage
+    -   [ ] groupSettingsPage
 
 -   [ ] groupPage
 
@@ -73,11 +78,6 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
 
     -   [ ] userMessagesPage
     -   [ ] groupMessagesPage
-
--   [ ] settingsPage +-
-
-    -   [ ] userSettingsPage
-    -   [ ] groupSettingsPage
 
 -   [x] randomViewPage
 
