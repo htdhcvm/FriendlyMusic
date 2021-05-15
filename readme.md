@@ -57,10 +57,17 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
     -   [x] vacancyPageGroup
     -   [x] vacancyPageUser
 
--   [ ] settingsPage +-
+-   [х] settingsPage
 
-    -   [ ] userSettingsPage
-    -   [ ] groupSettingsPage
+    -   [x] userSettingsPage
+    -   [х] userSettingsPageGroup
+    -   [x] groupSettingsPage
+    -   [x] groupSettingsPageVideo
+    -   [x] groupSettingsPagePhoto
+    -   [х] groupSettingsPageParticipants
+    <!-- -   [ ] groupSettingsPageCreation -->
+
+-   [ ] groupCreate
 
 -   [ ] groupPage
 
