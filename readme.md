@@ -67,7 +67,7 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
     -   [х] groupSettingsPageParticipants
     <!-- -   [ ] groupSettingsPageCreation -->
 
--   [ ] groupCreate
+-   [x] groupCreate ( при создании указывается Название группы главная фотка остальное в настройках )
 
 -   [ ] groupPage
 
