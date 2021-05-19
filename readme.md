@@ -75,11 +75,11 @@ https://dribbble.com/shots/5926989-Project-Sitemap-Builder-Sapphire-Data-Archite
     -   [ ] visitorGroupPage
     -   [ ] groupGroupPage
 
--   [ ] userPage
+-   [x] userPage ( для других все тоже самое только с возможность написать )
 
-    -   [ ] visitorSearch
-    -   [ ] userUserPage
-    -   [ ] groupUserPage
+    -   [x] visitorSearch
+    -   [x] userUserPage
+    -   [x] groupUserPage
 
 -   [ ] messagesPage
 
