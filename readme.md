@@ -1,7 +1,5 @@
 # FriendlyMusic
 
-qwe\qwe
-
 ## Api
 
 ### Visitor
