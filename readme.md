@@ -36,13 +36,13 @@ qwe\qwe
 
 ### Group
 
-| Method / Param     | Url                                                   | Description |
-| ------------------ | ----------------------------------------------------- | ----------- |
-| GET                | /api/group/signIn/:login/:password                    |             |
-| GET                | /api/group/getCountOnTypeResume<br />                 |             |
-| Param :arrow_up: 🠡 | /:vacancy/:city/:experience/:countResumeOnPage<br />  |             |
-| Param :arrow_up: 🠡 | /:age/:position/:style/:gander/:existSocialLink<br /> |             |
-| Param :arrow_up: 🠡 | /:existTelephone/:existInstrument                     |             |
+| Method / Param | Url                                                   | Description |
+| -------------- | ----------------------------------------------------- | ----------- |
+| GET            | /api/group/signIn/:login/:password                    |             |
+| GET            | /api/group/getCountOnTypeResume<br />                 |             |
+| Params 🠡       | /:vacancy/:city/:experience/:countResumeOnPage<br />  |             |
+| Params 🠡       | /:age/:position/:style/:gander/:existSocialLink<br /> |             |
+| Params 🠡       | /:existTelephone/:existInstrument                     |             |
 
 TODO User chat. Add user in common chat with group. Send messages to group.
 
