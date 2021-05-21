@@ -1,1 +1,70 @@
-<mxfile host="app.diagrams.net" modified="2021-05-21T14:14:00.072Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36" etag="EByYkL1gIuo_QxzJNWnz" version="14.7.0" type="device"><diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">7Vtbb6M6EP41aJ9accmtj7k0u12dlbrKOdrtowMGrBrMGtOS8+uPbUzCLUlblbo5iVRRPIzH48+fhxmXGs48yr9SkIQ/iAexYZtebjgLw7atgW0b4sf0NoVkPJ4UgoAiTyntBCv0L1RCU0kz5MG0psgIwQwldaFL4hi6rCYDlJLnuppPcH3UBASwJVi5ALelv5DHwkI6GZo7+TeIgrAc2TLVkwiUykqQhsAjzzURzNmSxEy5eA9pBGIYM/7kB6CPkBrD25AxMdOpYS/5jy+0rwNCAgxBgtJrl0Rc7KZcZemDCGEBc8XQTBniwzm3hjOnhLDiLsrnEIu1Kpeh8Gm55+kWByrsvqDDeuhHyXKdf19slj/TOEE5/n6lrDwBnCl8DXuEub1ZIhBiGwX76E8m/JxFgAYoltM3zSTnVy6U4Ar5FSNJ8WxQecY4qlcAo0D1c7nDAoHSJr8L1G85MqoIQMQNznC79U8qTRSSunbNGMcDNQdY05akFNwJ13zgwkr/dVOby5KmLKQCr3K3lFOz9s/yTfhi6LMKwE3bPiL8acooioNDzvYxtgcYnCHKQg9sqk4UaxKv0+QIgn04FYDY4zzRhQkGcZDJeCZUppRyaGosbqB0lGV9OLl/V3yUBwximIQkVjjpWSvgeRSmqU4XYAQQ1ulASlwE8F8oZXsZu5IqehmbIqaostICk/4dk1Dic7IiEuvEIcpS5N7FnKtZJJMQfa7APIEUwdg9c2KANcnYA8noCmK/AYXWN7F+aNJHhHG6P7B9glfxn4ynyWzzqX3Uv5AJhU+/CH1MD76ohIZepBCPjIhljEfpg57e7fT0OuzyuJHCw7DOpc5L/LRrHtpPkDLEy/hpUQguZKk4U2XhovBsRriWj2VR7vPdyiWiwFaHEJat2suyrv4G8RMUVvmDkEVYKG3HFgPC8tijXSxb2xI8yr9CEkFG+VRN1aE8TlCHJNZYtZ93Rw7WjZKFleMGp1QE6gwh2Jreleb8RlXnr6jU7VOt1Ds34rlX6oYtdGMQac5XhG5CeEKtOZUsPMEoftTvhcgkiVfQ1iy076XoZTnUSce9gdUIfJOOwOd0BD7L6ivwOaca+BqkuYQ+lYczQJnWWjH2jg9/0rt4PGjs4lF7F086NvGkrz08ONU9fCg3P/eNrDt7YSiCt17mgl3ysg25H+qIAGIJ3AyXpbsePOTpgY+qePysic4vfXHsjvRl1JW+2H2FvtGphr49lf65R73SdpqAuBYJy1qhtfmrmmcdI1duSAjeD9T/NQoNuk6POqNQb0XUuCMKNTDmafFUfJ/DWx4CEYm9v0Ox3iJfXko8JT68pSC1B3XkODp087vaeOANs2ws8lprU7ZyxH5X7h8q97suolH2UJ/qeK3vhBrrw2fHQ5gLj9eWvCIJIDt2+NZe7671pBDzzfZU961rPZW5e4LkB0aKO04jdR86DUoUc1K9qp/7NAwNzSOGikm3DEl6bef4dsZNTopx1mdj3ODCuNcyzur6mO3dKfdq8ryNpBooN7pQ7tWUa/9Vhm0S2K68TPnQ/GLwxb2xxHVmyuu0cj+r3NsG58uEd+Bdx/Nt13lFxZHXiVS05LW707QYbymvQ6kyKrs2xp6UZraa9pfWHnrnZGlSX8KOXGlLl2quNOwrVbK6Dpw/2Zvreqjj3VWy/ZIu9RBJuo5IP+LldTjX3sPTgn8f8/oavZB0e8LMB5DOuXkn0rUM9U26ob5Qd5RCWgvDwYV0vZGu60T0QrrdJz4X0r2GdLy5+x+qQn33j2/O7X8=</diagram></mxfile>
+<mxfile>
+    <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
+        <mxGraphModel dx="1087" dy="860" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;User&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Interface&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;fio:string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;dateBirthday?:string&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;gander?:string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;language?: Array&amp;lt;string&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;telephone?: string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;address?: string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;email?: string&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;socialList?: Array&amp;lt;Social&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;site?: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;profession?: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;musicInstrument?: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;experience?: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;aboutYourSelf?: String&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;skills?: Array&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;quality?: Array&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;prevWorksList?: Array&amp;lt;Work&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;institutionList?: Array&amp;lt;Institution&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;coursesList?: Array&amp;lt;Course&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="170" width="190" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-2" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Work&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Interface&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ name: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ position: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ link: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ periodWork : Period&amp;nbsp;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="410" y="180" width="130" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-3" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Period&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Interface&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;start: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;end: String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="160" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-4" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Institution&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Interface&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;name: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;timeEducation: Period&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;nameFaculty: String&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;qualification: Qualification&amp;nbsp;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="410" y="320" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-6" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Course&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Interface&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;span&gt;name : String&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;timeEducation: Period&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;nameSchool : String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="50" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-7" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="b5fmpFbxJDyFQsnpixlJ-3" target="b5fmpFbxJDyFQsnpixlJ-2" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="340" y="530" as="sourcePoint"/>
+                        <mxPoint x="500" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-8" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=1;exitDx=0;exitDy=0;" parent="1" source="b5fmpFbxJDyFQsnpixlJ-3" target="b5fmpFbxJDyFQsnpixlJ-4" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="340" y="530" as="sourcePoint"/>
+                        <mxPoint x="500" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-11" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="b5fmpFbxJDyFQsnpixlJ-3" target="b5fmpFbxJDyFQsnpixlJ-6" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="340" y="530" as="sourcePoint"/>
+                        <mxPoint x="500" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-12" value="type Qualification = 'Бакалавр' | 'Магистр' | 'Специалитет'" style="html=1;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="480" width="340" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-13" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="b5fmpFbxJDyFQsnpixlJ-12" target="b5fmpFbxJDyFQsnpixlJ-4" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="340" y="530" as="sourcePoint"/>
+                        <mxPoint x="500" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-14" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="b5fmpFbxJDyFQsnpixlJ-6" target="b5fmpFbxJDyFQsnpixlJ-1" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="340" y="390" as="sourcePoint"/>
+                        <mxPoint x="500" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-15" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="b5fmpFbxJDyFQsnpixlJ-4" target="b5fmpFbxJDyFQsnpixlJ-1" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="340" y="390" as="sourcePoint"/>
+                        <mxPoint x="500" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="b5fmpFbxJDyFQsnpixlJ-16" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="b5fmpFbxJDyFQsnpixlJ-2" target="b5fmpFbxJDyFQsnpixlJ-1" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="340" y="390" as="sourcePoint"/>
+                        <mxPoint x="500" y="390" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
