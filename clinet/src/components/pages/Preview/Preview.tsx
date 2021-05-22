@@ -1,0 +1,13 @@
+import React from 'react';
+
+import './Preview.scss';
+
+const Preview = () => {
+    return (
+        <div>
+            <h1>Preview</h1>
+        </div>
+    );
+};
+
+export default Preview;
