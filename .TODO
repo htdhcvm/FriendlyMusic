@@ -98,3 +98,17 @@ Visitor
     [ ] groupMessagesPage
 
 [x] randomViewPage
+
+
+
+client 
+
+layout 
+[] About
+[x] Preview
+[x] SignInSignUp
+[] User
+[] Vacancy
+[x] Main
+[] Resume
+[] Search
