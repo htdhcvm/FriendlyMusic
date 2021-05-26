@@ -1,18 +1,24 @@
 import React from 'react';
-import Header from '../../elements/Header/Header';
-import AuthHeader from '../../elements/AuthHeader/AuthHeader';
-import LeftPanel from '../../elements/LeftPanel/LeftPanel';
-import MainContent from '../../elements/MainContent/MainContent';
-import AuthMainContent from '../../elements/AuthMainContent/AuthMainContent';
 import './Main.scss';
 
+import { MainPageBuilder, Director } from '../../../factoryComponents/main';
+
+const mainPageBuilder: MainPageBuilder = new MainPageBuilder();
+const director: Director = new Director();
+
 const Main = () => {
-    const isAuth: boolean = true;
+    const isAuth: boolean = false;
+
+    isAuth
+        ? director.constructAuth(mainPageBuilder)
+        : director.constructNotAuth(mainPageBuilder);
+
+    const { Header, Content, LeftPanel } = mainPageBuilder.getResult();
     return (
         <div className="Main">
-            {isAuth ? <AuthHeader /> : <Header />}
-            {isAuth ? <AuthMainContent /> : <MainContent />}
-            {isAuth ? <LeftPanel /> : null}
+            <Header />
+            <Content />
+            {LeftPanel ? <LeftPanel /> : null}
         </div>
     );
 };

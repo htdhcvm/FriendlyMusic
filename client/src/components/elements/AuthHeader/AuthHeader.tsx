@@ -8,7 +8,6 @@ import Avatar from '@material-ui/core/Avatar';
 
 import './AuthHeader.scss';
 import { TextField } from '@material-ui/core';
-import { useAction } from '../../../hooks/useAction';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 

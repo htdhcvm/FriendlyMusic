@@ -21,7 +21,7 @@ const App = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/about">
+                <Route path="/settings">
                     <Settings />
                 </Route>
                 <Route path="/about">
