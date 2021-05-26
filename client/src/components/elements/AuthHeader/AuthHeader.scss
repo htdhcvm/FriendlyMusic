@@ -1,0 +1,55 @@
+@import '../../../scss/default.scss';
+
+.header {
+    max-height: 80px;
+    border-bottom: 1px solid $divider-color;
+    padding: 10px 20px;
+}
+
+.auth-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 210px;
+    .left {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        .left-panel-toggle {
+            cursor: pointer;
+        }
+        .formSearch {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            padding-left: 36px;
+            .form-field {
+                flex: 1;
+                .search-input {
+                    width: 100%;
+                    padding-left: 20px;
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        .clearText {
+            cursor: pointer;
+        }
+
+        .settingsSearch {
+            cursor: pointer;
+            margin-right: 60px;
+            margin-left: 20px;
+        }
+    }
+    .right {
+        display: flex;
+        align-items: center;
+
+        .login {
+            margin-right: 10px;
+        }
+    }
+}
