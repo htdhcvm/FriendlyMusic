@@ -8,21 +8,44 @@ import Avatar from '@material-ui/core/Avatar';
 
 import './AuthHeader.scss';
 import { TextField } from '@material-ui/core';
+import { useAction } from '../../../hooks/useAction';
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
+
+import { closeMenu, openMenu } from '../../../features/ui/action';
+
 const Header = () => {
+    const dispatch = useDispatch();
     const [searchText, setSearchTest] = useState('');
 
     const clearSearchText = () => {
         setSearchTest('');
     };
 
+    const { toggle } = useTypedSelector((state) => state.ui);
+
     const handleSearch = (e: SyntheticEvent) => {
         e.preventDefault();
-        console.log('search');
     };
+
+    const handleCloseLeftMenu = () => {
+        if (toggle) {
+            return dispatch(openMenu);
+        }
+        return dispatch(closeMenu);
+    };
+
     return (
-        <div className="header auth-header">
+        <div
+            className={`header auth-header ${
+                toggle ? 'close-menu-resize-header' : ''
+            }`}
+        >
             <div className="left">
-                <ZoomOutMapIcon className="left-panel-toggle" />
+                <ZoomOutMapIcon
+                    onClick={handleCloseLeftMenu}
+                    className="left-panel-toggle"
+                />
                 <form className="formSearch" onSubmit={handleSearch}>
                     <SearchIcon />
                     <div className="form-field">

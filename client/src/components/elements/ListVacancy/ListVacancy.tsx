@@ -12,6 +12,7 @@ import tempGroup3 from '../../../assets/temporary/tempGroup3.jpg';
 const ListVacancy = () => {
     const listVacancyCollection = [
         {
+            id: 1,
             image: tempGroup1,
             title: 'Басс гитарист',
             groupName: 'Metallica',
@@ -19,6 +20,7 @@ const ListVacancy = () => {
             price: 450000,
         },
         {
+            id: 2,
             image: tempGroup2,
             title: 'Ритм гитарис',
             groupName: 'MMM',
@@ -26,6 +28,7 @@ const ListVacancy = () => {
             price: 450000,
         },
         {
+            id: 3,
             image: tempGroup3,
             title: 'Диджей',
             groupName: 'Miyagi & Andy Panda',
@@ -33,6 +36,7 @@ const ListVacancy = () => {
             price: 450000,
         },
         {
+            id: 4,
             title: 'Басс гитарист',
             groupName: 'Metallica',
             data: '21.04.2021 16:24',
@@ -45,7 +49,8 @@ const ListVacancy = () => {
             <div className="wrapper">
                 {listVacancyCollection.map((vacancy) => (
                     <ItemVacancy
-                        image={vacancy.image}
+                        key={vacancy.id}
+                        imageGroup={vacancy.image}
                         title={vacancy.title}
                         groupName={vacancy.groupName}
                         data={vacancy.data}

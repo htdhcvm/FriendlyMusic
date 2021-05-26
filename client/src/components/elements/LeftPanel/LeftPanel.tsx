@@ -7,14 +7,17 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import logo from '../../../assets/logo/logoButtom.png';
 
-import ItemLeftPanel from '../../elements/ItemLeftPanel/ItemLeftPanel';
+import ItemLeftPanel from '../ItemLeftPanel/ItemLeftPanel';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 const LeftPanel = () => {
+    const { toggle } = useTypedSelector((state) => state.ui);
+
     const handleLogout = () => {
         console.log('logout');
     };
     return (
-        <div className="left-panel">
+        <div className={`left-panel ${toggle ? 'left-panel-close' : ''}`}>
             <div className="wrapperLogo">
                 <img src={logo} alt="logo" />
             </div>

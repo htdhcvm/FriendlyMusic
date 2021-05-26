@@ -4,7 +4,7 @@ import './MainContent.scss';
 
 const MainContent = () => {
     return (
-        <div className="MainContent">
+        <div className={'MainContent'}>
             <h1>MainContent</h1>
             <h1>MainContent</h1>
             <h1>MainContent</h1>
