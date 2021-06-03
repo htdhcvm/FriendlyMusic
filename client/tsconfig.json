@@ -18,7 +18,9 @@
     },
     "include": ["src"],
     "baseUrl": "./",
+    "noImplicitAny": false,
     "paths": {
         "@assets/*": ["assets/*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./@types"]
 }

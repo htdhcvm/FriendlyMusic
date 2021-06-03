@@ -1,0 +1,10 @@
+@import './default.scss';
+
+@mixin base-btn {
+    background-color: $main-color;
+    margin-top: 40px;
+    color: white;
+    &:hover {
+        background-color: #e81454;
+    }
+}

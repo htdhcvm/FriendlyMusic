@@ -1,0 +1,29 @@
+@import '../../../scss/default.scss';
+
+.InputWithTags {
+    width: 100%;
+    .form-field {
+        align-items: baseline;
+    }
+    .input-text {
+        h4 {
+            margin: 0px;
+        }
+
+        .description {
+            font-size: 10px;
+            display: inline-block;
+            line-height: 14px;
+            color: $item-list-vacancy-desciption-color;
+        }
+        .MuiInput-root {
+            width: 100%;
+        }
+    }
+
+    .listTags {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

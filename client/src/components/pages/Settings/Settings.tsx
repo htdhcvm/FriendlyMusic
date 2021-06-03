@@ -2,13 +2,19 @@ import React from 'react';
 
 import './Settings.scss';
 
+import { PageBuilder, Director } from '../../../factoryComponents/main';
+
 import {
     UserSettingsFactory,
     GroupSettingsFactory,
     createSettingsPanel,
 } from '../../../factoryComponents/settings';
 
+const pageBuilderHeaderMenu: PageBuilder = new PageBuilder();
+const director: Director = new Director();
+
 const Settings = () => {
+    const isAuth: boolean = true;
     const typeUser: String = 'group';
 
     const SettingComponent =
@@ -16,10 +22,14 @@ const Settings = () => {
             ? createSettingsPanel(new UserSettingsFactory())
             : createSettingsPanel(new GroupSettingsFactory());
 
-    console.log(SettingComponent);
+    if (isAuth) director.constructForSettings(pageBuilderHeaderMenu);
+
+    const { Header, LeftPanel } = pageBuilderHeaderMenu.getResult();
+
     return (
-        <div>
-            <h1>Settings</h1>
+        <div className="Settings">
+            {Header ? <Header /> : null}
+            {LeftPanel ? <LeftPanel /> : null}
             <SettingComponent />
         </div>
     );

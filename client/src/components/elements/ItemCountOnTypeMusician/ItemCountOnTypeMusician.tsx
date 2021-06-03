@@ -11,7 +11,7 @@ interface Props {
 
 const ItemCountOnTypeMusician = ({ image, text, count }: Props) => {
     return (
-        <Paper elevation={2} className="item">
+        <Paper elevation={2} className="ItemCountOnTypeMusician item">
             <img src={image} alt="type musician" />
             <span>{count}</span>
         </Paper>

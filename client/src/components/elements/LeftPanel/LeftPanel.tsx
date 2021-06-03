@@ -5,6 +5,7 @@ import './LeftPanel.scss';
 import GroupIcon from '@material-ui/icons/Group';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
 import logo from '../../../assets/logo/logoButtom.png';
 
 import ItemLeftPanel from '../ItemLeftPanel/ItemLeftPanel';
@@ -16,6 +17,7 @@ const LeftPanel = () => {
     const handleLogout = () => {
         console.log('logout');
     };
+
     return (
         <div className={`left-panel ${toggle ? 'left-panel-close' : ''}`}>
             <div className="wrapperLogo">

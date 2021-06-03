@@ -36,7 +36,7 @@ const Header = () => {
 
     return (
         <div
-            className={`header auth-header ${
+            className={`header-main auth-header ${
                 toggle ? 'close-menu-resize-header' : ''
             }`}
         >

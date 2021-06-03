@@ -1,0 +1,19 @@
+@import '../../../scss/headerMenu.scss';
+@import '../../../scss//authMainContent.scss';
+
+.Settings {
+    @include header-menu;
+}
+
+.settings-element {
+    @include auth-main-content-padding;
+    padding-right: 80px;
+}
+
+.close-menu-resize-main {
+    padding-left: 20px;
+}
+
+.title-settings {
+    padding: 40px 0px 20px 0px;
+}

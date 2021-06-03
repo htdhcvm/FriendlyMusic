@@ -1,23 +1,24 @@
 import React from 'react';
 import './Main.scss';
 
-import { MainPageBuilder, Director } from '../../../factoryComponents/main';
+import { PageBuilder, Director } from '../../../factoryComponents/main';
 
-const mainPageBuilder: MainPageBuilder = new MainPageBuilder();
+const pageBuilderMain: PageBuilder = new PageBuilder();
 const director: Director = new Director();
 
 const Main = () => {
-    const isAuth: boolean = false;
+    const isAuth: boolean = true;
 
     isAuth
-        ? director.constructAuth(mainPageBuilder)
-        : director.constructNotAuth(mainPageBuilder);
+        ? director.constructAuthMain(pageBuilderMain)
+        : director.constructNotAuthMain(pageBuilderMain);
 
-    const { Header, Content, LeftPanel } = mainPageBuilder.getResult();
+    console.log(pageBuilderMain.getResult());
+    const { Header, Content, LeftPanel } = pageBuilderMain.getResult();
     return (
         <div className="Main">
-            <Header />
-            <Content />
+            {Header ? <Header /> : null}
+            {Content ? <Content /> : null}
             {LeftPanel ? <LeftPanel /> : null}
         </div>
     );

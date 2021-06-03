@@ -1,0 +1,47 @@
+@import '../../../scss/baseBtn.scss';
+@import '../../../scss/default.scss';
+
+.EducationItemCourses {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-gap: 20px;
+
+    .addBtn {
+        @include base-btn;
+    }
+
+    .educationItems {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 20px;
+
+        .row {
+            display: flex;
+            gap: 20px;
+            .fieldItem {
+                flex-grow: 1;
+            }
+        }
+    }
+
+    .wrapperBtnAdd {
+        margin-left: auto;
+    }
+
+    .divider {
+        width: 100%;
+        height: 1px;
+        background-color: $divider-color;
+    }
+
+    .ItemEducation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .info {
+            display: flex;
+            gap: 20px;
+        }
+    }
+}

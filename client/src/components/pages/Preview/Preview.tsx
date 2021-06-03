@@ -25,7 +25,9 @@ const Preview = () => {
     return (
         <div className="Preview">
             <div className="header">
-                <img src={logo} alt="logo"></img>
+                <Link to="/main">
+                    <img src={logo} alt="logo"></img>
+                </Link>
                 <div className="links">
                     <Link className="about" to="/about">
                         О сервисе

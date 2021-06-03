@@ -26,12 +26,12 @@ const CarouselContainer = () => {
                 <ItemCountOnTypeMusician
                     image={conductor}
                     text="Дирижеров"
-                    count={4}
+                    count={2}
                 />
                 <ItemCountOnTypeMusician
                     image={contrabass}
                     text="Контрабасистов"
-                    count={4}
+                    count={7}
                 />
                 <ItemCountOnTypeMusician image={dj} text="Диджеев" count={4} />
                 <ItemCountOnTypeMusician
@@ -42,12 +42,12 @@ const CarouselContainer = () => {
                 <ItemCountOnTypeMusician
                     image={electricGuitarBass}
                     text="Басистов"
-                    count={4}
+                    count={11}
                 />
                 <ItemCountOnTypeMusician
                     image={electricGuitarRitm}
                     text="Ритм гитаристов"
-                    count={4}
+                    count={7}
                 />
                 <ItemCountOnTypeMusician
                     image={electricGuitarSolo}
@@ -62,32 +62,32 @@ const CarouselContainer = () => {
                 <ItemCountOnTypeMusician
                     image={musicTeacher}
                     text="Учителей музыки"
-                    count={4}
+                    count={6}
                 />
                 <ItemCountOnTypeMusician
                     image={piano}
                     text="Пианистов"
-                    count={4}
+                    count={2}
                 />
                 <ItemCountOnTypeMusician
                     image={singer}
                     text="Певцов"
-                    count={4}
+                    count={1}
                 />
                 <ItemCountOnTypeMusician
                     image={violin}
                     text="Скрипачей"
-                    count={4}
+                    count={6}
                 />
                 <ItemCountOnTypeMusician
                     image={violinist}
                     text="Виолончелистов"
-                    count={4}
+                    count={2}
                 />
                 <ItemCountOnTypeMusician
                     image={violoncello}
                     text="Виолончелистов"
-                    count={4}
+                    count={1}
                 />
             </div>
         </>

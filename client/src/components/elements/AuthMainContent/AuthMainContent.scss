@@ -1,5 +1,7 @@
+@import '../../../scss//authMainContent.scss';
+
 .AuthMainContent {
-    padding-left: 270px;
+    @include auth-main-content-padding;
 }
 
 .close-menu-resize-main {

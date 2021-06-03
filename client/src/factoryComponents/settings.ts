@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 
-import UserSettings from '../components/elements/UserSettings/UserSettings';
-import GroupSettings from '../components/elements/GroupSettings/GroupSettings';
+import UserSettings from '../components/elements/settings/UserSettings/UserSettings';
+import GroupSettings from '../components/elements/settings/GroupSettings/GroupSettings';
 
 abstract class Settings {
     abstract factoryCreate(): FunctionComponent;

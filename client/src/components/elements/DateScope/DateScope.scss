@@ -1,0 +1,11 @@
+.DateScope {
+    gap: 20px;
+    display: flex;
+    width: 100%;
+    .dateStart {
+        flex: 1;
+    }
+    .dateEnd {
+        flex: 1;
+    }
+}

@@ -1,0 +1,63 @@
+@import '../../../scss/default.scss';
+@import '../../../scss/baseBtn.scss';
+
+.EducationItem {
+    width: 100%;
+    grid-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    .row {
+        display: flex;
+        gap: 20px;
+        .item-text-field {
+            flex-grow: 1;
+        }
+    }
+
+    .divider {
+        width: 100%;
+        height: 1px;
+        background-color: $divider-color;
+    }
+
+    .wrapperBtnAddEducation {
+        margin-left: auto;
+        .addButton {
+            @include base-btn;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    .DateScope {
+        display: flex;
+        flex: 1;
+        gap: 20px;
+    }
+
+    .listEducations {
+        color: black;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 20px;
+        .ItemEducation {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+            .info {
+                display: flex;
+                gap: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .EducationItem {
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

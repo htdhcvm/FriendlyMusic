@@ -9,6 +9,11 @@ import tempGroup1 from '../../../assets/temporary/tempGroup1.jpeg';
 import tempGroup2 from '../../../assets/temporary/tempGroup2.jpg';
 import tempGroup3 from '../../../assets/temporary/tempGroup3.jpg';
 
+import tempGroup4 from '../../../assets/temporary/temp4.jpg';
+import tempGroup5 from '../../../assets/temporary/temp5.jpg';
+import tempGroup6 from '../../../assets/temporary/temp6.jpg';
+import tempGroup7 from '../../../assets/temporary/temp7.jpg';
+
 const ListVacancy = () => {
     const listVacancyCollection = [
         {
@@ -38,9 +43,34 @@ const ListVacancy = () => {
         {
             id: 4,
             title: 'Басс гитарист',
-            groupName: 'Metallica',
+            image: tempGroup4,
+            groupName: 'Eric Clapton',
+            data: '21.04.2021 16:24',
+            price: 325000,
+        },
+        {
+            id: 5,
+            image: tempGroup5,
+            title: 'Виолончелист',
+            groupName: '2CELLOS',
             data: '21.04.2021 16:24',
             price: 450000,
+        },
+        {
+            id: 6,
+            image: tempGroup6,
+            title: 'Соло гитара',
+            groupName: 'AC DC',
+            data: '21.04.2021 16:24',
+            price: 450000,
+        },
+        {
+            id: 7,
+            image: tempGroup7,
+            title: 'Вокалист',
+            groupName: 'Dio',
+            data: '21.04.2021 16:24',
+            price: 600000,
         },
     ];
     return (

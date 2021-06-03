@@ -12,7 +12,7 @@ interface Builder {
     setLeftPanel(builder: LeftPanelBuilder): void;
 }
 
-export class MainPageBuilder implements Builder {
+export class PageBuilder implements Builder {
     private header!: BuilderHeader;
     private content!: BuilderContent;
     private leftPanel!: LeftPanelBuilder;
@@ -28,29 +28,30 @@ export class MainPageBuilder implements Builder {
     }
 
     getResult(): Page {
-        if (this.leftPanel) {
-            return new Page(
-                this.header.getComponent(),
-                this.content.getComponent(),
-                this.leftPanel.getComponent()
-            );
-        }
-
-        return new Page(
-            this.header.getComponent(),
-            this.content.getComponent()
+        const returnPage: Page = new Page(
+            this.header ? this.header.getComponent() : undefined,
+            this.content ? this.content.getComponent() : undefined,
+            this.leftPanel ? this.leftPanel.getComponent() : undefined
         );
+
+        Object.keys(returnPage).forEach((key) => {
+            if (returnPage[key as keyof Page] === undefined) {
+                delete returnPage[key as keyof Page];
+            }
+        });
+
+        return returnPage;
     }
 }
 
 class Page {
-    public Header: FunctionComponent;
-    public Content: FunctionComponent;
+    public Header?: FunctionComponent;
+    public Content?: FunctionComponent;
     public LeftPanel?: FunctionComponent;
 
     constructor(
-        Header: FunctionComponent,
-        Content: FunctionComponent,
+        Header?: FunctionComponent,
+        Content?: FunctionComponent,
         LeftPanel?: FunctionComponent
     ) {
         this.Header = Header;
@@ -119,13 +120,17 @@ class LeftPanelBuilder implements ComponentBuilder {
 }
 
 export class Director {
-    constructAuth(builder: Builder) {
+    constructAuthMain(builder: Builder) {
         builder.setContent(new AuthContentBuilder(AuthMainContent));
         builder.setHeader(new AuthHeaderBuilder(AuthHeader));
         builder.setLeftPanel(new LeftPanelBuilder(LeftPanel));
     }
-    constructNotAuth(builder: Builder) {
+    constructNotAuthMain(builder: Builder) {
         builder.setContent(new ContentBuilder(MainContent));
         builder.setHeader(new HeaderBuilder(Header));
+    }
+    constructForSettings(builder: Builder) {
+        builder.setHeader(new AuthHeaderBuilder(AuthHeader));
+        builder.setLeftPanel(new LeftPanelBuilder(LeftPanel));
     }
 }

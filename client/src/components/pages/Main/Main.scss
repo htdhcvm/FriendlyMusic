@@ -1,20 +1,6 @@
 @import '../../../scss/default.scss';
+@import '../../../scss/headerMenu.scss';
 
 .Main {
-    display: grid;
-
-    grid-template-areas:
-        'header'
-        'content';
-    grid-template-columns: 1fr;
-    grid-template-rows: fit-content(80px) 1fr;
-    height: 100vh;
-
-    .header {
-        grid-area: header;
-    }
-
-    .MainContent {
-        grid-area: content;
-    }
+    @include header-menu;
 }
