@@ -9,23 +9,23 @@ import Groups from './groupsFactory';
 import Socials from './socialsFactory';
 import Group_vacancies from './group_vacanciesFactory';
 import DataScopes from './dataScopesFactory';
-import Vacancies from './vacanciesFactory';
+import Vacancy from './vacanciesFactory';
 import User_Resume from './user_ResumeFactory';
 import Resumes from './resumesFactory';
 
 const factories = {
     user: Factory.extend(User),
-    refreshSessions: Factory.extend(RefreshSessions),
-    courses: Factory.extend(Courses),
+    refreshSession: Factory.extend(RefreshSessions),
+    course: Factory.extend(Courses),
     university: Factory.extend(University),
-    placeWorks: Factory.extend(PlaceWorks),
-    groups: Factory.extend(Groups),
-    socials: Factory.extend(Socials),
-    group_vacancies: Factory.extend(Group_vacancies),
-    dataScopes: Factory.extend(DataScopes),
-    vacancies: Factory.extend(Vacancies),
+    placeWork: Factory.extend(PlaceWorks),
+    group: Factory.extend(Groups),
+    social: Factory.extend(Socials),
+    group_vacancie: Factory.extend(Group_vacancies),
+    dataScope: Factory.extend(DataScopes),
+    vacancy: Factory.extend(Vacancy),
     user_Resume: Factory.extend(User_Resume),
-    resumes: Factory.extend(Resumes),
+    resume: Factory.extend(Resumes),
 };
 
 export default factories;

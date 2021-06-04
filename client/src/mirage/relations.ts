@@ -2,58 +2,52 @@ import { belongsTo, hasMany, Model } from 'miragejs';
 
 const relations = {
     user: Model.extend({
-        refreshSessions: belongsTo(),
-        courses: belongsTo(),
-        university: belongsTo(),
-        placeWorks: belongsTo(),
-        user_Resume: belongsTo(),
-        groups: hasMany(),
+        refreshSessions: hasMany(),
+        courses: hasMany(),
+        universitys: hasMany(),
+        placeWorks: hasMany(),
         socials: hasMany(),
+        group: belongsTo(),
+        resume: hasMany(),
     }),
-    refreshSessions: Model.extend({
-        users: hasMany(),
+    refreshSession: Model.extend({
+        user: belongsTo(),
     }),
-    courses: Model.extend({
-        users: hasMany(),
-        dataScopes: hasMany(),
+    course: Model.extend({
+        user: belongsTo(),
+        dataScope: belongsTo(),
     }),
     university: Model.extend({
-        users: hasMany(),
-        dataScopes: hasMany(),
+        user: belongsTo(),
+        dataScope: belongsTo(),
     }),
-    placeWorks: Model.extend({
-        users: hasMany(),
-        dataScopes: hasMany(),
-    }),
-    groups: Model.extend({
-        users: belongsTo(),
-        socials: hasMany(),
-        group_vacancies: belongsTo(),
-    }),
-    socials: Model.extend({
-        users: belongsTo(),
-        groups: belongsTo(),
-    }),
-    group_vacancies: Model.extend({
-        groups: hasMany(),
-        vacancies: hasMany(),
+    placeWork: Model.extend({
+        user: belongsTo(),
+        dataScope: belongsTo(),
     }),
 
-    dataScopes: Model.extend({
-        courses: belongsTo(),
+    dataScope: Model.extend({
+        course: belongsTo(),
         university: belongsTo(),
-        placeWorks: belongsTo(),
-    }),
-    vacancies: Model.extend({
-        group_vacancies: belongsTo(),
+        placeWork: belongsTo(),
     }),
 
-    user_Resume: Model.extend({
-        users: hasMany(),
-        resumes: hasMany(),
+    group: Model.extend({
+        user: belongsTo(),
+        socials: hasMany(),
+        vacancy: hasMany(),
     }),
-    resumes: Model.extend({
-        user_Resume: belongsTo(),
+
+    social: Model.extend({
+        user: belongsTo(),
+        group: belongsTo(),
+    }),
+
+    vacancy: Model.extend({
+        groups: hasMany(),
+    }),
+    resume: Model.extend({
+        users: hasMany(),
     }),
 };
 

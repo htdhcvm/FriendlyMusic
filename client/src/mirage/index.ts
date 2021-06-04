@@ -8,14 +8,27 @@ createServer({
     factories: factories,
 
     seeds(server) {
-        server.createList('user', 5);
+        // server.createList('user', 5);
+        // server.createList('refreshSession', 5);
+        // server.createList('vacancy', 5);
+        // server.createList('course', 5);
+        // server.createList('university', 5);
+        // server.createList('user', 2).forEach((user) => {
+        //     server.createList('refreshSession', 2, { user });
+        // });
     },
 
     routes() {
         this.namespace = 'api';
 
         this.get('/movies', (schema) => {
-            return schema.all('user');
+            return {
+                users: schema.all('user').models,
+                refreshSessions: schema.all('refreshSession').models,
+                // vacancies: schema.all('vacancies').models,
+                // courses: schema.all('courses').models,
+                // universities: schema.all('university').models,
+            };
         });
 
         this.get('/api/visitor/getListVacancy', () => {

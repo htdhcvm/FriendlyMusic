@@ -110,5 +110,20 @@ layout
 [] User
 [] Vacancy
 [x] Main
+[x] settings user
 [] Resume
 [] Search
+
+[] mirage
+    [x] factory fill
+        [x] User
+        [x] RefreshSessions
+        [x] Courses
+        [x] University
+        [x] PlaceWorks
+        [x] Groups
+        [x] Socials
+        [x] DataScopes
+        [x] Vacancy
+        [x] Resumes
+    [] seed
