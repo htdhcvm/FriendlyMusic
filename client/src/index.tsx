@@ -14,3 +14,7 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+
+fetch('/api/movies')
+    .then((r) => r.json())
+    .then((d) => console.log(d));
