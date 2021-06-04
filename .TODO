@@ -126,4 +126,11 @@ layout
         [x] DataScopes
         [x] Vacancy
         [x] Resumes
-    [] seed
+    [x] seed
+        [x] eight useres
+        [x] five group 
+        [x] each users have resume 
+        [x] each users have refreshsession 
+        [x] foure group have vacancy 
+        
+    [] routes

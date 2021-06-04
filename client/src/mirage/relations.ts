@@ -4,11 +4,11 @@ const relations = {
     user: Model.extend({
         refreshSessions: hasMany(),
         courses: hasMany(),
-        universitys: hasMany(),
+        universities: hasMany(),
         placeWorks: hasMany(),
         socials: hasMany(),
         group: belongsTo(),
-        resume: hasMany(),
+        resumes: hasMany(),
     }),
     refreshSession: Model.extend({
         user: belongsTo(),
@@ -35,7 +35,7 @@ const relations = {
     group: Model.extend({
         user: belongsTo(),
         socials: hasMany(),
-        vacancy: hasMany(),
+        vacancies: hasMany(),
     }),
 
     social: Model.extend({
@@ -44,10 +44,10 @@ const relations = {
     }),
 
     vacancy: Model.extend({
-        groups: hasMany(),
+        group: belongsTo(),
     }),
     resume: Model.extend({
-        users: hasMany(),
+        users: belongsTo(),
     }),
 };
 

@@ -7,6 +7,9 @@ import { fillArray } from '../helpers/fillArray';
 faker.locale = 'ru';
 
 const User = {
+    id() {
+        return faker.datatype.uuid();
+    },
     fio() {
         return `${faker.name.findName()}`;
     },
