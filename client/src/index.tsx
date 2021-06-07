@@ -4,7 +4,11 @@ import { Provider } from 'react-redux';
 import App from './App';
 import { store, persistor } from './store';
 import { PersistGate } from 'redux-persist/integration/react';
-import './mirage';
+import { createMockServer } from './mirage';
+
+if (process.env.NODE_ENV === 'development') {
+    createMockServer();
+}
 
 ReactDOM.render(
     <Provider store={store}>
@@ -14,7 +18,3 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
-
-fetch('/api/movies')
-    .then((r) => r.json())
-    .then((d) => console.log(d));
