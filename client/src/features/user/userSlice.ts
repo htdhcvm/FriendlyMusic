@@ -1,6 +1,8 @@
 import { UserAction, UserActionTypes } from './actionsDescription';
 
-const initialState = {};
+const initialState = {
+    status: 'visitor',
+};
 
 export default function userReducer(state = initialState, action: UserAction) {
     switch (action.type) {
