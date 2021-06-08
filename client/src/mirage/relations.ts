@@ -6,8 +6,8 @@ const relations = {
         courses: hasMany(),
         universities: hasMany(),
         placeWorks: hasMany(),
+        user_group: hasMany(),
         socials: hasMany(),
-        group: belongsTo(),
         resumes: hasMany(),
     }),
     refreshSession: Model.extend({
@@ -33,7 +33,8 @@ const relations = {
     }),
 
     group: Model.extend({
-        user: belongsTo(),
+        user_group: hasMany(),
+
         socials: hasMany(),
         vacancies: hasMany(),
     }),
@@ -46,6 +47,12 @@ const relations = {
     vacancy: Model.extend({
         group: belongsTo(),
     }),
+
+    user_group: Model.extend({
+        user: belongsTo(),
+        group: belongsTo(),
+    }),
+
     resume: Model.extend({
         users: belongsTo(),
     }),

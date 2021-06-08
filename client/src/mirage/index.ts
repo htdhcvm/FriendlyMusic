@@ -48,8 +48,7 @@ export const createMockServer = (environment = 'development') => {
             });
 
             server.createList('user', 4).forEach((user) => {
-                server.create('group', {
-                    user: user,
+                const group = server.create('group', {
                     vacancies: server.createList(
                         'vacancy',
                         Math.floor(Math.random() * 5) + 1
@@ -58,6 +57,16 @@ export const createMockServer = (environment = 'development') => {
                         'social',
                         Math.floor(Math.random() * 5) + 1
                     ),
+                });
+
+                server.create('user_group', { user, group, type: 'owner' });
+            });
+
+            server.createList('user', 4).forEach((user, index) => {
+                server.create('user_group', {
+                    user,
+                    group: server.schema.all('group').models[index],
+                    type: 'participant',
                 });
             });
         },
@@ -69,6 +78,7 @@ export const createMockServer = (environment = 'development') => {
                 return {
                     users: schema.all('user').models,
                     resumes: schema.all('resume').models,
+                    user_groups: schema.all('user_group').models,
                     refreshSessions: schema.all('refreshSession').models,
                     groups: schema.all('group').models,
                     vacancys: schema.all('vacancy').models,

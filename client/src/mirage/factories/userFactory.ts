@@ -2,6 +2,8 @@ import faker from 'faker';
 
 import professions from '../staticData/professions';
 import qualities from '../staticData/qualities';
+import logins from '../staticData/login';
+import passwords from '../staticData/passwords';
 import { fillArray } from '../helpers/fillArray';
 
 faker.locale = 'ru';
@@ -20,11 +22,11 @@ const User = {
             .split(' ');
         return `${dateBirthday[0]} ${dateBirthday[1]} ${dateBirthday[2]} ${dateBirthday[3]}`;
     },
-    login() {
-        return faker.internet.userName();
+    login(i: number) {
+        return logins[i];
     },
-    password() {
-        return faker.internet.password();
+    password(i: number) {
+        return passwords[i];
     },
     gander() {
         return faker.name.gender();
