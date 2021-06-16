@@ -1,14 +1,17 @@
 import { UiActionTypes, UiAction } from './uiDescription';
 
-interface initStateUi {
+interface InitStateUi {
     toggle: boolean;
 }
 
-const initialState: initStateUi = {
+const initialState: InitStateUi = {
     toggle: false,
 };
 
-export default function uiReducer(state = initialState, action: UiAction) {
+export default function uiReducer(
+    state: InitStateUi = initialState,
+    action: UiAction
+) {
     switch (action.type) {
         case UiActionTypes.OPENMENU:
             return {
@@ -21,6 +24,6 @@ export default function uiReducer(state = initialState, action: UiAction) {
                 toggle: action.payload,
             };
         default:
-            return state;
+            return { ...state };
     }
 }

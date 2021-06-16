@@ -1,4 +1,4 @@
-import { Fork } from './fork';
+import { Fork } from '../visitor/fork';
 import { Social } from './social';
 
 export interface User<T> {

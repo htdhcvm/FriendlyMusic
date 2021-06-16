@@ -2,11 +2,11 @@ export interface GroupPage {
     name: String;
     address: String;
     experience: String;
-    telephine: String;
+    telephone: String;
     typeGroup: String;
     socialList: Array<Social>;
-    existRepetitionBase: Boolean;
-    commerceProject: Boolean;
+    existRepetitionBase: boolean;
+    commerceProject: boolean;
 }
 
 interface Social {

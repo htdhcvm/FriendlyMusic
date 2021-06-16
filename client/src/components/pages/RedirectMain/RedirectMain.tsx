@@ -8,7 +8,7 @@ interface Props {
 }
 
 const RedirectMain = ({ children, ...rest }: Props) => {
-    const statusReg: Boolean = false;
+    const statusReg: boolean = false;
 
     return (
         <Route

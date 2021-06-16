@@ -3,9 +3,8 @@ import './App.scss';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// import Protected from './components/pages/Protected/Protected';
+import OnlyForVisitor from './components/elements/OnlyForVisitor/OnlyForVisitor';
 import NotMatch from './components/pages/NotMatch/NotMatch';
-
 import About from './components/pages/About/About';
 import Preview from './components/pages/Preview/Preview';
 import SignInSignUp from './components/pages/SignInSignUp/SignInSignUp';
@@ -14,7 +13,6 @@ import Vacancy from './components/pages/Vacancy/Vacancy';
 import Main from './components/pages/Main/Main';
 import Resume from './components/pages/Resume/Resume';
 import Search from './components/pages/Search/Search';
-
 import Settings from './components/pages/Settings/Settings';
 
 const App = () => {
@@ -42,9 +40,9 @@ const App = () => {
                 <Route path="/main">
                     <Main />
                 </Route>
-                <Route path="/signInSignUp">
+                <OnlyForVisitor path="/signInSignUp">
                     <SignInSignUp />
-                </Route>
+                </OnlyForVisitor>
                 <Route path="/" exact>
                     <Preview />
                 </Route>

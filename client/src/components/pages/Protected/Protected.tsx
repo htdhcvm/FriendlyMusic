@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Protected = ({ children, ...rest }: Props) => {
-    const statusReg: Boolean = true;
+    const statusReg: boolean = true;
 
     return (
         <Route

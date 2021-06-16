@@ -5,12 +5,12 @@ export enum UiActionTypes {
 
 interface OpenAction {
     type: UiActionTypes.OPENMENU;
-    payload: Boolean;
+    payload: boolean;
 }
 
 interface CloseAction {
     type: UiActionTypes.CLOSEMENU;
-    payload: Boolean;
+    payload: boolean;
 }
 
 export type UiAction = OpenAction | CloseAction;

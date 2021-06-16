@@ -1,4 +1,4 @@
-import { Fork } from './fork';
+import { Fork } from '../visitor/fork';
 
 export interface DetailSearch<T> {
     keyWord: Array<String>;
@@ -7,8 +7,8 @@ export interface DetailSearch<T> {
     experience?: String;
     countVacancyOnPage?: Number;
     salary?: Fork<T>;
-    existBase?: Boolean;
-    existMaterial?: Boolean;
-    existNumberPhone?: Boolean;
-    existLinkSocial?: Boolean;
+    existBase?: boolean;
+    existMaterial?: boolean;
+    existNumberPhone?: boolean;
+    existLinkSocial?: boolean;
 }

@@ -1,122 +1,22 @@
-import React, { SyntheticEvent, useState } from 'react';
-
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import { Alert, AlertTitle } from '@material-ui/lab';
-import Typography from '@material-ui/core/Typography';
+import { useState } from 'react';
 
 import './SignInSignUp.scss';
+
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
+import SignInForm from '../../elements/SignInForm/SignInForm';
+import SignUpForm from '../../elements/SignUpFrom/SignUpFrom';
 
 const SignInSignUp = () => {
     const [rightPanel, setRightPanel] = useState(false);
 
-    const handleRegistration = (e: SyntheticEvent) => {
-        e.preventDefault();
-        console.log('handleRegistration');
-    };
-
-    const handleSignIn = (e: SyntheticEvent) => {
-        e.preventDefault();
-        console.log('handleSignIn');
-    };
     return (
         <div className="SignInSignUp">
             <div className="form-wrapper">
-                {!rightPanel ? (
-                    <div className={`form-container sign-in-container`}>
-                        <Typography variant="h4" gutterBottom>
-                            Вход
-                        </Typography>
-                        <form onSubmit={handleSignIn}>
-                            <div className="form-field">
-                                <TextField
-                                    label="Логин"
-                                    variant="outlined"
-                                    type="text"
-                                    fullWidth={true}
-                                />
-                            </div>
-                            <div className="form-field">
-                                <TextField
-                                    label="Пароль"
-                                    variant="outlined"
-                                    type="password"
-                                    fullWidth={true}
-                                />
-                            </div>
-                            <Button
-                                className="btnSignIn"
-                                variant="contained"
-                                color="primary"
-                                type="submit"
-                            >
-                                Войти
-                            </Button>
-                            <Alert severity="error" className="error-alert">
-                                <AlertTitle>Ошибка</AlertTitle>
-                                Вы ввели неправильный логин или пароль -
-                                <strong>перепроверьте введенные данные.</strong>
-                            </Alert>
-                        </form>
-                    </div>
-                ) : null}
-                {rightPanel ? (
-                    <div className={`form-container sign-up-container`}>
-                        <Typography variant="h4" gutterBottom>
-                            Регистрация
-                        </Typography>
-
-                        <form onSubmit={handleRegistration}>
-                            <div className="form-field">
-                                <TextField
-                                    label="ФИО"
-                                    variant="outlined"
-                                    type="text"
-                                    fullWidth={true}
-                                />
-                            </div>
-                            <div className="form-field">
-                                <TextField
-                                    label="Логин"
-                                    variant="outlined"
-                                    type="text"
-                                    fullWidth={true}
-                                />
-                            </div>
-                            <div className="form-field">
-                                <TextField
-                                    label="Пароль"
-                                    variant="outlined"
-                                    type="password"
-                                    fullWidth={true}
-                                />
-                            </div>
-                            <div className="form-field">
-                                <TextField
-                                    label="Повторите пароль"
-                                    variant="outlined"
-                                    type="password"
-                                    fullWidth={true}
-                                />
-                            </div>
-                            <Button
-                                className="btnSignUp"
-                                variant="contained"
-                                color="primary"
-                                type="submit"
-                            >
-                                Зарегистрироваться
-                            </Button>
-                            <Alert severity="error" className="error-alert">
-                                <AlertTitle>Ошибка</AlertTitle>
-                                Вы ввели неправильный логин или пароль -
-                                <strong>перепроверьте введенные данные.</strong>
-                            </Alert>
-                        </form>
-                    </div>
-                ) : null}
+                {!rightPanel ? <SignInForm /> : null}
+                {rightPanel ? <SignUpForm /> : null}
             </div>
-
             <div className="overlay-container">
                 {!rightPanel ? (
                     <div className="sign-in">

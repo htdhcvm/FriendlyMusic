@@ -1,4 +1,4 @@
-const logins = [
+export const logins = [
     'user_1',
     'user_2',
     'user_3',
@@ -9,4 +9,4 @@ const logins = [
     'user_8',
 ];
 
-export default logins;
+export const group = ['group_1', 'group_2', 'group_3', 'group_4'];

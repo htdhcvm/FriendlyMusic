@@ -2,8 +2,8 @@ import React from 'react';
 
 import { useTypedSelector } from '../../../../hooks/useTypedSelector';
 
-import TabGroupProfile from '../TabGroupProfile/TabGroupProfile';
-import TabGroupManipulation from '../TabGroupManipulation/TabGroupManipulation';
+// import TabGroupProfile from '../TabGroupProfile/TabGroupProfile';
+// import TabGroupManipulation from '../TabGroupManipulation/TabGroupManipulation';
 
 const GroupSettings = () => {
     const { toggle } = useTypedSelector((state) => state.ui);

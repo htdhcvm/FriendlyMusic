@@ -1,20 +1,20 @@
-import React from 'react';
 import './Main.scss';
 
 import { PageBuilder, Director } from '../../../factoryComponents/main';
-
-const pageBuilderMain: PageBuilder = new PageBuilder();
-const director: Director = new Director();
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 const Main = () => {
-    const isAuth: boolean = true;
+    const pageBuilderMain: PageBuilder = new PageBuilder();
+    const director: Director = new Director();
+
+    const isAuth: boolean = useTypedSelector((state) => state.user.isAuth);
 
     isAuth
         ? director.constructAuthMain(pageBuilderMain)
         : director.constructNotAuthMain(pageBuilderMain);
 
-    console.log(pageBuilderMain.getResult());
     const { Header, Content, LeftPanel } = pageBuilderMain.getResult();
+
     return (
         <div className="Main">
             {Header ? <Header /> : null}

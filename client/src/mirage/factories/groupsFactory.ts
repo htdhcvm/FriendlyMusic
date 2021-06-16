@@ -2,6 +2,8 @@ import faker from 'faker';
 
 import { fillArray } from '../helpers/fillArray';
 import musicGenre from '../staticData/musicGenre';
+import { group } from '../staticData/login';
+import passwords from '../staticData/passwords';
 
 const Groups = {
     id() {
@@ -9,6 +11,12 @@ const Groups = {
     },
     name() {
         return faker.name.findName();
+    },
+    login(i: number) {
+        return group[i];
+    },
+    password(i: number) {
+        return passwords[i];
     },
     experience() {
         return faker.datatype.number();

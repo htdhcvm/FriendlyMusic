@@ -2,7 +2,7 @@ import faker from 'faker';
 
 import professions from '../staticData/professions';
 import qualities from '../staticData/qualities';
-import logins from '../staticData/login';
+import { logins } from '../staticData/login';
 import passwords from '../staticData/passwords';
 import { fillArray } from '../helpers/fillArray';
 
