@@ -1,4 +1,4 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from 'react';
+import React, { ChangeEvent, SyntheticEvent, useEffect, useState } from 'react';
 
 import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap';
 import SearchIcon from '@material-ui/icons/Search';
@@ -16,6 +16,8 @@ import { closeMenu, openMenu } from '../../../features/ui/action';
 const Header = () => {
     const dispatch = useDispatch();
     const [searchText, setSearchTest] = useState('');
+
+    const login = useTypedSelector((state) => state.user.login);
 
     const clearSearchText = () => {
         setSearchTest('');
@@ -70,7 +72,7 @@ const Header = () => {
             </div>
 
             <div className="right">
-                <span className="login">Flouheforst</span>
+                <span className="login">{login}</span>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
             </div>
         </div>
