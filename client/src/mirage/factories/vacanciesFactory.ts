@@ -14,7 +14,7 @@ const Vacancy = {
         return faker.datatype.uuid();
     },
     image() {
-        return `${faker.image.nature()}`;
+        return `${faker.image.city()}?random=${Date.now()}`;
     },
     title() {
         return faker.name.jobTitle();
@@ -48,6 +48,12 @@ const Vacancy = {
     },
     condition() {
         return fillArray(conditions, 20);
+    },
+    price() {
+        return faker.commerce.price();
+    },
+    date() {
+        return faker.date.past();
     },
 };
 

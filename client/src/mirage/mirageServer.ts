@@ -9,6 +9,7 @@ import getHash from './helpers/getHash';
 
 import jwt from 'jsonwebtoken';
 import faker from 'faker';
+import { group } from './staticData/login';
 
 const VERY_SECRET_KEY = 'VERY_SECRET_KEY';
 const TIME_EXPIRE = 1000 * 60 * 60 * 24;
@@ -18,6 +19,10 @@ export const createMockServer = (environment = 'development') => {
         environment,
         serializers: {
             application: RestSerializer,
+            vacancy: RestSerializer.extend({
+                alwaysIncludeLinkageData: true,
+                include: ['group'],
+            }),
         },
 
         models: relations,
@@ -55,6 +60,10 @@ export const createMockServer = (environment = 'development') => {
                         const user = schema.findBy('user', { login });
 
                         if (user) {
+                            return new Response(400);
+                        }
+
+                        if (password !== retPassword) {
                             return new Response(400);
                         }
 
@@ -206,76 +215,88 @@ export const createMockServer = (environment = 'development') => {
                 return new Response(200);
             });
 
-            this.get('/api/visitor/getListVacancy', () => {
+            this.get('/visitor/getListVacancy', (schema) => {
+                let list: Array<{}> = [];
+
+                schema.all('group').models.forEach((groupItem) => {
+                    groupItem.vacancies.models.forEach((vacancy: any) => {
+                        list.push({
+                            id: vacancy.id,
+                            title: vacancy.title,
+                            image: vacancy.image,
+                            price: vacancy.price,
+                            date: vacancy.date,
+                            groupName: groupItem.name,
+                        });
+                    });
+                });
+
+                return list;
+            });
+
+            this.get('/visitor/getListVacancy/:name', () => {
                 return { id: 1 };
             });
 
-            this.get('/api/visitor/getListVacancy/:name', () => {
+            this.get('/visitor/getDataVacancy/:idVacancy', () => {
                 return { id: 1 };
             });
 
-            this.get('/api/visitor/getDataVacancy/:idVacancy', () => {
+            this.get('/visitor/getDataGroup/:idGroup', () => {
                 return { id: 1 };
             });
 
-            this.get('/api/visitor/getDataGroup/:idGroup', () => {
-                return { id: 1 };
-            });
-
-            this.get('/api/user/signIn/:login/:password', () => {
+            this.get('/user/signIn/:login/:password', () => {
                 return { id: 1 };
             });
 
             this.get(
-                '/api/user/search/:keyWord/:city/:positionGroup/:experience/:countVacancyOnPage/:salary/:existBase/:existMaterial/:existNumberPhone/:linkSocial',
+                '/user/search/:keyWord/:city/:positionGroup/:experience/:countVacancyOnPage/:salary/:existBase/:existMaterial/:existNumberPhone/:linkSocial',
                 () => {
                     return { id: 1 };
                 }
             );
 
-            this.get('/api/visitor/getDataVacancy/:idVacancy', () => {
+            this.get('/visitor/getDataVacancy/:idVacancy', () => {
                 return { id: 1 };
             });
 
-            this.get('/api/user/settings/dataUser/owner/:idUser', () => {
+            this.get('/user/settings/dataUser/owner/:idUser', () => {
                 return { id: 1 };
             });
 
-            this.get('/api/user/settings/changeDataUser', () => {
+            this.get('/user/settings/changeDataUser', () => {
                 return { id: 1 };
             });
 
-            this.get('/api/user/settings/createGroup', () => {
+            this.get('/user/settings/createGroup', () => {
                 return { id: 1 };
             });
 
-            this.get('/api/user/settings/getDataGroup/consist/:idUser', () => {
+            this.get('/user/settings/getDataGroup/consist/:idUser', () => {
+                return { id: 1 };
+            });
+
+            this.get('/user/settings/consist/eventOnAddMemberInGroup', () => {
                 return { id: 1 };
             });
 
             this.get(
-                '/api/user/settings/consist/eventOnAddMemberInGroup',
+                '/user/settings/consist/eventOnCancelMemberInGroup',
                 () => {
                     return { id: 1 };
                 }
             );
 
             this.get(
-                '/api/user/settings/consist/eventOnCancelMemberInGroup',
+                '/user/settings/consist/eventOnDeleteMemberGroupAgree',
                 () => {
                     return { id: 1 };
                 }
             );
 
             this.get(
-                '/api/user/settings/consist/eventOnDeleteMemberGroupAgree',
-                () => {
-                    return { id: 1 };
-                }
-            );
-
-            this.get(
-                '/api/user/settings/consist/eventOnDeleteMemberGroupDisagree',
+                '/user/settings/consist/eventOnDeleteMemberGroupDisagree',
                 () => {
                     return { id: 1 };
                 }

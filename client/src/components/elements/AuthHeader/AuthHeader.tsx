@@ -1,4 +1,4 @@
-import React, { ChangeEvent, SyntheticEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, SyntheticEvent, useState } from 'react';
 
 import ZoomOutMapIcon from '@material-ui/icons/ZoomOutMap';
 import SearchIcon from '@material-ui/icons/Search';

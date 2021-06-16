@@ -1,10 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as ActionUser from '../features/user/action';
 import * as ActionUi from '../features/ui/action';
+import * as ActionUser from '../features/user/action';
+import * as ActionVacancy from '../features/vacancy/action';
 
-const actions = { ...ActionUser, ...ActionUi };
+const actions = { ...ActionUser, ...ActionUi, ...ActionVacancy };
 
 export const useAction = () => {
     const dispatch = useDispatch();

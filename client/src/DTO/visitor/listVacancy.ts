@@ -3,6 +3,10 @@ export interface ListVacancy {
 }
 
 interface Vacancy {
+    id: string;
     name: string;
-    musicalStyleList: Array<String>;
+    image: string;
+    groupName: string;
+    date: string;
+    price: number;
 }

@@ -6,7 +6,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAction } from '../../../hooks/useAction';
 import { FormControl, Select } from '@material-ui/core';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import { RootStateOrAny, useSelector } from 'react-redux';
+import { RootStateOrAny } from 'react-redux';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';

@@ -39,12 +39,12 @@ const relations = {
         vacancies: hasMany(),
     }),
 
-    social: Model.extend({
-        user: belongsTo(),
+    vacancy: Model.extend({
         group: belongsTo(),
     }),
 
-    vacancy: Model.extend({
+    social: Model.extend({
+        user: belongsTo(),
         group: belongsTo(),
     }),
 
