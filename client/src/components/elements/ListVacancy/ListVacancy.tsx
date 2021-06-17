@@ -9,15 +9,15 @@ import { useAction } from '../../../hooks/useAction';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 const ListVacancy = () => {
-    const { getListVacancies } = useAction();
+    const { getListVacancies, getCountOnTypeVacancy } = useAction();
 
     const listVacancies = useTypedSelector(
-        (state) => state.vacancy.list.listVacancy
+        (state) => state.vacancy.listVacancies
     );
 
-    console.log(listVacancies);
     useEffect(() => {
         getListVacancies();
+        getCountOnTypeVacancy();
     }, []);
 
     return (
@@ -28,7 +28,7 @@ const ListVacancy = () => {
                     <ItemVacancy
                         key={vacancy.id}
                         imageGroup={vacancy.image}
-                        title={vacancy.name}
+                        title={vacancy.title}
                         groupName={vacancy.groupName}
                         data={vacancy.date}
                         price={vacancy.price}

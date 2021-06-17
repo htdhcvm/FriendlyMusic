@@ -2,64 +2,16 @@ import React from 'react';
 
 import './MainContent.scss';
 
+import CarouselContainer from '../../elements/CarouselContainer/CarouselContainer';
+import ListVacancy from '../../elements/ListVacancy/ListVacancy';
+
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
+
 const MainContent = () => {
     return (
-        <div className={'MainContent'}>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1> <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
-            <h1>MainContent</h1>
+        <div className="MainContent">
+            <CarouselContainer />
+            <ListVacancy />
         </div>
     );
 };

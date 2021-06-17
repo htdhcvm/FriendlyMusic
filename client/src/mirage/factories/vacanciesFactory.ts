@@ -1,6 +1,7 @@
 import faker from 'faker';
 
 import professions from '../staticData/professions';
+import professionsType from '../staticData/professionsType';
 import expirense from '../staticData/expirense';
 import qualities from '../staticData/qualities';
 import requirements from '../staticData/requirements';
@@ -21,6 +22,11 @@ const Vacancy = {
     },
     profession() {
         return professions[Math.floor(Math.random() * professions.length)];
+    },
+    professionType() {
+        return professionsType[
+            Math.floor(Math.random() * professionsType.length)
+        ];
     },
     experience() {
         return expirense[Math.floor(Math.random() * expirense.length)];
@@ -50,7 +56,7 @@ const Vacancy = {
         return fillArray(conditions, 20);
     },
     price() {
-        return faker.commerce.price();
+        return +faker.commerce.price() * (Math.random() < 0.5 ? 1000 : 100);
     },
     date() {
         return faker.date.past();

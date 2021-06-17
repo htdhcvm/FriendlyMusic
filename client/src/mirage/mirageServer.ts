@@ -234,6 +234,36 @@ export const createMockServer = (environment = 'development') => {
                 return list;
             });
 
+            this.get('/visitor/getCountCategory', (schema) => {
+                let sumCount: {
+                    [key: string]: {
+                        count: number;
+                        profession: string;
+                        professionType: string;
+                    };
+                } = {};
+
+                schema.all('vacancy').models.forEach((vacancy) => {
+                    if (sumCount[vacancy.professionType]) {
+                        sumCount[vacancy.professionType] = {
+                            count: sumCount[vacancy.professionType].count + 1,
+                            profession:
+                                sumCount[vacancy.professionType].profession,
+                            professionType:
+                                sumCount[vacancy.professionType].professionType,
+                        };
+                    } else {
+                        sumCount[vacancy.professionType] = {
+                            count: 1,
+                            profession: vacancy.profession,
+                            professionType: vacancy.professionType,
+                        };
+                    }
+                });
+
+                return Object.values(sumCount);
+            });
+
             this.get('/visitor/getListVacancy/:name', () => {
                 return { id: 1 };
             });
@@ -243,10 +273,6 @@ export const createMockServer = (environment = 'development') => {
             });
 
             this.get('/visitor/getDataGroup/:idGroup', () => {
-                return { id: 1 };
-            });
-
-            this.get('/user/signIn/:login/:password', () => {
                 return { id: 1 };
             });
 

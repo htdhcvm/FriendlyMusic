@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './CarouselContainer.scss';
 
@@ -18,22 +18,43 @@ import singer from '../../../assets/onTypeMusician/singer.png';
 import violin from '../../../assets/onTypeMusician/violin.png';
 import violinist from '../../../assets/onTypeMusician/violinist.png';
 import violoncello from '../../../assets/onTypeMusician/violoncello.png';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
+console.log();
 const CarouselContainer = () => {
+    const listVacanciesOnType = useTypedSelector(
+        (state) => state.vacancy.listVacanciesOnType
+    );
+
+    console.log(
+        listVacanciesOnType[0].image,
+        listVacanciesOnType[0].image.substr(
+            8,
+            listVacanciesOnType[0].image.length
+        )
+    );
     return (
         <>
             <div className="CarouselContainer">
-                <ItemCountOnTypeMusician
-                    image={conductor}
-                    text="Дирижеров"
-                    count={2}
-                />
-                <ItemCountOnTypeMusician
-                    image={contrabass}
-                    text="Контрабасистов"
-                    count={7}
-                />
-                <ItemCountOnTypeMusician image={dj} text="Диджеев" count={4} />
+                {listVacanciesOnType.map((vacancyType) => (
+                    <ItemCountOnTypeMusician
+                        image={vacancyType.image}
+                        count={vacancyType.count}
+                    />
+                ))}
+                {/* <img
+                    src={
+                        require('../../../assets/onTypeMusician/conductor.png')
+                            .default
+                    }
+                /> */}
+                {/* <img
+                    src={listVacanciesOnType[0].image
+                        .substr(8, listVacanciesOnType[0].image.length)
+                        .trim()}
+                /> */}
+
+                {/* <ItemCountOnTypeMusician image={dj} text="Диджеев" count={4} />
                 <ItemCountOnTypeMusician
                     image={drummer}
                     text="Барабнщиков"
@@ -88,7 +109,7 @@ const CarouselContainer = () => {
                     image={violoncello}
                     text="Виолончелистов"
                     count={1}
-                />
+                /> */}
             </div>
         </>
     );

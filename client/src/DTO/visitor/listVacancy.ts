@@ -1,10 +1,8 @@
-export interface ListVacancy {
-    listVacancy: Array<Vacancy>;
-}
+export type ListVacancy = Array<Vacancy>;
 
 interface Vacancy {
     id: string;
-    name: string;
+    title: string;
     image: string;
     groupName: string;
     date: string;

@@ -1,14 +1,15 @@
 import { ListVacancy } from '../../DTO/visitor/listVacancy';
+import { ListTypeVacancy } from '../../DTO/visitor/listTypeVacancy';
 import { VacancyAction, VacancyActionTypes } from './actionsDescription';
 
 interface IState {
-    list: ListVacancy;
+    listVacancies: ListVacancy;
+    listVacanciesOnType: ListTypeVacancy;
 }
 
 const initialState: IState = {
-    list: {
-        listVacancy: [],
-    },
+    listVacancies: [],
+    listVacanciesOnType: [],
 };
 
 export default function vacancyReducer(
@@ -19,10 +20,12 @@ export default function vacancyReducer(
         case VacancyActionTypes.GETLISTVACANCIES:
             return {
                 ...state,
-                list: {
-                    ...state.list,
-                    listVacancy: action.payload,
-                },
+                listVacancies: action.payload,
+            };
+        case VacancyActionTypes.GETCOUNTTYPEVACANCY:
+            return {
+                ...state,
+                listVacanciesOnType: action.payload,
             };
         default:
             return { ...state };
