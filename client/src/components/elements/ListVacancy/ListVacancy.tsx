@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { Typography } from '@material-ui/core';
 
@@ -9,7 +9,7 @@ import { useAction } from '../../../hooks/useAction';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 const ListVacancy = () => {
-    const { getListVacancies, getCountOnTypeVacancy } = useAction();
+    const { getListVacancies } = useAction();
 
     const listVacancies = useTypedSelector(
         (state) => state.vacancy.listVacancies
@@ -17,7 +17,6 @@ const ListVacancy = () => {
 
     useEffect(() => {
         getListVacancies();
-        getCountOnTypeVacancy();
     }, []);
 
     return (
@@ -27,6 +26,7 @@ const ListVacancy = () => {
                 {listVacancies.map((vacancy) => (
                     <ItemVacancy
                         key={vacancy.id}
+                        id={vacancy.id}
                         imageGroup={vacancy.image}
                         title={vacancy.title}
                         groupName={vacancy.groupName}

@@ -8,6 +8,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import { Link } from 'react-router-dom';
 
 interface Prop {
+    id: string;
     imageGroup?: string;
     title: string;
     groupName: string;
@@ -15,10 +16,17 @@ interface Prop {
     data?: string;
 }
 
-const ItemVacancy = ({ imageGroup, title, groupName, price, data }: Prop) => {
+const ItemVacancy = ({
+    id,
+    imageGroup,
+    title,
+    groupName,
+    price,
+    data,
+}: Prop) => {
     return (
         <Box className="ItemVacancy">
-            <Link to="/vacancy">
+            <Link to={`/vacancy/${id}`}>
                 {imageGroup ? (
                     <img src={imageGroup} alt="vacancy group" />
                 ) : (

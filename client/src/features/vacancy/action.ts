@@ -6,7 +6,7 @@ import { Visitor } from '../../axios/axios-configuration';
 import { ListVacancy } from '../../DTO/visitor/listVacancy';
 import { ListTypeVacancy } from '../../DTO/visitor/listTypeVacancy';
 
-import createMusicians from '../../factoryComponents/typeMusicianWithImage';
+import createMusicians from '../../factoryComponents/Musician/Musician';
 
 export const getListVacancies = () => {
     return async (dispatch: Dispatch<VacancyAction>) => {

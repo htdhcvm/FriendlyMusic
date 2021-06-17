@@ -28,7 +28,7 @@ const App = () => {
                 <Route path="/user">
                     <User />
                 </Route>
-                <Route path="/vacancy">
+                <Route path="/vacancy/:vacancyId" exact>
                     <Vacancy />
                 </Route>
                 <Route path="/search">
