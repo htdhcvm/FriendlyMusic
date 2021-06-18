@@ -6,8 +6,6 @@ import GroupIcon from '@material-ui/icons/Group';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-import logo from '../../../assets/logo/logoButtom.png';
-
 import ItemLeftPanel from '../ItemLeftPanel/ItemLeftPanel';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { useAction } from '../../../hooks/useAction';
@@ -26,7 +24,7 @@ const LeftPanel = () => {
         <div className={`left-panel ${toggle ? 'left-panel-close' : ''}`}>
             <div className="wrapperLogo">
                 <Link to="/main">
-                    <img src={logo} alt="logo" />
+                    <img src="./assets/logo/logoButtom.png" alt="logo" />
                 </Link>
             </div>
             <div className="list-item-menu">

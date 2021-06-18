@@ -30,7 +30,7 @@ const ItemVacancy = ({
                 {imageGroup ? (
                     <img src={imageGroup} alt="vacancy group" />
                 ) : (
-                    <Skeleton variant="rect" width={190} height={190} />
+                    <Skeleton variant="rect" width={'100%'} height={190} />
                 )}
 
                 <div className="title">

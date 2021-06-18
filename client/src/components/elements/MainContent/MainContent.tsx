@@ -5,8 +5,6 @@ import './MainContent.scss';
 import CarouselContainer from '../../elements/CarouselContainer/CarouselContainer';
 import ListVacancy from '../../elements/ListVacancy/ListVacancy';
 
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-
 const MainContent = () => {
     return (
         <div className="MainContent">

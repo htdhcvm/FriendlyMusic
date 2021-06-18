@@ -74,7 +74,7 @@ const createMusicians = (
 
     for (const musician of musicians) {
         const creator: Creator = typeDefinitionCreator(musician.professionType);
-        listMusicians.push(creator.create(musician.count));
+        listMusicians.push(creator.create(musician.count, musician.profession));
     }
 
     return listMusicians;

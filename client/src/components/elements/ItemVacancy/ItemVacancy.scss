@@ -1,5 +1,4 @@
 .ItemVacancy {
-    max-width: 300px;
     margin-bottom: 20px;
 
     a {
@@ -13,5 +12,9 @@
         justify-content: space-between;
         margin-top: 10px;
         color: black;
+    }
+
+    img {
+        width: 100%;
     }
 }

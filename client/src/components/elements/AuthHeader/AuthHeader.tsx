@@ -73,7 +73,7 @@ const Header = () => {
 
             <div className="right">
                 <span className="login">{login}</span>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                <Avatar alt={login} src="/static/images/avatar/1.jpg" />
             </div>
         </div>
     );

@@ -3,7 +3,23 @@
     .wrapper {
         display: flex;
         flex-wrap: wrap;
+        .row {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+            .ItemVacancy {
+                flex: 1;
+            }
+        }
+    }
+    .awd {
+        display: flex;
         gap: 20px;
-        margin-top: 20px;
+        flex-direction: column;
+        .row {
+            display: flex;
+            gap: 20px;
+        }
     }
 }

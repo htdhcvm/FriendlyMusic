@@ -1,13 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Header.scss';
 
 const Header = () => {
     return (
         <div className="header-main">
-            <div>
-                <h1>Header</h1>
-            </div>
+            <img className="logo" src="./assets/logo/logoPart.png" />
+            <Link to="/signInSignUp">Войти/Регистрация</Link>
         </div>
     );
 };

@@ -24,6 +24,7 @@ const CarouselContainer = () => {
                 {listVacanciesOnType.map((vacancyType) => (
                     <ItemCountOnTypeMusician
                         key={vacancyType.type}
+                        title={vacancyType.profession}
                         image={vacancyType.image}
                         count={vacancyType.count}
                     />
