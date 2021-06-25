@@ -1,7 +1,9 @@
 import { UserAction, UserActionTypes } from './actionsDescription';
 
+type UserStatus = 'visitor' | 'user' | 'group';
+
 interface IState {
-    status: string;
+    status: UserStatus;
     access_token: string;
     isAuth: boolean;
     login: string;
@@ -49,6 +51,7 @@ export default function userReducer(
                 access_token: action.payload.access_token,
                 login: action.payload.loginAuth,
                 status: 'group',
+                isAuth: true,
             };
         case UserActionTypes.INTERNALSERVERERROR:
             return {
