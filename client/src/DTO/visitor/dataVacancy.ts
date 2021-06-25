@@ -1,23 +1,36 @@
+import { TypeVacancy } from './listTypeVacancy';
+
 export interface DataVacancy {
-    fromOffer: String;
-    title: String;
+    fromOffer: string;
+    title: string;
     groupData: Group;
     socialLinks: Array<SocialLink>;
-    experience: String;
-    description: String;
-    requirement: String;
-    responsibility?: String;
-    offer?: String;
-    quality?: String;
-    skills?: String;
-    address?: String;
+    responsibility?: string;
+    description: string;
+    requirement: Array<string>;
+    priceStart: number;
+    experience: string;
+    quality?: Array<string>;
+    priceEnd: number;
+    skills?: Array<string>;
+    offer?: Array<string>;
+    profession: string;
+    professionType: string;
+    typeVacancyMusic: TypeVacancy;
+    image: string;
+    date: string;
+    willPlus: Array<string>;
 }
 
 interface Group {
-    name: String;
-    idGroup: String;
+    name: string;
+    idGroup: string;
+    address?: string;
+    avatar: string;
+    latlon: Array<number>;
 }
 interface SocialLink {
-    name: String;
-    link: String;
+    name: string;
+    link: string;
+    image: string;
 }
