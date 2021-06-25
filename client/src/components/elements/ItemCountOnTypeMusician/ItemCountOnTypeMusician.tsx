@@ -6,7 +6,7 @@ import Paper from '@material-ui/core/Paper';
 interface Props {
     title: string;
     image: string;
-    count: number;
+    count?: number | undefined;
 }
 
 const ItemCountOnTypeMusician = ({ title, image, count }: Props) => {
@@ -15,7 +15,7 @@ const ItemCountOnTypeMusician = ({ title, image, count }: Props) => {
             <span className="title">{title}</span>
             <div className="footer">
                 <img src={image} alt="type musician" />
-                <span className="count">{count}</span>
+                <span className="count">{count ? count : null}</span>
             </div>
         </Paper>
     );
