@@ -148,10 +148,12 @@ export class Director {
         builder.setHeader(new AuthHeaderBuilder(AuthHeader));
         builder.setLeftPanel(new LeftPanelBuilder(LeftPanel));
     }
+
     constructNotAuthMain(builder: Builder) {
         builder.setContent(new ContentBuilder(MainContent));
         builder.setHeader(new HeaderBuilder(Header));
     }
+
     constructForSettings(builder: Builder) {
         builder.setHeader(new AuthHeaderBuilder(AuthHeader));
         builder.setLeftPanel(new LeftPanelBuilder(LeftPanel));
@@ -161,6 +163,7 @@ export class Director {
         builder.setContent(new ContentBuilderForVacancy(VacancyContent));
         builder.setHeader(new HeaderBuilder(Header));
     }
+
     constructorForVacancyPageAuth(builder: Builder) {
         builder.setContent(
             new AuthContentBuilderForVacancy(AuthVacancyContent)
