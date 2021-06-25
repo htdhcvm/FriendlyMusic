@@ -20,7 +20,6 @@ const ListVacancy = () => {
     }, []);
 
     const generateRows = (): ReactNode => {
-        console.log(listVacancies);
         const rows: any = [];
         const tmp: Array<ReactNode> = [];
         listVacancies.forEach((vacancy, index) => {
