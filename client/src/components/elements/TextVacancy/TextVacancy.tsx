@@ -81,7 +81,6 @@ interface MapGoogleProps {
 const MapGoogle = ({ latlon }: MapGoogleProps) => {
     const coordinates = { lat: +latlon[0], lng: +latlon[1] };
 
-    console.log('coordinates', coordinates);
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_API

@@ -1,10 +1,6 @@
-import { SyntheticEvent, useState } from 'react';
-
 import './AuthVacancyContent.scss';
 
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import Popover from '@material-ui/core/Popover';
-import Typography from '@material-ui/core/Typography';
 
 import HeaderVacancy from '../HeaderVacancy/HeaderVacancy';
 import BarVacancy from '../BarVacancy/BarVacancy';
@@ -15,7 +11,6 @@ const AuthVacancyContent = () => {
     const { toggle } = useTypedSelector((state) => state.ui);
 
     const {
-        fromOffer,
         title,
         experience,
         description,
@@ -34,7 +29,6 @@ const AuthVacancyContent = () => {
         date,
     } = useTypedSelector((state) => state.vacancy.currentVacancy);
 
-    console.log(groupData);
     return (
         <div
             className={`AuthVacancyContent ${
