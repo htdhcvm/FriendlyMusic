@@ -1,13 +1,32 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-
 import './Vacancy.scss';
 
+import { PageBuilder, Director } from '../../../factoryComponents/main';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
+
+import withVacancyData from '../../hoc/withVacancyData';
+
 const Vacancy = () => {
-    let { vacancyId } = useParams<{ vacancyId: string }>();
+    const pageBuilderMain: PageBuilder = new PageBuilder();
+    const director: Director = new Director();
+
+    const isAuth: boolean = useTypedSelector((state) => state.user.isAuth);
+
+    isAuth
+        ? director.constructorForVacancyPageAuth(pageBuilderMain)
+        : director.constructorForVacancyPageNotAuth(pageBuilderMain);
+
+    const { Header, LeftPanel, Content } = pageBuilderMain.getResult();
+
+    let ContentWithData;
+    if (Content) {
+        ContentWithData = withVacancyData({ Component: Content });
+    }
+
     return (
-        <div>
-            <h1>Vacancy {vacancyId}</h1>
+        <div className="Vacancy">
+            {Header ? <Header /> : null}
+            {LeftPanel ? <LeftPanel /> : null}
+            {ContentWithData ? <ContentWithData /> : null}
         </div>
     );
 };

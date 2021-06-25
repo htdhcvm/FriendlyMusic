@@ -1,0 +1,6 @@
+@import '../../../scss/default.scss';
+@import '../../../scss/headerMenu.scss';
+
+.Vacancy {
+    @include header-menu;
+}
