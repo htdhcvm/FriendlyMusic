@@ -6,6 +6,9 @@ import LeftPanel from '../components/elements/LeftPanel/LeftPanel';
 import MainContent from '../components/elements/MainContent/MainContent';
 import AuthMainContent from '../components/elements/AuthMainContent/AuthMainContent';
 
+import VacancyContent from '../components/elements/VacancyContent/VacancyContent';
+import AuthVacancyContent from '../components/elements/AuthVacancyContent/AuthVacancyContent';
+
 interface Builder {
     setHeader(builder: BuilderHeader): void;
     setContent(builder: BuilderContent): void;
@@ -119,6 +122,26 @@ class LeftPanelBuilder implements ComponentBuilder {
     }
 }
 
+class ContentBuilderForVacancy implements ComponentBuilder {
+    private component: FunctionComponent;
+    constructor(component: FunctionComponent) {
+        this.component = component;
+    }
+
+    getComponent(): FunctionComponent {
+        return this.component;
+    }
+}
+class AuthContentBuilderForVacancy implements ComponentBuilder {
+    private component: FunctionComponent;
+    constructor(component: FunctionComponent) {
+        this.component = component;
+    }
+
+    getComponent(): FunctionComponent {
+        return this.component;
+    }
+}
 export class Director {
     constructAuthMain(builder: Builder) {
         builder.setContent(new AuthContentBuilder(AuthMainContent));
@@ -130,6 +153,18 @@ export class Director {
         builder.setHeader(new HeaderBuilder(Header));
     }
     constructForSettings(builder: Builder) {
+        builder.setHeader(new AuthHeaderBuilder(AuthHeader));
+        builder.setLeftPanel(new LeftPanelBuilder(LeftPanel));
+    }
+
+    constructorForVacancyPageNotAuth(builder: Builder) {
+        builder.setContent(new ContentBuilderForVacancy(VacancyContent));
+        builder.setHeader(new HeaderBuilder(Header));
+    }
+    constructorForVacancyPageAuth(builder: Builder) {
+        builder.setContent(
+            new AuthContentBuilderForVacancy(AuthVacancyContent)
+        );
         builder.setHeader(new AuthHeaderBuilder(AuthHeader));
         builder.setLeftPanel(new LeftPanelBuilder(LeftPanel));
     }
