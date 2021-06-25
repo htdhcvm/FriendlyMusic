@@ -1,0 +1,18 @@
+.ButtonsVacancy {
+    margin: 20px 0px;
+    .respond {
+        border-radius: 4px;
+        border: none;
+        color: white;
+        text-transform: uppercase;
+        padding: 20px;
+        background-color: #1976d2;
+        outline: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 16px;
+        &:hover {
+            background-color: #084989;
+        }
+    }
+}
