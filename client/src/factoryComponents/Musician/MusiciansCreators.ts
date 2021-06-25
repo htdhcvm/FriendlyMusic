@@ -16,75 +16,75 @@ import {
 } from './MusiciansTypes';
 
 export abstract class Creator {
-    abstract factoryCreate(count: number, profession: string): TypeMusician;
+    abstract factoryCreate(profession: string, count?: number): TypeMusician;
 
-    create(count: number, profession: string) {
-        return this.factoryCreate(count, profession);
+    create(profession: string, count?: number) {
+        return this.factoryCreate(profession, count);
     }
 }
 
 export class ConductorCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new Conductor(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new Conductor(profession, count);
     }
 }
 export class ContrabassCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new Contrabass(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new Contrabass(profession, count);
     }
 }
 export class DjCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new Dj(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new Dj(profession, count);
     }
 }
 export class DrummerCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new Drummer(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new Drummer(profession, count);
     }
 }
 export class ElectricGuitarBassCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new ElectricGuitarBass(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new ElectricGuitarBass(profession, count);
     }
 }
 export class ElectricGuitarRitmCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new ElectricGuitarRitm(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new ElectricGuitarRitm(profession, count);
     }
 }
 export class ElectricGuitarSoloCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new ElectricGuitarSolo(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new ElectricGuitarSolo(profession, count);
     }
 }
 export class GuitarClassicCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new GuitarClassic(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new GuitarClassic(profession, count);
     }
 }
 export class MusicTeacherCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new MusicTeacher(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new MusicTeacher(profession, count);
     }
 }
 export class PianoCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new Piano(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new Piano(profession, count);
     }
 }
 export class SingerCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new Singer(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new Singer(profession, count);
     }
 }
 export class ViolinCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new Violin(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new Violin(profession, count);
     }
 }
 export class ViolinistCreator extends Creator {
-    factoryCreate(count: number, profession: string): TypeMusician {
-        return new Violinist(count, profession);
+    factoryCreate(profession: string, count?: number): TypeMusician {
+        return new Violinist(profession, count);
     }
 }

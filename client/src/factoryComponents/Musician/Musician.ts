@@ -63,7 +63,7 @@ const typeDefinitionCreator = (professionType: string): Creator => {
     return creator as Creator;
 };
 
-const createMusicians = (
+export const createMusicians = (
     musicians: Array<{
         count: number;
         profession: string;
@@ -74,10 +74,16 @@ const createMusicians = (
 
     for (const musician of musicians) {
         const creator: Creator = typeDefinitionCreator(musician.professionType);
-        listMusicians.push(creator.create(musician.count, musician.profession));
+        listMusicians.push(creator.create(musician.profession, musician.count));
     }
 
     return listMusicians;
 };
 
-export default createMusicians;
+export const createMusician = (musician: {
+    profession: string;
+    professionType: string;
+}) => {
+    const creator: Creator = typeDefinitionCreator(musician.professionType);
+    return creator.create(musician.profession);
+};
