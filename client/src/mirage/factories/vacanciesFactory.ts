@@ -15,7 +15,7 @@ const Vacancy = {
         return faker.datatype.uuid();
     },
     image() {
-        return `${faker.image.city()}?random=${Date.now()}`;
+        return `${faker.image.city(1920, 600)}?random=${Date.now()}`;
     },
     title() {
         return faker.name.jobTitle();
@@ -35,7 +35,7 @@ const Vacancy = {
         return `${faker.lorem.paragraphs()} \n ${faker.lorem.paragraphs()} \n ${faker.lorem.paragraphs()}`;
     },
     skills() {
-        return faker.company.suffixes();
+        return faker.company.catchPhraseAdjective();
     },
     quality() {
         return fillArray(qualities, 20);
@@ -55,7 +55,10 @@ const Vacancy = {
     condition() {
         return fillArray(conditions, 20);
     },
-    price() {
+    priceStart() {
+        return +faker.commerce.price() * (Math.random() < 0.5 ? 100 : 10);
+    },
+    priceEnd() {
         return +faker.commerce.price() * (Math.random() < 0.5 ? 1000 : 100);
     },
     date() {

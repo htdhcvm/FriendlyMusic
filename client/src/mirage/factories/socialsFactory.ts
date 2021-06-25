@@ -1,6 +1,14 @@
 import faker from 'faker';
 
-const socials = ['instagram', 'vk', 'facebook', 'linkedin'];
+const socials = [
+    'instagram',
+    'spotify',
+    'vk',
+    'facebook',
+    'linkedin',
+    'yandexmusic',
+];
+
 const Socials = {
     id() {
         return faker.datatype.uuid();
@@ -10,7 +18,7 @@ const Socials = {
         return socials[Math.floor(Math.random() * socials.length)];
     },
 
-    name() {
+    link() {
         return faker.internet.url();
     },
 };

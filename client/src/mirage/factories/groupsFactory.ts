@@ -24,6 +24,11 @@ const Groups = {
     address() {
         return `${faker.address.county()} ${faker.address.city()} ${faker.address.streetAddress()}`;
     },
+
+    latlon() {
+        return [faker.address.latitude(), faker.address.longitude()];
+    },
+
     telephone() {
         return faker.phone.phoneNumber();
     },

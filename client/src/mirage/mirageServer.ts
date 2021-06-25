@@ -10,6 +10,9 @@ import getHash from './helpers/getHash';
 import jwt from 'jsonwebtoken';
 import faker from 'faker';
 import { group } from './staticData/login';
+import { SortedArray } from 'typescript';
+
+import unique from './helpers/uniq';
 
 const VERY_SECRET_KEY = 'VERY_SECRET_KEY';
 const TIME_EXPIRE = 1000 * 60 * 60 * 24;
@@ -143,9 +146,11 @@ export const createMockServer = (environment = 'development') => {
 
                         document.cookie = `refresh-session=${refresh_session};  path=/;`;
 
+                        console.log(user.avatar);
                         return {
                             access_token: token_access,
                             loginAuth: login,
+                            // avatar,
                         };
                     } catch (error) {
                         console.log(error);
@@ -264,11 +269,54 @@ export const createMockServer = (environment = 'development') => {
                 return Object.values(sumCount);
             });
 
-            this.get('/visitor/getListVacancy/:name', () => {
-                return { id: 1 };
-            });
+            this.get(
+                '/visitor/getDataVacancy/:idVacancy',
+                (schema, request) => {
+                    const { idVacancy } = request.params;
 
-            this.get('/visitor/getDataVacancy/:idVacancy', () => {
+                    const vacancy = schema.findBy('vacancy', { id: idVacancy });
+                    if (vacancy === null) return new Response(400);
+
+                    const group: any = vacancy.group;
+
+                    console.log(group);
+                    return {
+                        title: vacancy.title,
+                        experience: vacancy.experience,
+                        description: vacancy.description,
+                        requirement: vacancy.requirement,
+                        responsibility: vacancy.responsibility,
+                        offer: vacancy.offer,
+                        willPlus: vacancy.willPlus,
+                        quality: vacancy.quality,
+                        skills: vacancy.skills,
+                        image: vacancy.image,
+                        profession: vacancy.profession,
+                        professionType: vacancy.professionType,
+                        date: vacancy.date,
+                        priceStart: vacancy.priceStart,
+                        priceEnd: vacancy.priceEnd,
+                        groupData: {
+                            idGroup: group.id,
+                            name: group.name,
+                            address: group.address,
+                            avatar: group.avatar,
+                            latlon: group.latlon,
+                        },
+                        socialLinks: unique(
+                            group.socials.models.map((social: any) => {
+                                return {
+                                    name: social.type,
+                                    link: social.link,
+                                };
+                            }),
+                            'name'
+                        ),
+                    };
+                }
+            );
+
+            this.get('/visitor/getListVacancy/:name', () => {
                 return { id: 1 };
             });
 
@@ -282,10 +330,6 @@ export const createMockServer = (environment = 'development') => {
                     return { id: 1 };
                 }
             );
-
-            this.get('/visitor/getDataVacancy/:idVacancy', () => {
-                return { id: 1 };
-            });
 
             this.get('/user/settings/dataUser/owner/:idUser', () => {
                 return { id: 1 };
