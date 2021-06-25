@@ -1,7 +1,7 @@
 export type ListTypeVacancy = Array<TypeVacancy>;
 
-interface TypeVacancy {
-    count: number;
+export interface TypeVacancy {
+    count?: number | undefined;
     image: string;
     profession: string;
     type: string;
