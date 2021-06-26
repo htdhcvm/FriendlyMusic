@@ -54,6 +54,8 @@ interface ContentProp {
 }
 
 const ItemContent = memo(({ content, title }: ContentProp) => {
+    const [toggleRead, setToggleRead] = useState(false);
+
     if (content)
         return (
             <div className="itemContent">
@@ -66,8 +68,32 @@ const ItemContent = memo(({ content, title }: ContentProp) => {
                             — {item[0].toUpperCase() + item.slice(1)}
                         </Typography>
                     ))
-                ) : (
+                ) : content.length < 200 ? (
                     <Typography variant="body1">{content}</Typography>
+                ) : (
+                    <>
+                        <Typography variant="body1">
+                            {content.substr(0, 500)}
+                            {!toggleRead ? '...' : null}
+                            {!toggleRead ? (
+                                <span
+                                    className="read-more"
+                                    onClick={() => setToggleRead(true)}
+                                >
+                                    {' Читать далее'}
+                                </span>
+                            ) : null}
+                            {toggleRead ? content.slice(500) : null}
+                            {toggleRead ? (
+                                <span
+                                    className="read-more"
+                                    onClick={() => setToggleRead(false)}
+                                >
+                                    {' Скрыть текст'}
+                                </span>
+                            ) : null}
+                        </Typography>
+                    </>
                 )}
             </div>
         );
@@ -88,16 +114,9 @@ const MapGoogle = ({ latlon }: MapGoogleProps) => {
             : '',
     });
 
-    const [map, setMap] = useState(null);
-
     const onLoad = useCallback(function callback(map) {
         const bounds = new window.google.maps.LatLngBounds();
         map.fitBounds(bounds);
-        setMap(map);
-    }, []);
-
-    const onUnmount = useCallback(function callback(map) {
-        setMap(null);
     }, []);
 
     return isLoaded ? (
@@ -109,7 +128,6 @@ const MapGoogle = ({ latlon }: MapGoogleProps) => {
             center={coordinates}
             zoom={12}
             onLoad={onLoad}
-            onUnmount={onUnmount}
         >
             <Marker
                 position={{ lat: coordinates.lat, lng: coordinates.lng }}

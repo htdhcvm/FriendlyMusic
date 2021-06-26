@@ -1,26 +1,27 @@
 import './Vacancy.scss';
 
-import { PageBuilder, Director } from '../../../factoryComponents/main';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import generatePageElements from '../../../factoryComponents/Builder/GeneratePage';
+
+import UserStatus from '../../../types/UserStatus';
 
 import withVacancyData from '../../hoc/withVacancyData';
+import { FunctionComponent } from 'react';
 
 const Vacancy = () => {
-    const pageBuilderMain: PageBuilder = new PageBuilder();
-    const director: Director = new Director();
+    const status: UserStatus = useTypedSelector((state) => state.user.status);
+    let ContentWithData: FunctionComponent | undefined;
 
-    const isAuth: boolean = useTypedSelector((state) => state.user.isAuth);
+    const { Header, Content, LeftPanel } = generatePageElements(
+        'Vacancy',
+        status
+    );
 
-    isAuth
-        ? director.constructorForVacancyPageAuth(pageBuilderMain)
-        : director.constructorForVacancyPageNotAuth(pageBuilderMain);
-
-    const { Header, LeftPanel, Content } = pageBuilderMain.getResult();
-
-    let ContentWithData;
     if (Content) {
         ContentWithData = withVacancyData({ Component: Content });
     }
+
+    console.log(Content);
 
     return (
         <div className="Vacancy">

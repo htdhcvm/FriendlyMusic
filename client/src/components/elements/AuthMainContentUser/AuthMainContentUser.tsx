@@ -1,18 +1,18 @@
 import React from 'react';
 
-import './AuthMainContent.scss';
+import './AuthMainContentUser.scss';
 
-import CarouselContainer from '../../elements/CarouselContainer/CarouselContainer';
-import ListVacancy from '../../elements/ListVacancy/ListVacancy';
+import CarouselContainer from '../CarouselContainer/CarouselContainer';
+import ListVacancy from '../ListVacancy/ListVacancy';
 
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
-const AuthMainContent = () => {
+const AuthMainContentUser = () => {
     const { toggle } = useTypedSelector((state) => state.ui);
 
     return (
         <div
-            className={`AuthMainContent ${
+            className={`AuthMainContentUser ${
                 toggle ? 'close-menu-resize-main' : ''
             }`}
         >
@@ -22,4 +22,4 @@ const AuthMainContent = () => {
     );
 };
 
-export default AuthMainContent;
+export default AuthMainContentUser;

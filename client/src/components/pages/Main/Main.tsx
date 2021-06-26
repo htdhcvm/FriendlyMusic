@@ -1,19 +1,14 @@
 import './Main.scss';
 
-import { PageBuilder, Director } from '../../../factoryComponents/main';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import generatePageElements from '../../../factoryComponents/Builder/GeneratePage';
+
+import UserStatus from '../../../types/UserStatus';
 
 const Main = () => {
-    const pageBuilderMain: PageBuilder = new PageBuilder();
-    const director: Director = new Director();
+    const status: UserStatus = useTypedSelector((state) => state.user.status);
 
-    const isAuth: boolean = useTypedSelector((state) => state.user.isAuth);
-
-    isAuth
-        ? director.constructAuthMain(pageBuilderMain)
-        : director.constructNotAuthMain(pageBuilderMain);
-
-    const { Header, Content, LeftPanel } = pageBuilderMain.getResult();
+    const { Header, Content, LeftPanel } = generatePageElements('Main', status);
 
     return (
         <div className="Main">

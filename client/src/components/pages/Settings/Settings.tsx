@@ -1,36 +1,23 @@
-import React from 'react';
-
 import './Settings.scss';
 
-import { PageBuilder, Director } from '../../../factoryComponents/main';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import generatePageElements from '../../../factoryComponents/Builder/GeneratePage';
 
-import {
-    UserSettingsFactory,
-    GroupSettingsFactory,
-    createSettingsPanel,
-} from '../../../factoryComponents/settings';
-
-const pageBuilderHeaderMenu: PageBuilder = new PageBuilder();
-const director: Director = new Director();
+import UserStatus from '../../../types/UserStatus';
 
 const Settings = () => {
-    const isAuth: boolean = true;
-    const typeUser: String = 'group';
+    const status: UserStatus = useTypedSelector((state) => state.user.status);
 
-    const SettingComponent =
-        typeUser === 'group'
-            ? createSettingsPanel(new UserSettingsFactory())
-            : createSettingsPanel(new GroupSettingsFactory());
-
-    if (isAuth) director.constructForSettings(pageBuilderHeaderMenu);
-
-    const { Header, LeftPanel } = pageBuilderHeaderMenu.getResult();
+    const { Header, Content, LeftPanel } = generatePageElements(
+        'Settings',
+        status
+    );
 
     return (
         <div className="Settings">
             {Header ? <Header /> : null}
             {LeftPanel ? <LeftPanel /> : null}
-            <SettingComponent />
+            {Content ? <Content /> : null}
         </div>
     );
 };
