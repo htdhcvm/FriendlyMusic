@@ -1,6 +1,6 @@
+import { Reducer } from 'redux';
 import { UserAction, UserActionTypes } from './actionsDescription';
-
-type UserStatus = 'visitor' | 'user' | 'group';
+import UserStatus from '../../types/UserStatus';
 
 interface IState {
     status: UserStatus;
@@ -14,8 +14,8 @@ interface IState {
 
 const initialState: IState = {
     status: 'visitor',
-    access_token: '',
     isAuth: false,
+    access_token: '',
     login: '',
     errors: {
         internalServerError: false,
@@ -23,18 +23,18 @@ const initialState: IState = {
     },
 };
 
-export default function userReducer(
-    state: IState = initialState,
-    action: UserAction
-) {
+const userReducer: Reducer<IState, UserAction> = (
+    state = initialState,
+    action
+) => {
     switch (action.type) {
         case UserActionTypes.REGISTRATION:
             return {
                 ...state,
                 access_token: action.payload.access_token,
                 login: action.payload.loginAuth,
-                status: 'user',
                 isAuth: true,
+                status: 'user',
             };
 
         case UserActionTypes.SIGNINMUSICIAN:
@@ -87,4 +87,6 @@ export default function userReducer(
         default:
             return { ...state };
     }
-}
+};
+
+export default userReducer;

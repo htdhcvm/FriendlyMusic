@@ -1,3 +1,5 @@
+import { Reducer } from 'redux';
+
 import { UiActionTypes, UiAction } from './uiDescription';
 
 interface InitStateUi {
@@ -8,10 +10,10 @@ const initialState: InitStateUi = {
     toggle: false,
 };
 
-export default function uiReducer(
-    state: InitStateUi = initialState,
-    action: UiAction
-) {
+const uiReducer: Reducer<InitStateUi, UiAction> = (
+    state = initialState,
+    action
+) => {
     switch (action.type) {
         case UiActionTypes.OPENMENU:
             return {
@@ -26,4 +28,5 @@ export default function uiReducer(
         default:
             return { ...state };
     }
-}
+};
+export default uiReducer;

@@ -1,3 +1,5 @@
+import { Reducer } from 'redux';
+
 import { ListVacancy } from '../../DTO/visitor/listVacancy';
 import { ListTypeVacancy } from '../../DTO/visitor/listTypeVacancy';
 import { VacancyAction, VacancyActionTypes } from './actionsDescription';
@@ -45,10 +47,10 @@ const initialState: IState = {
     },
 };
 
-export default function vacancyReducer(
-    state: IState = initialState,
-    action: VacancyAction
-) {
+const vacancyReducer: Reducer<IState, VacancyAction> = (
+    state = initialState,
+    action
+) => {
     switch (action.type) {
         case VacancyActionTypes.GETLISTVACANCIES:
             return {
@@ -103,4 +105,6 @@ export default function vacancyReducer(
         default:
             return { ...state };
     }
-}
+};
+
+export default vacancyReducer;
