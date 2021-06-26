@@ -12,7 +12,7 @@ export enum UserActionTypes {
 
 interface Actions {
     type: string;
-    payload?: object | string;
+    payload?: string | SuccessAuth;
 }
 
 interface RegistrationActions extends Actions {
