@@ -1,7 +1,7 @@
-import VacancyOnCategory from './VacancyOnCategory';
+import Category from '../types/CategoryMusicians';
+import VacancyOnCategory from '../types/VacancyOnCategory';
 
 type Vacancy = {
-    fromOffer: string;
     title: string;
     groupData: Group;
     socialLinks: Array<SocialLink>;
@@ -14,9 +14,8 @@ type Vacancy = {
     priceEnd: number;
     skills?: Array<string>;
     offer?: Array<string>;
-    profession: string;
-    professionType: string;
     typeVacancyMusic: VacancyOnCategory;
+    profession: Category;
     image: string;
     date: string;
     willPlus: Array<string>;
