@@ -1,6 +1,6 @@
 import faker from 'faker';
 
-import professions from '../staticData/professions';
+import categoriesMusicians from '../staticData/categoryMusicians';
 import qualities from '../staticData/qualities';
 import { logins } from '../staticData/login';
 import passwords from '../staticData/passwords';
@@ -44,7 +44,9 @@ const User = {
         return faker.internet.url();
     },
     profession() {
-        return professions[Math.floor(Math.random() * professions.length)];
+        return categoriesMusicians[
+            Math.floor(Math.random() * categoriesMusicians.length)
+        ];
     },
     musicInstrument() {
         return `crafter`;

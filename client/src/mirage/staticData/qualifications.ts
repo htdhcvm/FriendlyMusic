@@ -1,3 +1,9 @@
-const qualifications = ['бакалавкр', 'магистр', 'специалист'];
+import Qualification from '../../types/Qualification';
+
+const qualifications: Array<Qualification> = [
+    'бакалавкр',
+    'магистр',
+    'специалист',
+];
 
 export default qualifications;

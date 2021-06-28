@@ -1,14 +1,13 @@
 import faker from 'faker';
 
-import professions from '../staticData/professions';
-import professionsType from '../staticData/professionsType';
 import expirense from '../staticData/expirense';
 import qualities from '../staticData/qualities';
 import requirements from '../staticData/requirements';
 import conditions from '../staticData/conditions';
 import offers from '../staticData/offers';
-
 import { fillArray } from '../helpers/fillArray';
+
+import categoriesMusicians from '../staticData/categoryMusicians';
 
 const Vacancy = {
     id() {
@@ -20,12 +19,10 @@ const Vacancy = {
     title() {
         return faker.name.jobTitle();
     },
+
     profession() {
-        return professions[Math.floor(Math.random() * professions.length)];
-    },
-    professionType() {
-        return professionsType[
-            Math.floor(Math.random() * professionsType.length)
+        return categoriesMusicians[
+            Math.floor(Math.random() * categoriesMusicians.length)
         ];
     },
     experience() {
@@ -35,7 +32,13 @@ const Vacancy = {
         return `${faker.lorem.paragraphs()} \n ${faker.lorem.paragraphs()} \n ${faker.lorem.paragraphs()}`;
     },
     skills() {
-        return faker.company.catchPhraseAdjective();
+        return Array.from(
+            new Set(
+                new Array(Math.floor(Math.random() * 30) + 1)
+                    .fill(null)
+                    .map((_) => faker.company.catchPhraseAdjective())
+            )
+        );
     },
     quality() {
         return fillArray(qualities, 20);

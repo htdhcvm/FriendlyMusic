@@ -9,10 +9,10 @@ import getHash from './helpers/getHash';
 
 import jwt from 'jsonwebtoken';
 import faker from 'faker';
-import { group } from './staticData/login';
-import { SortedArray } from 'typescript';
 
 import unique from './helpers/uniq';
+
+import DTOVacancy from '../DTO/visitor/Vacancy';
 
 const VERY_SECRET_KEY = 'VERY_SECRET_KEY';
 const TIME_EXPIRE = 1000 * 60 * 60 * 24;
@@ -249,19 +249,20 @@ export const createMockServer = (environment = 'development') => {
                 } = {};
 
                 schema.all('vacancy').models.forEach((vacancy) => {
-                    if (sumCount[vacancy.professionType]) {
-                        sumCount[vacancy.professionType] = {
-                            count: sumCount[vacancy.professionType].count + 1,
+                    if (sumCount[vacancy.profession.type]) {
+                        sumCount[vacancy.profession.type] = {
+                            count: sumCount[vacancy.profession.type].count + 1,
                             profession:
-                                sumCount[vacancy.professionType].profession,
+                                sumCount[vacancy.profession.type].profession,
                             professionType:
-                                sumCount[vacancy.professionType].professionType,
+                                sumCount[vacancy.profession.type]
+                                    .professionType,
                         };
                     } else {
-                        sumCount[vacancy.professionType] = {
+                        sumCount[vacancy.profession.type] = {
                             count: 1,
-                            profession: vacancy.profession,
-                            professionType: vacancy.professionType,
+                            profession: vacancy.profession.description,
+                            professionType: vacancy.profession.type,
                         };
                     }
                 });
@@ -279,8 +280,7 @@ export const createMockServer = (environment = 'development') => {
 
                     const group: any = vacancy.group;
 
-                    console.log(group);
-                    return {
+                    const dataVacancy: DTOVacancy = {
                         title: vacancy.title,
                         experience: vacancy.experience,
                         description: vacancy.description,
@@ -292,8 +292,7 @@ export const createMockServer = (environment = 'development') => {
                         skills: vacancy.skills,
                         image: vacancy.image,
                         profession: vacancy.profession,
-                        professionType: vacancy.professionType,
-                        date: vacancy.date,
+                        date: vacancy.date.toString(),
                         priceStart: vacancy.priceStart,
                         priceEnd: vacancy.priceEnd,
                         groupData: {
@@ -313,6 +312,7 @@ export const createMockServer = (environment = 'development') => {
                             'name'
                         ),
                     };
+                    return dataVacancy;
                 }
             );
 
