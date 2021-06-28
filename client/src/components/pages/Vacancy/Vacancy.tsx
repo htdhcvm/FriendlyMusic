@@ -21,8 +21,6 @@ const Vacancy = () => {
         ContentWithData = withVacancyData({ Component: Content });
     }
 
-    console.log(Content);
-
     return (
         <div className="Vacancy">
             {Header ? <Header /> : null}
