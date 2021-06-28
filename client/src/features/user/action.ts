@@ -3,23 +3,23 @@ import { UserAction, UserActionTypes } from './actionsDescription';
 
 import { Visitor, User } from '../../axios/axios-configuration';
 
-import { Signin } from '../../DTO/visitor/signin';
-import { Registration } from '../../DTO/visitor/registration';
-import { SuccessAuth } from '../../DTO/visitor/successAuth';
+import DTOSignin from '../../DTO/visitor/Signin';
+import DTORegistration from '../../DTO/visitor/Registration';
+import DTOSuccessAuth from '../../DTO/visitor/SuccessAuth';
 
 export const registration = ({
     login,
     fio,
     password,
     retPassword,
-}: Registration) => {
+}: DTORegistration) => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
             const response = await Visitor.get(
                 `/auth/registration/musician/${login}/${fio}/${password}/${retPassword}`
             );
 
-            const { access_token, loginAuth }: SuccessAuth = response.data;
+            const { access_token, loginAuth }: DTOSuccessAuth = response.data;
 
             return dispatch({
                 type: UserActionTypes.REGISTRATION,
@@ -34,14 +34,14 @@ export const registration = ({
     };
 };
 
-export const signInMusician = ({ login, password }: Signin) => {
+export const signInMusician = ({ login, password }: DTOSignin) => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
             const response = await Visitor.get(
                 `/auth/authorization/musician/${login}/${password}`
             );
 
-            const { access_token, loginAuth }: SuccessAuth = response.data;
+            const { access_token, loginAuth }: DTOSuccessAuth = response.data;
 
             dispatch({
                 type: UserActionTypes.SIGNINMUSICIAN,
@@ -65,13 +65,13 @@ export const signInMusician = ({ login, password }: Signin) => {
     };
 };
 
-export const signInGroup = ({ login, password }: Signin) => {
+export const signInGroup = ({ login, password }: DTOSignin) => {
     return async (dispatch: Dispatch<UserAction>) => {
         const response = await Visitor.get(
             `/auth/authorization/group/${login}/${password}`
         );
 
-        const { access_token, loginAuth }: SuccessAuth = response.data;
+        const { access_token, loginAuth }: DTOSuccessAuth = response.data;
 
         dispatch({
             type: UserActionTypes.SIGNINGROUP,

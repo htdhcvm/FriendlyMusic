@@ -1,6 +1,6 @@
-import { ListVacancy } from '../../DTO/visitor/listVacancy';
-import { ListTypeVacancy } from '../../DTO/visitor/listTypeVacancy';
-import { DataVacancy } from '../../DTO/visitor/dataVacancy';
+import VacancyItemList from '../../types/VacancyItemList';
+import VacancyOnCategory from '../../types/VacancyOnCategory';
+import Vacancy from '../../types/Vacancy';
 
 export enum VacancyActionTypes {
     GETLISTVACANCIES = 'VACANCY/GETLISTVACANCIES',
@@ -11,22 +11,27 @@ export enum VacancyActionTypes {
 
 interface Actions {
     type: string;
-    payload?: object | string | ListVacancy | ListTypeVacancy | DataVacancy;
+    payload?:
+        | object
+        | string
+        | Array<VacancyItemList>
+        | Array<VacancyOnCategory>
+        | Vacancy;
 }
 
 interface GetListVacancies extends Actions {
     type: VacancyActionTypes.GETLISTVACANCIES;
-    payload: ListVacancy;
+    payload: Array<VacancyItemList>;
 }
 
 interface GetCountOnTypeVacancy extends Actions {
     type: VacancyActionTypes.GETCOUNTTYPEVACANCY;
-    payload: ListTypeVacancy;
+    payload: Array<VacancyOnCategory>;
 }
 
 interface GetVacancyOnId extends Actions {
     type: VacancyActionTypes.GETVACANCYONID;
-    payload: DataVacancy;
+    payload: Vacancy;
 }
 
 interface ClearCurrentVacancyData extends Actions {

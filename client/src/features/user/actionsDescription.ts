@@ -1,4 +1,4 @@
-import { SuccessAuth } from '../../DTO/visitor/successAuth';
+import DTOSuccessAuth from '../../DTO/visitor/SuccessAuth';
 
 export enum UserActionTypes {
     REGISTRATION = 'USER/REGISTRATION',
@@ -12,22 +12,22 @@ export enum UserActionTypes {
 
 interface Actions {
     type: string;
-    payload?: string | SuccessAuth;
+    payload?: string | DTOSuccessAuth;
 }
 
 interface RegistrationActions extends Actions {
     type: UserActionTypes.REGISTRATION;
-    payload: SuccessAuth;
+    payload: DTOSuccessAuth;
 }
 
 interface SignInMusicianAction extends Actions {
     type: UserActionTypes.SIGNINMUSICIAN;
-    payload: SuccessAuth;
+    payload: DTOSuccessAuth;
 }
 
 interface SignInGroupAction extends Actions {
     type: UserActionTypes.SIGNINGROUP;
-    payload: SuccessAuth;
+    payload: DTOSuccessAuth;
 }
 
 interface SignInErrorUnauthorizated {

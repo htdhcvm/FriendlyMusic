@@ -1,21 +1,21 @@
 import { Reducer } from 'redux';
 
-import { ListVacancy } from '../../DTO/visitor/listVacancy';
-import { ListTypeVacancy } from '../../DTO/visitor/listTypeVacancy';
 import { VacancyAction, VacancyActionTypes } from './actionsDescription';
-import { DataVacancy } from '../../DTO/visitor/dataVacancy';
+
+import VacancyItemList from '../../types/VacancyItemList';
+import VacancyOnCategory from '../../types/VacancyOnCategory';
+import Vacancy from '../../types/Vacancy';
 
 interface IState {
-    listVacancies: ListVacancy;
-    listVacanciesOnType: ListTypeVacancy;
-    currentVacancy: DataVacancy;
+    listVacancies: Array<VacancyItemList>;
+    listVacanciesOnType: Array<VacancyOnCategory>;
+    currentVacancy: Vacancy;
 }
 
 const initialState: IState = {
     listVacancies: [],
     listVacanciesOnType: [],
     currentVacancy: {
-        fromOffer: '',
         title: '',
         experience: '',
         description: '',
@@ -26,8 +26,10 @@ const initialState: IState = {
         willPlus: [],
         responsibility: '',
         image: '',
-        profession: '',
-        professionType: '',
+        profession: {
+            type: '',
+            description: '',
+        },
         priceStart: 0,
         priceEnd: 0,
         date: '',
@@ -66,7 +68,6 @@ const vacancyReducer: Reducer<IState, VacancyAction> = (
             return {
                 ...state,
                 currentVacancy: {
-                    fromOffer: '',
                     title: '',
                     experience: '',
                     description: '',
@@ -77,8 +78,10 @@ const vacancyReducer: Reducer<IState, VacancyAction> = (
                     willPlus: [],
                     responsibility: '',
                     image: '',
-                    profession: '',
-                    professionType: '',
+                    profession: {
+                        type: '',
+                        description: '',
+                    },
                     priceStart: 0,
                     priceEnd: 0,
                     date: '',
@@ -91,8 +94,8 @@ const vacancyReducer: Reducer<IState, VacancyAction> = (
                         idGroup: '',
                         name: '',
                         address: '',
-                        avatar: '',
                         latlon: [0, 0],
+                        avatar: '',
                     },
                     socialLinks: [],
                 },

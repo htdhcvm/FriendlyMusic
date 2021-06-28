@@ -3,8 +3,8 @@ import { VacancyActionTypes, VacancyAction } from './actionsDescription';
 
 import { Visitor } from '../../axios/axios-configuration';
 
-import { ListVacancy } from '../../DTO/visitor/listVacancy';
-import { ListTypeVacancy } from '../../DTO/visitor/listTypeVacancy';
+import DTOVacancyItemList from '../../DTO/visitor/ListVacancy';
+import DTOListTypeVacancy from '../../DTO/visitor/ListTypeVacancy';
 
 import { createSocials } from '../../factoryComponents/Socials/Socials';
 
@@ -17,7 +17,7 @@ export const getListVacancies = () => {
     return async (dispatch: Dispatch<VacancyAction>) => {
         const response = await Visitor.get('/visitor/getListVacancy');
 
-        const listVacancies: ListVacancy = response.data;
+        const listVacancies: DTOVacancyItemList = response.data;
 
         dispatch({
             type: VacancyActionTypes.GETLISTVACANCIES,
@@ -30,7 +30,7 @@ export const getCountOnTypeVacancy = () => {
     return async (dispatch: Dispatch<VacancyAction>) => {
         const response = await Visitor.get('/visitor/getCountCategory');
 
-        const listVacanciesType: ListTypeVacancy = createMusicians(
+        const listVacanciesType: DTOListTypeVacancy = createMusicians(
             response.data
         );
 
@@ -48,11 +48,11 @@ export const getVacancyOnId = (id: string) => {
         const vacancy = response.data;
 
         vacancy.typeVacancyMusic = createMusician({
-            profession: response.data.profession,
-            professionType: response.data.professionType,
+            profession: vacancy.profession.description,
+            professionType: vacancy.profession.type,
         });
 
-        response.data.socialLinks = createSocials(response.data.socialLinks);
+        vacancy.socialLinks = createSocials(vacancy.socialLinks);
 
         dispatch({
             type: VacancyActionTypes.GETVACANCYONID,
