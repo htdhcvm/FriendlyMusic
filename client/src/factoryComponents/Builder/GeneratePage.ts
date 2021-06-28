@@ -13,8 +13,6 @@ import {
 
 import { Page } from './Page';
 
-type Auth = true | false;
-
 const generatePageElements = (page: PageList, typeUser: UserStatus): Page => {
     const director: Director = new Director();
     let pageBuilder: Builder | undefined;
