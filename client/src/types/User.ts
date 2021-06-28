@@ -41,3 +41,5 @@ interface Course<T> {
     timeEducation: Fork<T>;
     nameSchool: String;
 }
+
+export default User;
