@@ -1,4 +1,4 @@
-import { Fork } from '../visitor/fork';
+import Fork from '../../types/Fork';
 
 export interface DetailSearch<T> {
     keyWord: Array<String>;
