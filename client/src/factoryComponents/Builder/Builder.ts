@@ -63,11 +63,10 @@ export class BuilderSettingsPage implements Builder {
     }
 
     generatePage(): Page {
-        console.log('settings');
         return new SettingsPage(
             this.header.getComponent(),
             this.content.getComponent(),
-            this.leftMenu.getComponent()
+            this.leftMenu?.getComponent()
         );
     }
 }
@@ -90,7 +89,7 @@ export class BuilderVacancyPage implements Builder {
         return new VacancyPage(
             this.header.getComponent(),
             this.content.getComponent(),
-            this.leftMenu.getComponent()
+            this.leftMenu?.getComponent()
         );
     }
 }
@@ -113,7 +112,7 @@ export class BuilderGroupPage implements Builder {
         return new GroupPage(
             this.header.getComponent(),
             this.content.getComponent(),
-            this.leftMenu.getComponent()
+            this.leftMenu?.getComponent()
         );
     }
 }
