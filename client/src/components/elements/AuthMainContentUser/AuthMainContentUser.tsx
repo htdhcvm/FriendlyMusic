@@ -5,17 +5,11 @@ import './AuthMainContentUser.scss';
 import CarouselContainer from '../CarouselContainer/CarouselContainer';
 import ListVacancy from '../ListVacancy/ListVacancy';
 
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
 
-const AuthMainContentUser = () => {
-    const { toggle } = useTypedSelector((state) => state.ui);
-
+const AuthMainContentUser = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     return (
-        <div
-            className={`AuthMainContentUser ${
-                toggle ? 'close-menu-resize-main' : ''
-            }`}
-        >
+        <div className={`AuthMainContentUser ${toggleMenuClass}`}>
             <CarouselContainer />
             <ListVacancy />
         </div>

@@ -7,9 +7,9 @@ import BarVacancy from '../BarVacancy/BarVacancy';
 import TextVacancy from '../TextVacancy/TextVacancy';
 import ButtonsVacancy from '../ButtonsVacancy/ButtonsVacancy';
 
-const AuthVacancyContent = () => {
-    const { toggle } = useTypedSelector((state) => state.ui);
+import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
 
+const AuthVacancyContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     const {
         title,
         experience,
@@ -30,11 +30,7 @@ const AuthVacancyContent = () => {
     } = useTypedSelector((state) => state.vacancy.currentVacancy);
 
     return (
-        <div
-            className={`AuthVacancyContent ${
-                toggle ? 'close-menu-resize-main' : ''
-            }`}
-        >
+        <div className={`AuthVacancyContent ${toggleMenuClass}`}>
             <HeaderVacancy
                 image={image}
                 vacancyMusicTypeImage={typeVacancyMusic.image}

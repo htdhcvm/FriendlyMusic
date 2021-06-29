@@ -1,8 +1,10 @@
 import './AuthMainContentGroup.scss';
 
-const AuthMainContentGroup = () => {
+import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
+
+const AuthMainContentGroup = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     return (
-        <div className="AuthMainContentGroup">
+        <div className={`AuthMainContentGroup ${toggleMenuClass}`}>
             <h1>AuthMainContentGroup</h1>
         </div>
     );

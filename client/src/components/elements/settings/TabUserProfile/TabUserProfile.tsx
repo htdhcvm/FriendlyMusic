@@ -9,7 +9,7 @@ import EducationItem from '../../EducationItem/EducationItem';
 import EducationItemCourses from '../../EducationItemCourses/EducationItemCourses';
 
 import { languages } from '../../../../listsSelect/listLanguage';
-import { proffesions } from '../../../../listsSelect/professions';
+// import { proffesions } from '../../../../listsSelect/professions';
 
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -22,7 +22,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { Button, TextareaAutosize, TextField } from '@material-ui/core';
 
 import PhoneInput from 'react-phone-number-input';
-// import * as EmailValidator from 'email-validator';
 
 const TabUserProfile = (props: any) => {
     const { value, index } = props;
@@ -247,14 +246,14 @@ const TabUserProfile = (props: any) => {
                                                 setProfession(e.target.value)
                                             }
                                         >
-                                            {proffesions.map((profession) => (
+                                            {/* {proffesions.map((profession) => (
                                                 <MenuItem
                                                     key={profession.id}
                                                     value={profession.id}
                                                 >
                                                     {profession.name}
                                                 </MenuItem>
-                                            ))}
+                                            ))} */}
                                         </Select>
                                     </FormControl>
                                 </div>

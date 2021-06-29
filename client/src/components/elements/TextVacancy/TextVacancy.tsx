@@ -6,7 +6,7 @@ import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import './TextVacancy.scss';
 
 interface Props {
-    Buttons: FunctionComponent;
+    Buttons?: FunctionComponent;
     description: string;
     experience?: string;
     responsibility?: string;
@@ -33,7 +33,7 @@ const TextVacancy: FunctionComponent<Props> = ({
     return (
         <div className="TextVacancy">
             <div className="wrapper">
-                <Buttons />
+                {Buttons ? <Buttons /> : null}
                 <span className="experience">Требуемый опыт: {experience}</span>
                 <ItemContent content={description} title="Описание" />
                 <ItemContent content={requirement} title="Требования" />

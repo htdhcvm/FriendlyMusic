@@ -1,0 +1,5 @@
+@import '../../../scss//authMainContent.scss';
+
+.AuthMainContentGroup {
+    @include auth-main-content-padding;
+}
