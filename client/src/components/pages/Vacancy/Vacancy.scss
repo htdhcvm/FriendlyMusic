@@ -3,4 +3,8 @@
 
 .Vacancy {
     @include header-menu;
+
+    .close-menu-resize-main {
+        padding-left: 0px;
+    }
 }

@@ -3,15 +3,15 @@
 
 .Settings {
     @include header-menu;
+
+    .close-menu-resize-main {
+        padding-left: 20px;
+    }
 }
 
 .settings-element {
     @include auth-main-content-padding;
-    padding-right: 80px;
-}
-
-.close-menu-resize-main {
-    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .title-settings {
