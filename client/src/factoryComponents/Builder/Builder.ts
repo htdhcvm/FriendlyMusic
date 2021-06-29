@@ -13,6 +13,8 @@ import GroupPageContentAuth from '../../components/elements/GroupPageContentAuth
 import UserSettings from '../../components/elements/settings/UserSettings/UserSettings';
 import GroupSettings from '../../components/elements/settings/GroupSettings/GroupSettings';
 
+import withToggleMenu from '../../components/hoc/withToggleMenu';
+
 import { Page, MainPage, SettingsPage, VacancyPage, GroupPage } from './Page';
 
 export interface Builder {
@@ -158,7 +160,9 @@ export class MainContentBuilder implements Content {
 }
 
 export class AuthMainContentUserBuilder implements Content {
-    private component: FunctionComponent = AuthMainContentUser;
+    private component: FunctionComponent = withToggleMenu({
+        Component: AuthMainContentUser,
+    });
 
     getComponent(): FunctionComponent {
         return this.component;
@@ -166,7 +170,9 @@ export class AuthMainContentUserBuilder implements Content {
 }
 
 export class AuthMainContentGroupBuilder implements Content {
-    private component: FunctionComponent = AuthMainContentGroup;
+    private component: FunctionComponent = withToggleMenu({
+        Component: AuthMainContentGroup,
+    });
 
     getComponent(): FunctionComponent {
         return this.component;
@@ -182,7 +188,9 @@ export class VacancyContentBuilder implements Content {
 }
 
 export class AuthVacancyContentBuilder implements Content {
-    private component: FunctionComponent = AuthVacancyContent;
+    private component: FunctionComponent = withToggleMenu({
+        Component: AuthVacancyContent,
+    });
 
     getComponent(): FunctionComponent {
         return this.component;
