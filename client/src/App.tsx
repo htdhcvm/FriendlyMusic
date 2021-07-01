@@ -28,14 +28,14 @@ const App = () => {
                 <Route path="/user">
                     <User />
                 </Route>
+                <Route path="/resume/:resumeId" exact>
+                    <Resume />
+                </Route>
                 <Route path="/vacancy/:vacancyId" exact>
                     <Vacancy />
                 </Route>
                 <Route path="/search">
                     <Search />
-                </Route>
-                <Route path="/resume">
-                    <Resume />
                 </Route>
                 <Route path="/main">
                     <Main />
