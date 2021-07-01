@@ -54,7 +54,7 @@ const relations = {
     }),
 
     resume: Model.extend({
-        users: belongsTo(),
+        user: belongsTo(),
     }),
 };
 

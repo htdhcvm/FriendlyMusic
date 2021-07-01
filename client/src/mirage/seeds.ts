@@ -1,6 +1,8 @@
 const seeds = (server: any) => {
     server.createList('user', 8).forEach((user: any) => {
-        server.createList('resume', Math.floor(Math.random() * 2) + 1, user);
+        server.createList('resume', Math.floor(Math.random() * 2) + 1, {
+            user,
+        });
         server.createList('social', Math.floor(Math.random() * 5) + 1, {
             user,
         });

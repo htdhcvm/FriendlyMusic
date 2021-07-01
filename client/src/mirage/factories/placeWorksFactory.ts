@@ -13,6 +13,12 @@ const PlaceWorks = {
     link() {
         return faker.internet.url();
     },
+    start() {
+        return faker.date.past();
+    },
+    end() {
+        return faker.date.past();
+    },
 };
 
 export default PlaceWorks;

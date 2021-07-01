@@ -62,7 +62,7 @@ const User = {
     },
 
     avatar() {
-        return faker.internet.avatar();
+        return `${faker.image.people(400, 600)}?random=${Date.now()}`;
     },
 };
 

@@ -10,6 +10,12 @@ const Courses = {
     name() {
         return faker.company.catchPhrase();
     },
+    start() {
+        return faker.date.past();
+    },
+    end() {
+        return faker.date.past();
+    },
 };
 
 export default Courses;

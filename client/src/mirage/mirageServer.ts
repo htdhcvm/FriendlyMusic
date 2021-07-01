@@ -13,6 +13,8 @@ import faker from 'faker';
 import unique from './helpers/uniq';
 
 import DTOVacancy from '../DTO/visitor/Vacancy';
+import DTOResume from '../DTO/group/Resume';
+import DTOGroupList from '../DTO/group/ResumesList';
 
 const VERY_SECRET_KEY = 'VERY_SECRET_KEY';
 const TIME_EXPIRE = 1000 * 60 * 60 * 24;
@@ -315,6 +317,104 @@ export const createMockServer = (environment = 'development') => {
                     return dataVacancy;
                 }
             );
+
+            this.get('/group/getResume/:idResume', (schema, request) => {
+                const { idResume } = request.params;
+
+                const resume = schema.findBy('resume', { id: idResume });
+
+                if (resume) {
+                    const user: any = resume.user;
+
+                    const courses = user.courses;
+                    const universities = user.universities;
+                    const placeWorks = user.placeWorks;
+                    const socials = user.socials;
+
+                    const DtoResume: DTOResume = {
+                        title: resume.title,
+                        fio: user.fio,
+                        dateBirthday: user.dateBirthday,
+                        gander: user.gander,
+                        language: resume.language,
+                        telephone: user.telephone,
+                        address: user.address,
+                        email: user.email,
+                        site: user.site,
+                        profession: user.profession,
+                        musicInstrument: user.musicInstrument,
+                        experience: resume.experience,
+                        aboutYourSelf: user.description,
+                        skills: user.skills,
+                        quality: user.quality,
+                        salary: resume.salary,
+                        avatar: user.avatar,
+                        kindActivity: resume.kindActivity,
+                        socialList: unique(
+                            socials.models.map((social: any) => {
+                                return {
+                                    name: social.type,
+                                    link: social.link,
+                                };
+                            }),
+                            'name'
+                        ),
+
+                        prevWorkList: placeWorks.models.map((work: any) => ({
+                            name: work.name,
+                            position: work.position,
+                            link: work.link,
+                            periodWork: {
+                                start: work.start,
+                                end: work.end,
+                            },
+                        })),
+
+                        institutionList: universities.models.map(
+                            (university: any) => ({
+                                name: university.name,
+                                nameFaculty: university.nameFaculty,
+                                qualification: university.qualification,
+                                timeEducation: {
+                                    start: university.start,
+                                    end: university.end,
+                                },
+                            })
+                        ),
+
+                        coursesList: courses.models.map((course: any) => ({
+                            name: course.nameSchool,
+                            nameSchool: course.name,
+                            timeEducation: {
+                                start: course.start,
+                                end: course.end,
+                            },
+                        })),
+                    };
+
+                    return DtoResume;
+                }
+                return new Response(400);
+            });
+
+            this.get('/group/getListResumes', (schema) => {
+                const groupList: DTOGroupList = [];
+
+                schema.all('resume').models.forEach((resume) => {
+                    const user: any = resume.user;
+
+                    groupList.push({
+                        id: resume.id,
+                        title: resume.title,
+                        image: resume.image,
+                        userName: user.fio,
+                        date: resume.date.toString(),
+                        price: resume.salary,
+                    });
+                });
+
+                return groupList;
+            });
 
             this.get('/visitor/getListVacancy/:name', () => {
                 return { id: 1 };

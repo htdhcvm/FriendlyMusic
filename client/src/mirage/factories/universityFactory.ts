@@ -17,6 +17,13 @@ const University = {
     qualification() {
         return [Math.floor(Math.random() * qualifications.length)];
     },
+
+    start() {
+        return faker.date.past();
+    },
+    end() {
+        return faker.date.past();
+    },
 };
 
 export default University;
