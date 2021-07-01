@@ -1,6 +1,7 @@
 type Social = {
-    link: string;
     name: string;
+    link: string;
+    image?: string;
 };
 
 export default Social;
