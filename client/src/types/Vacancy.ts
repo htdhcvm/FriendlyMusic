@@ -1,10 +1,11 @@
 import Category from '../types/CategoryMusicians';
 import VacancyOnCategory from '../types/VacancyOnCategory';
+import Social from './Social';
 
 type Vacancy = {
     title: string;
     groupData: Group;
-    socialLinks: Array<SocialLink>;
+    socialLinks: Array<Social>;
     responsibility?: string;
     description: string;
     requirement: Array<string>;
@@ -27,11 +28,6 @@ type Group = {
     address?: string;
     avatar: string;
     latlon: Array<number>;
-};
-type SocialLink = {
-    name: string;
-    link: string;
-    image: string;
 };
 
 export default Vacancy;
