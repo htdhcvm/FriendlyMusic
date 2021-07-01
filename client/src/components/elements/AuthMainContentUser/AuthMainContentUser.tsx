@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { memo } from 'react';
 import './AuthMainContentUser.scss';
 
 import CarouselContainer from '../CarouselContainer/CarouselContainer';
@@ -16,4 +15,4 @@ const AuthMainContentUser = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     );
 };
 
-export default AuthMainContentUser;
+export default memo(AuthMainContentUser);

@@ -1,9 +1,7 @@
-import React from 'react';
-
 import './MainContent.scss';
 
 import CarouselContainer from '../../elements/CarouselContainer/CarouselContainer';
-import ListVacancy from '../../elements/ListVacancy/ListVacancy';
+import ListVacancy from '../ListVacancy/ListVacancy';
 
 const MainContent = () => {
     return (

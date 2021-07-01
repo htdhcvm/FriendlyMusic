@@ -1,4 +1,4 @@
-import React from 'react';
+import { FunctionComponent, memo } from 'react';
 
 import './ItemVacancy.scss';
 
@@ -7,28 +7,29 @@ import Typography from '@material-ui/core/Typography';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { Link } from 'react-router-dom';
 
-interface Prop {
-    id: string;
-    imageGroup?: string;
-    title: string;
-    groupName: string;
-    price: number;
-    data?: string;
-}
+import VacancyItemList from '../../../types/VacancyItemList';
+// interface Prop {
+//     id: string;
+//     imageGroup?: string;
+//     title: string;
+//     groupName: string;
+//     price: number;
+//     data?: string;
+// }
 
-const ItemVacancy = ({
+const ItemVacancy: FunctionComponent<VacancyItemList> = ({
     id,
-    imageGroup,
     title,
+    image,
     groupName,
+    date,
     price,
-    data,
-}: Prop) => {
+}) => {
     return (
         <Box className="ItemVacancy">
             <Link to={`/vacancy/${id}`}>
-                {imageGroup ? (
-                    <img src={imageGroup} alt="vacancy group" />
+                {image ? (
+                    <img src={image} alt="vacancy group" />
                 ) : (
                     <Skeleton variant="rect" width={'100%'} height={190} />
                 )}
@@ -48,9 +49,9 @@ const ItemVacancy = ({
                 >
                     {groupName}
                 </Typography>
-                {data ? (
+                {date ? (
                     <Typography variant="caption" color="textSecondary">
-                        {data}
+                        {date}
                     </Typography>
                 ) : null}
             </Link>
@@ -58,4 +59,4 @@ const ItemVacancy = ({
     );
 };
 
-export default ItemVacancy;
+export default memo(ItemVacancy);

@@ -1,11 +1,12 @@
 import './AuthMainContentGroup.scss';
 
 import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
+import ListResumes from '../ListResumes/ListResumes';
 
 const AuthMainContentGroup = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     return (
         <div className={`AuthMainContentGroup ${toggleMenuClass}`}>
-            <h1>AuthMainContentGroup</h1>
+            <ListResumes />
         </div>
     );
 };

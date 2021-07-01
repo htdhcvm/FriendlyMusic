@@ -2,16 +2,12 @@ import { Link } from 'react-router-dom';
 
 import './BarVacancy.scss';
 
+import Social from '../../../types/Social';
+
 interface Props {
     idGroup: string;
     groupName: string;
-    socialLinks: Array<SocialLink>;
-}
-
-interface SocialLink {
-    name: string;
-    link: string;
-    image: string;
+    socialLinks: Array<Social>;
 }
 
 const BarVacancy = ({ idGroup, groupName, socialLinks }: Props) => {

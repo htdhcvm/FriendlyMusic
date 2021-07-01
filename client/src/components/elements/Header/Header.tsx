@@ -9,7 +9,9 @@ const Header = () => {
             <Link to="/main">
                 <img className="logo" src="/assets/logo/logoPart.png" />
             </Link>
-            <Link to="/signInSignUp">Войти/Регистрация</Link>
+            <Link className="linkSigninSignup" to="/signInSignUp">
+                Войти / Регистрация
+            </Link>
         </div>
     );
 };
