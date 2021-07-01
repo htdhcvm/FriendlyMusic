@@ -1,0 +1,18 @@
+@mixin item-resume-for-list-educatoins {
+    .list {
+        .item {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 20px;
+
+            .name {
+                flex: 1;
+                a {
+                    text-decoration: none;
+                    color: black;
+                    border-bottom: 1px solid #ef376e;
+                }
+            }
+        }
+    }
+}
