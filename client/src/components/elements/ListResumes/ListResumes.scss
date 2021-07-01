@@ -1,0 +1,16 @@
+.ListResumes {
+    margin-top: 40px;
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        .row {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+            .ItemResume {
+                flex: 1;
+            }
+        }
+    }
+}

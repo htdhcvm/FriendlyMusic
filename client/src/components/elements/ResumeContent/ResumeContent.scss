@@ -1,0 +1,96 @@
+@import '../../../scss/authMainContent.scss';
+@import '../../../scss//ItemResumeForListEducatoins.scss';
+
+.ResumeContent {
+    @include auth-main-content-padding;
+
+    display: grid;
+    grid-template-areas: 'photo text salary';
+    grid-template-columns: fit-content(300px) 3fr 2fr;
+    gap: 40px;
+    margin-top: 40px;
+    .photo {
+        grid-area: photo;
+        img {
+            max-width: 100%;
+            max-height: 500px;
+        }
+    }
+    .text {
+        grid-area: text;
+        .title {
+            .fio {
+                font-size: 70px;
+                line-height: 53px; // :TODO
+                font-weight: lighter;
+                margin: 0px;
+            }
+        }
+
+        .sub-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .item-resume {
+            margin-bottom: 40px;
+
+            .fill {
+                display: flex;
+                flex-direction: column;
+
+                .item {
+                    display: flex;
+                    margin-bottom: 20px;
+                    gap: 40px;
+                    .description {
+                        min-width: 210px;
+                        max-width: 250px;
+                    }
+                    .text {
+                        line-height: 27px;
+                    }
+                    .listSocial {
+                        display: flex;
+                        gap: 10px;
+                        .socialImage {
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+
+            .tags {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                .tag {
+                    padding: 2px 7px;
+                    background-color: #eaeaea;
+                    border-radius: 30px;
+                }
+            }
+        }
+
+        .PrevWorkPlace {
+            @include item-resume-for-list-educatoins;
+        }
+
+        .EducationList {
+            @include item-resume-for-list-educatoins;
+        }
+
+        .Courses {
+            @include item-resume-for-list-educatoins;
+        }
+    }
+    .salary {
+        grid-area: salary;
+        .salary-text {
+            font-size: 36px;
+            line-height: 28px; // :TODO
+            font-weight: lighter;
+        }
+    }
+}
