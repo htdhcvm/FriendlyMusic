@@ -11,7 +11,7 @@ const categoriesMusicians: Array<Category> = [
     },
     {
         type: 'drummer',
-        description: 'Барабанщин',
+        description: 'Барабанщик',
     },
     {
         type: 'electricGuitarBass',

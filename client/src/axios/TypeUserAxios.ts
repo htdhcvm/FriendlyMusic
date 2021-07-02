@@ -12,7 +12,7 @@ export class ClientVisitor implements AxiosConnect, AxiosConnectClient {
 
     constructor() {
         this.timeout = 5000;
-        this.baseURL = '/api/';
+        this.baseURL = 'http://localhost:3000/api';
     }
 
     getConfigData(): AxiosConnectData {
@@ -32,7 +32,7 @@ export class ClientGroup
 
     constructor() {
         this.timeout = 5000;
-        this.baseURL = '/api/group/';
+        this.baseURL = 'http://localhost:3000/api/group';
         this.withCredentials = true;
     }
 
@@ -54,7 +54,7 @@ export class ClientUser
 
     constructor() {
         this.timeout = 5000;
-        this.baseURL = '/api/user/';
+        this.baseURL = 'http://localhost:3000/api/user';
         this.withCredentials = true;
     }
 
@@ -73,7 +73,7 @@ export class DevVisitor implements AxiosConnectDev, AxiosConnectClient {
 
     constructor() {
         this.timeout = 5000;
-        this.baseURL = 'http://localhost:3001/api/';
+        this.baseURL = 'http://localhost:3001/api';
     }
 
     getConfigData(): AxiosConnectData {
@@ -93,7 +93,7 @@ export class DevGroup
 
     constructor() {
         this.timeout = 5000;
-        this.baseURL = 'http://localhost:3001/api/group/';
+        this.baseURL = 'http://localhost:3001/api/group';
         this.withCredentials = true;
     }
 
@@ -115,7 +115,7 @@ export class DevUser
 
     constructor() {
         this.timeout = 5000;
-        this.baseURL = 'http://localhost:3001/api/user/';
+        this.baseURL = 'http://localhost:3001/api/user';
         this.withCredentials = true;
     }
 

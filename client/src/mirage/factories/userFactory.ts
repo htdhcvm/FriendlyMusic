@@ -5,6 +5,7 @@ import qualities from '../staticData/qualities';
 import { logins } from '../staticData/login';
 import passwords from '../staticData/passwords';
 import { fillArray } from '../helpers/fillArray';
+import videos from '../staticData/videos';
 
 faker.locale = 'ru';
 
@@ -63,6 +64,10 @@ const User = {
 
     avatar() {
         return `${faker.image.people(400, 600)}?random=${Date.now()}`;
+    },
+
+    videos() {
+        return fillArray(videos, 10);
     },
 };
 

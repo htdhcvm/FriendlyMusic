@@ -1,5 +1,6 @@
 @mixin item-resume-for-list-educatoins {
     .list {
+        max-width: 960px;
         .item {
             display: flex;
             gap: 40px;

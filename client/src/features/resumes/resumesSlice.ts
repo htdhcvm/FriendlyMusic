@@ -13,6 +13,7 @@ const initialState: IState = {
     listResumes: [],
 
     currentResume: {
+        idUser: '',
         fio: '',
         title: '',
         dateBirthday: '',
@@ -63,6 +64,7 @@ const resumesSlice: Reducer<IState, ResumesActions> = (
             return {
                 ...state,
                 currentResume: {
+                    idUser: '',
                     fio: '',
                     title: '',
                     dateBirthday: '',

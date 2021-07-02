@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Connection from './ConnectionWrapper';
 
 import {
@@ -29,6 +30,10 @@ const createConnection = (mode: string | undefined) => {
 const { connectionVisitor, connectionGroup, connectionUser } = createConnection(
     process.env.REACT_APP_MODE
 );
+
+export const Youtube = axios.create({
+    baseURL: 'https://www.googleapis.com/youtube/v3',
+});
 
 export const Visitor = connectionVisitor;
 export const Group = connectionGroup;

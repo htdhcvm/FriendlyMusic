@@ -15,6 +15,7 @@ import unique from './helpers/uniq';
 import DTOVacancy from '../DTO/visitor/Vacancy';
 import DTOResume from '../DTO/group/Resume';
 import DTOGroupList from '../DTO/group/ResumesList';
+import DTOUser from '../DTO/group/User';
 
 const VERY_SECRET_KEY = 'VERY_SECRET_KEY';
 const TIME_EXPIRE = 1000 * 60 * 60 * 24;
@@ -332,6 +333,7 @@ export const createMockServer = (environment = 'development') => {
                     const socials = user.socials;
 
                     const DtoResume: DTOResume = {
+                        idUser: user.id,
                         title: resume.title,
                         fio: user.fio,
                         dateBirthday: user.dateBirthday,
@@ -416,61 +418,98 @@ export const createMockServer = (environment = 'development') => {
                 return groupList;
             });
 
-            this.get('/visitor/getListVacancy/:name', () => {
-                return { id: 1 };
+            this.get('/user/getCurrentUser/:idUser', (schema, request) => {
+                const { idUser } = request.params;
+
+                console.log(idUser);
+
+                const user = schema.findBy('user', { id: idUser });
+
+                // const userData: DTOUser<string> = {
+                //     login
+                //     fio
+                //     dateBirthday
+                //     gander
+                //     telephone
+                //     address
+                //     email
+                //     site
+                //     profession : {
+                //         type
+                //         description
+                //     },
+                //     musicInstrument
+                //     experience
+                //     aboutYourSelf
+                //     avatar
+                //     language
+                //     socialList
+                //     skills
+                //     quality
+                //     prevWorksList
+                //     institutionList
+                //     coursesList
+                //     listVideos
+                // };
+
+                return {};
             });
 
-            this.get('/visitor/getDataGroup/:idGroup', () => {
-                return { id: 1 };
-            });
+            // this.get('/visitor/getListVacancy/:name', () => {
+            //     return { id: 1 };
+            // });
 
-            this.get(
-                '/user/search/:keyWord/:city/:positionGroup/:experience/:countVacancyOnPage/:salary/:existBase/:existMaterial/:existNumberPhone/:linkSocial',
-                () => {
-                    return { id: 1 };
-                }
-            );
+            // this.get('/visitor/getDataGroup/:idGroup', () => {
+            //     return { id: 1 };
+            // });
 
-            this.get('/user/settings/dataUser/owner/:idUser', () => {
-                return { id: 1 };
-            });
+            // this.get(
+            //     '/user/search/:keyWord/:city/:positionGroup/:experience/:countVacancyOnPage/:salary/:existBase/:existMaterial/:existNumberPhone/:linkSocial',
+            //     () => {
+            //         return { id: 1 };
+            //     }
+            // );
 
-            this.get('/user/settings/changeDataUser', () => {
-                return { id: 1 };
-            });
+            // this.get('/user/settings/dataUser/owner/:idUser', () => {
+            //     return { id: 1 };
+            // });
 
-            this.get('/user/settings/createGroup', () => {
-                return { id: 1 };
-            });
+            // this.get('/user/settings/changeDataUser', () => {
+            //     return { id: 1 };
+            // });
 
-            this.get('/user/settings/getDataGroup/consist/:idUser', () => {
-                return { id: 1 };
-            });
+            // this.get('/user/settings/createGroup', () => {
+            //     return { id: 1 };
+            // });
 
-            this.get('/user/settings/consist/eventOnAddMemberInGroup', () => {
-                return { id: 1 };
-            });
+            // this.get('/user/settings/getDataGroup/consist/:idUser', () => {
+            //     return { id: 1 };
+            // });
 
-            this.get(
-                '/user/settings/consist/eventOnCancelMemberInGroup',
-                () => {
-                    return { id: 1 };
-                }
-            );
+            // this.get('/user/settings/consist/eventOnAddMemberInGroup', () => {
+            //     return { id: 1 };
+            // });
 
-            this.get(
-                '/user/settings/consist/eventOnDeleteMemberGroupAgree',
-                () => {
-                    return { id: 1 };
-                }
-            );
+            // this.get(
+            //     '/user/settings/consist/eventOnCancelMemberInGroup',
+            //     () => {
+            //         return { id: 1 };
+            //     }
+            // );
 
-            this.get(
-                '/user/settings/consist/eventOnDeleteMemberGroupDisagree',
-                () => {
-                    return { id: 1 };
-                }
-            );
+            // this.get(
+            //     '/user/settings/consist/eventOnDeleteMemberGroupAgree',
+            //     () => {
+            //         return { id: 1 };
+            //     }
+            // );
+
+            // this.get(
+            //     '/user/settings/consist/eventOnDeleteMemberGroupDisagree',
+            //     () => {
+            //         return { id: 1 };
+            //     }
+            // );
         },
     });
 };

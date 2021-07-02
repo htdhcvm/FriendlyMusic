@@ -15,6 +15,8 @@ import Resume from './components/pages/Resume/Resume';
 import Search from './components/pages/Search/Search';
 import Settings from './components/pages/Settings/Settings';
 
+import { getVideos } from './mirage/helpers/getVideos';
+
 const App = () => {
     return (
         <Router>
@@ -25,7 +27,7 @@ const App = () => {
                 <Route path="/about">
                     <About />
                 </Route>
-                <Route path="/user">
+                <Route path="/user/:idUser">
                     <User />
                 </Route>
                 <Route path="/resume/:resumeId" exact>

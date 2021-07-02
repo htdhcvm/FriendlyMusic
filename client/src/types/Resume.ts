@@ -1,7 +1,9 @@
 import Qualification from './Qualification';
 import Social from './Social';
+import Fork from './Fork';
 
 type Resume = {
+    idUser: string;
     fio: string;
     title: string;
     dateBirthday?: string;
@@ -20,6 +22,7 @@ type Resume = {
     experience?: string;
     aboutYourSelf?: string;
     kindActivity?: KindActivity;
+
     language?: Array<string>;
     socialList?: Array<Social>;
     skills?: Array<string>;

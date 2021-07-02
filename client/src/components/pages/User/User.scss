@@ -1,0 +1,5 @@
+@import '../../../scss/headerMenu.scss';
+
+.User {
+    @include header-menu;
+}

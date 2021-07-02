@@ -108,13 +108,13 @@ layout
 [x] Preview
 [x] SignInSignUp
 [] User
-[] Vacancy
+[x] Vacancy
 [x] Main
 [x] settings user
 [] Resume
 [] Search
 
-[] mirage
+[x] mirage
     [x] factory fill
         [x] User
         [x] RefreshSessions
@@ -133,4 +133,8 @@ layout
         [x] each users have refreshsession 
         [x] foure group have vacancy 
         
-    [] routes
+[x] Relocate from dto files types which are entity business
+[] bring order in scss
+[] hoc which show loading after load component page show it, if component undefined show user error and send to server message: ${namePage} not loading something went wrong
+[] handle errors
+

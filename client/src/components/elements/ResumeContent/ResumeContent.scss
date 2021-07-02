@@ -5,8 +5,8 @@
     @include auth-main-content-padding;
 
     display: grid;
-    grid-template-areas: 'photo text salary';
-    grid-template-columns: fit-content(300px) 3fr 2fr;
+    grid-template-areas: 'photo text ';
+    grid-template-columns: fit-content(300px) 1fr;
     gap: 40px;
     margin-top: 40px;
     .photo {
@@ -18,12 +18,29 @@
     }
     .text {
         grid-area: text;
+        .target {
+            .text {
+                font-size: 60px;
+                line-height: 70px;
+                margin: -11px 0px 0px -4px;
+            }
+            margin-bottom: 20px;
+        }
+        .salary-text {
+            margin-bottom: 40px;
+        }
         .title {
             .fio {
-                font-size: 70px;
-                line-height: 53px; // :TODO
+                display: flex;
+                align-items: center;
+                font-size: 48px;
                 font-weight: lighter;
-                margin: 0px;
+                margin: 0px 0px 0px -2px;
+                .link {
+                    margin-left: 40px;
+                    font-size: 36px;
+                    transform: rotate(-45deg);
+                }
             }
         }
 
@@ -39,11 +56,14 @@
             .fill {
                 display: flex;
                 flex-direction: column;
-
+                max-width: 960px;
                 .item {
                     display: flex;
                     margin-bottom: 20px;
                     gap: 40px;
+                    .name {
+                        line-height: 30px;
+                    }
                     .description {
                         min-width: 210px;
                         max-width: 250px;

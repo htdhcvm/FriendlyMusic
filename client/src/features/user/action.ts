@@ -101,3 +101,19 @@ export const logout = () => {
             });
     };
 };
+
+export const getCurrentUser = (idUser: string) => {
+    return async (dispatch: Dispatch<UserAction>) => {
+        const response = await User.get(`/getCurrentUser/${idUser}`);
+
+        const user = response.data;
+        console.log(user);
+    };
+};
+
+export const getUserOnId = (idUser: string) => {
+    return async (dispatch: Dispatch<UserAction>) => {};
+};
+export const clearUserData = () => {
+    return async (dispatch: Dispatch<UserAction>) => {};
+};

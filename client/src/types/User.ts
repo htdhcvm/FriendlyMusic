@@ -4,42 +4,47 @@ import Qualification from './Qualification';
 
 export interface User<T> {
     login: string;
-    fio: String;
-    dateBirthday?: String;
-    gander?: String;
-    language?: Array<String>;
-    telephone?: String;
-    address?: String;
-    email?: String;
-    socialList?: Array<Social>;
-    site?: String;
-    profession?: String;
-    musicInstrument?: String;
-    experience?: String;
-    aboutYourSelf?: String;
-    skills?: Array<String>;
-    quality?: Array<String>;
-    prevWorksList?: Array<Work<T>>;
-    institutionList?: Array<Institution<T>>;
-    coursesList?: Array<Course<T>>;
+    fio: string;
+    dateBirthday?: string;
+    gander?: string;
+    telephone?: string;
+    address?: string;
+    email?: string;
+    site?: string;
+    profession?: {
+        type: string;
+        description: string;
+    };
+    musicInstrument?: string;
+    experience?: string;
+    aboutYourSelf?: string;
+    avatar?: string;
+    language?: string[];
+    socialList?: Social[];
+    skills?: string[];
+    quality?: string[];
+    prevWorksList?: Work<T>[];
+    institutionList?: Institution<T>[];
+    coursesList?: Course<T>[];
+    listVideos?: string[];
 }
 
 interface Work<T> {
-    name: String;
-    position: String;
-    link?: String;
+    name: string;
+    position: string;
+    link?: string;
     periodWork: Fork<T>;
 }
 interface Institution<T> {
-    name: String;
+    name: string;
     timeEducation: Fork<T>;
-    nameFaculty: String;
+    nameFaculty: string;
     qualification: Qualification;
 }
 interface Course<T> {
-    name: String;
+    name: string;
     timeEducation: Fork<T>;
-    nameSchool: String;
+    nameSchool: string;
 }
 
 export default User;

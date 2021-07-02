@@ -1,6 +1,6 @@
 type Fork<T> = {
-    startSalary: T;
-    endSalary: T;
+    start: T;
+    end: T;
 };
 
 export default Fork;

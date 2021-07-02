@@ -5,11 +5,15 @@ import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { Typography } from '@material-ui/core';
 import ButtonsVacancy from '../ButtonsVacancy/ButtonsVacancy';
 import Social from '../../../types/Social';
-
+import LinkIcon from '@material-ui/icons/Link';
 import { Course, Work, Institution } from '../../../types/Resume';
+import { Link } from 'react-router-dom';
+import Skeleton from '@material-ui/lab/Skeleton';
+import { FunctionComponent } from 'react';
 
 const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     const {
+        idUser,
         fio,
         title,
         dateBirthday,
@@ -38,16 +42,34 @@ const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     return (
         <div className={`MainContent ResumeContent ${toggleMenuClass}`}>
             <div className="photo">
-                <img alt="avatar resume" src={avatar} />
+                {avatar && avatar.length > 0 ? (
+                    <img alt="avatar resume" src={avatar} />
+                ) : (
+                    <Skeleton variant="rect" width={'100%'} height={400} />
+                )}
             </div>
 
             <div className="text">
+                <div className="target">
+                    <Typography variant="h2" className="text">
+                        Цель: {title}
+                    </Typography>
+                </div>
+
+                <Typography variant="h4" className="salary-text">
+                    Зарплата от: {salary} т рублей.
+                </Typography>
+
                 <div className="title">
                     <Typography variant="h2" className="fio">
                         {fio}
+                        <Link to={`/user/${idUser}`}>
+                            <LinkIcon className="link" />
+                        </Link>
                     </Typography>
                     <ButtonsVacancy />
                 </div>
+
                 <div className="item-resume main-info">
                     <Typography variant="h4" className="sub-title">
                         Основная информация
@@ -83,24 +105,7 @@ const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
                         />
                     </div>
                 </div>
-                <div className="item-resume contact-info">
-                    <Typography variant="h4" className="sub-title">
-                        Контактная информация
-                    </Typography>
 
-                    <div className="fill">
-                        <Item
-                            data={telephone}
-                            descriptionText="Номер телефона:"
-                        />
-                        <Item data={address} descriptionText="Адрес:" />
-                        <Item data={email} descriptionText="email:" />
-                        <ItemSocial
-                            data={socialList}
-                            descriptionText="Социальные сети:"
-                        />
-                    </div>
-                </div>
                 <div className="item-resume profession-info">
                     <Typography variant="h4" className="sub-title">
                         Профессиональная информация
@@ -125,12 +130,25 @@ const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
                 <PrevWorkPlace works={prevWorkList} />
                 <EducationList educations={institutionList} />
                 <Courses courses={coursesList} />
-            </div>
 
-            <div className="salary">
-                <Typography variant="h4" className="salary-text">
-                    Зарплата от: {salary} т рублей.
-                </Typography>
+                <div className="item-resume contact-info">
+                    <Typography variant="h4" className="sub-title">
+                        Контактная информация
+                    </Typography>
+
+                    <div className="fill">
+                        <Item
+                            data={telephone}
+                            descriptionText="Номер телефона:"
+                        />
+                        <Item data={address} descriptionText="Адрес:" />
+                        <Item data={email} descriptionText="email:" />
+                        <ItemSocial
+                            data={socialList}
+                            descriptionText="Социальные сети:"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );
@@ -303,4 +321,5 @@ const Courses = ({ courses }: CoursesProp) => {
         </div>
     );
 };
+
 export default ResumeContent;
