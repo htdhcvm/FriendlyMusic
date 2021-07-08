@@ -16,11 +16,37 @@ import DTOVacancy from '../DTO/visitor/Vacancy';
 import DTOResume from '../DTO/group/Resume';
 import DTOGroupList from '../DTO/group/ResumesList';
 import DTOUser from '../DTO/group/User';
+import DTOGroup from '../DTO/group/Group';
+
+import videos from './staticData/videos';
 
 const VERY_SECRET_KEY = 'VERY_SECRET_KEY';
 const TIME_EXPIRE = 1000 * 60 * 60 * 24;
 
-export const createMockServer = (environment = 'development') => {
+export const createMockServer = async (environment = 'development') => {
+    const InitData = () => {
+        return new Promise<void>((resolve) => {
+            fetch(
+                `https://www.googleapis.com/youtube/v3/videos?key=${
+                    process.env.REACT_APP_GOOGLE_API
+                }&part=${'player'}&maxResults=${20}&chart=${'mostPopular'}&maxHeight=${200}&maxWidth=${360}`,
+                {
+                    method: 'GET',
+                }
+            )
+                .then((r) => r.json())
+                .then((data) => {
+                    data.items.forEach((video: any) => {
+                        videos.push(video.player.embedHtml);
+                    });
+
+                    resolve();
+                });
+        });
+    };
+
+    await InitData();
+
     createServer({
         environment,
         serializers: {
@@ -39,6 +65,8 @@ export const createMockServer = (environment = 'development') => {
         },
 
         routes() {
+            this.passthrough('https://www.googleapis.com/youtube/v3/videos');
+
             this.namespace = 'api';
 
             this.get('/getAllModels', (schema) => {
@@ -338,7 +366,7 @@ export const createMockServer = (environment = 'development') => {
                         fio: user.fio,
                         dateBirthday: user.dateBirthday,
                         gander: user.gander,
-                        language: resume.language,
+                        language: user.language,
                         telephone: user.telephone,
                         address: user.address,
                         email: user.email,
@@ -396,7 +424,7 @@ export const createMockServer = (environment = 'development') => {
 
                     return DtoResume;
                 }
-                return new Response(400);
+                return new Response(404);
             });
 
             this.get('/group/getListResumes', (schema) => {
@@ -421,95 +449,128 @@ export const createMockServer = (environment = 'development') => {
             this.get('/user/getCurrentUser/:idUser', (schema, request) => {
                 const { idUser } = request.params;
 
-                console.log(idUser);
-
                 const user = schema.findBy('user', { id: idUser });
 
-                // const userData: DTOUser<string> = {
-                //     login
-                //     fio
-                //     dateBirthday
-                //     gander
-                //     telephone
-                //     address
-                //     email
-                //     site
-                //     profession : {
-                //         type
-                //         description
-                //     },
-                //     musicInstrument
-                //     experience
-                //     aboutYourSelf
-                //     avatar
-                //     language
-                //     socialList
-                //     skills
-                //     quality
-                //     prevWorksList
-                //     institutionList
-                //     coursesList
-                //     listVideos
-                // };
+                // console.log(user);
 
-                return {};
+                if (user) {
+                    const courses = user.courses;
+                    const universities = user.universities;
+                    const placeWorks = user.placeWorks;
+
+                    const userData: DTOUser<string> = {
+                        login: user.login,
+                        fio: user.fio,
+                        dateBirthday: user.dateBirthday,
+                        gander: user.gander,
+                        telephone: user.telephone,
+                        address: user.address,
+                        email: user.email,
+                        site: user.site,
+                        profession: user.profession,
+                        musicInstrument: user.musicInstrument,
+                        experience: user.experience,
+                        aboutYourSelf: user.description,
+                        avatar: user.avatar,
+                        language: user.language,
+                        photos: user.photos,
+                        socialList: unique(
+                            user.socials.models.map((social: any) => {
+                                return {
+                                    name: social.type,
+                                    link: social.link,
+                                };
+                            }),
+                            'name'
+                        ),
+                        skills: user.skills,
+                        quality: user.quality,
+
+                        prevWorksList: placeWorks.models.map((work: any) => ({
+                            name: work.name,
+                            position: work.position,
+                            link: work.link,
+                            periodWork: {
+                                start: work.start.toString(),
+                                end: work.end.toString(),
+                            },
+                        })),
+                        institutionList: universities.models.map(
+                            (university: any) => ({
+                                name: university.name,
+                                nameFaculty: university.nameFaculty,
+                                qualification: university.qualification,
+                                timeEducation: {
+                                    start: university.start,
+                                    end: university.end,
+                                },
+                            })
+                        ),
+                        coursesList: courses.models.map((course: any) => ({
+                            name: course.nameSchool,
+                            nameSchool: course.name,
+                            timeEducation: {
+                                start: course.start,
+                                end: course.end,
+                            },
+                        })),
+                        listVideos: user.videos,
+                    };
+
+                    return userData;
+                }
+                return new Response(404);
             });
 
-            // this.get('/visitor/getListVacancy/:name', () => {
-            //     return { id: 1 };
-            // });
+            this.get('/group/getCurrentGroup/:idGroup', (schema, request) => {
+                const { idGroup } = request.params;
 
-            // this.get('/visitor/getDataGroup/:idGroup', () => {
-            //     return { id: 1 };
-            // });
+                const group = schema.findBy('group', { id: idGroup });
 
-            // this.get(
-            //     '/user/search/:keyWord/:city/:positionGroup/:experience/:countVacancyOnPage/:salary/:existBase/:existMaterial/:existNumberPhone/:linkSocial',
-            //     () => {
-            //         return { id: 1 };
-            //     }
-            // );
+                if (group) {
+                    const groupData: DTOGroup = {
+                        name: group.name,
+                        description: group.description,
+                        experience: group.experience,
+                        typeGroup: group.typeGroup,
+                        musicalGenre: group.musicalGenre,
+                        existRepetitionBase: group.repetitionBase,
+                        commerceProject: group.commerceProject,
+                        address: group.address,
+                        telephone: group.telephone,
+                        email: group.email,
+                        listParticipantsGroup: group.user_group.models.map(
+                            (user: any) => {
+                                const itemUser: any = schema.findBy('user', {
+                                    id: user.userId,
+                                });
+                                return {
+                                    id: user.userId,
+                                    type: user.type,
+                                    name: itemUser.fio,
+                                    avatar: itemUser.avatar,
+                                };
+                            }
+                        ),
+                        socialList: unique(
+                            group.socials.models.map((social: any) => {
+                                return {
+                                    name: social.type,
+                                    link: social.link,
+                                };
+                            }),
+                            'name'
+                        ),
+                        listVideos: group.videos,
+                        avatar: group.avatar,
+                        photos: group.photos,
+                        latlon: group.latlon,
+                    };
+                    return groupData;
+                }
 
-            // this.get('/user/settings/dataUser/owner/:idUser', () => {
-            //     return { id: 1 };
-            // });
-
-            // this.get('/user/settings/changeDataUser', () => {
-            //     return { id: 1 };
-            // });
-
-            // this.get('/user/settings/createGroup', () => {
-            //     return { id: 1 };
-            // });
-
-            // this.get('/user/settings/getDataGroup/consist/:idUser', () => {
-            //     return { id: 1 };
-            // });
-
-            // this.get('/user/settings/consist/eventOnAddMemberInGroup', () => {
-            //     return { id: 1 };
-            // });
-
-            // this.get(
-            //     '/user/settings/consist/eventOnCancelMemberInGroup',
-            //     () => {
-            //         return { id: 1 };
-            //     }
-            // );
-
-            // this.get(
-            //     '/user/settings/consist/eventOnDeleteMemberGroupAgree',
-            //     () => {
-            //         return { id: 1 };
-            //     }
-            // );
-
-            // this.get(
-            //     '/user/settings/consist/eventOnDeleteMemberGroupDisagree',
-            //     () => {
-            //         return { id: 1 };
-            //     }
-            // );
+                return new Response(404);
+            });
         },
     });
 };

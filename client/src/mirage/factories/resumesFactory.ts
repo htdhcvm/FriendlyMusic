@@ -13,9 +13,7 @@ const Resumes = {
     salary() {
         return faker.datatype.number();
     },
-    language() {
-        return ['ru'];
-    },
+
     date() {
         return faker.date.past();
     },

@@ -6,6 +6,7 @@ import { logins } from '../staticData/login';
 import passwords from '../staticData/passwords';
 import { fillArray } from '../helpers/fillArray';
 import videos from '../staticData/videos';
+import expirense from '../staticData/expirense';
 
 faker.locale = 'ru';
 
@@ -49,6 +50,24 @@ const User = {
             Math.floor(Math.random() * categoriesMusicians.length)
         ];
     },
+    photos() {
+        return [
+            faker.image.image(),
+            faker.image.abstract(),
+            faker.image.animals(),
+            faker.image.business(),
+            faker.image.cats(),
+            faker.image.city(),
+            faker.image.food(),
+            faker.image.nightlife(),
+            faker.image.fashion(),
+            faker.image.people(),
+            faker.image.nature(),
+            faker.image.sports(),
+            faker.image.technics(),
+            faker.image.transport(),
+        ];
+    },
     musicInstrument() {
         return `crafter`;
     },
@@ -67,7 +86,14 @@ const User = {
     },
 
     videos() {
-        return fillArray(videos, 10);
+        return fillArray(videos, 20);
+    },
+    language() {
+        return ['ru'];
+    },
+
+    experience() {
+        return expirense[Math.floor(Math.random() * expirense.length)];
     },
 };
 

@@ -7,16 +7,19 @@ import { store } from './store';
 import { createMockServer } from './mirage/mirageServer';
 
 if (process.env.NODE_ENV === 'development') {
-    createMockServer();
+    createMockServer().then(() => {
+        store.subscribe(() => {
+            localStorage.setItem(
+                'reduxState',
+                JSON.stringify(store.getState())
+            );
+        });
+
+        ReactDOM.render(
+            <Provider store={store}>
+                <App />
+            </Provider>,
+            document.getElementById('root')
+        );
+    });
 }
-
-store.subscribe(() => {
-    localStorage.setItem('reduxState', JSON.stringify(store.getState()));
-});
-
-ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById('root')
-);

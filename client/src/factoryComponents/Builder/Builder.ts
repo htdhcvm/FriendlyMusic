@@ -221,7 +221,9 @@ export class GroupPageContentBuilder implements Content {
 }
 
 export class GroupPageContentAuthBuilder implements Content {
-    private component: FunctionComponent = GroupPageContentAuth;
+    private component: FunctionComponent = withToggleMenu({
+        Component: GroupPageContentAuth,
+    });
 
     getComponent(): FunctionComponent {
         return this.component;

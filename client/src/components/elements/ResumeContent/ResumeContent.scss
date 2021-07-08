@@ -9,6 +9,7 @@
     grid-template-columns: fit-content(300px) 1fr;
     gap: 40px;
     margin-top: 40px;
+
     .photo {
         grid-area: photo;
         img {
@@ -57,39 +58,6 @@
                 display: flex;
                 flex-direction: column;
                 max-width: 960px;
-                .item {
-                    display: flex;
-                    margin-bottom: 20px;
-                    gap: 40px;
-                    .name {
-                        line-height: 30px;
-                    }
-                    .description {
-                        min-width: 210px;
-                        max-width: 250px;
-                    }
-                    .text {
-                        line-height: 27px;
-                    }
-                    .listSocial {
-                        display: flex;
-                        gap: 10px;
-                        .socialImage {
-                            width: 20px;
-                        }
-                    }
-                }
-            }
-
-            .tags {
-                display: flex;
-                gap: 10px;
-                flex-wrap: wrap;
-                .tag {
-                    padding: 2px 7px;
-                    background-color: #eaeaea;
-                    border-radius: 30px;
-                }
             }
         }
 

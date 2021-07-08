@@ -10,10 +10,10 @@ const withUserData = ({ Component }: Prop) => {
     return () => {
         let { idUser } = useParams<{ idUser: string }>();
 
-        const { getUserOnId, clearUserData } = useAction();
+        const { getCurrentUser, clearUserData } = useAction();
 
         useEffect(() => {
-            getUserOnId(idUser);
+            getCurrentUser(idUser);
 
             return () => {
                 clearUserData();

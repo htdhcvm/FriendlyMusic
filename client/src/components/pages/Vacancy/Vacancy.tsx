@@ -1,25 +1,32 @@
+import { FunctionComponent } from 'react';
 import './Vacancy.scss';
 
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useAction } from '../../../hooks/useAction';
+import { useParams } from 'react-router';
+import UserStatus from '../../../types/UserStatus';
 import generatePageElements from '../../../factoryComponents/Builder/GeneratePage';
 
-import UserStatus from '../../../types/UserStatus';
-
-import withVacancyData from '../../hoc/withVacancyData';
-import { FunctionComponent } from 'react';
+import pageWithData from '../../hoc/pageWithData';
 
 const Vacancy = () => {
+    let { vacancyId } = useParams<{ vacancyId: string }>();
+
     const status: UserStatus = useTypedSelector((state) => state.user.status);
-    let ContentWithData: FunctionComponent | undefined;
 
     const { Header, Content, LeftPanel } = generatePageElements(
         'Vacancy',
         status
     );
 
-    if (Content) {
-        ContentWithData = withVacancyData({ Component: Content });
-    }
+    const { getVacancyOnId, clearCurrentVacancyData } = useAction();
+
+    const ContentWithData = pageWithData({
+        Component: Content,
+        loadData: getVacancyOnId,
+        clearDate: clearCurrentVacancyData,
+        id: vacancyId,
+    });
 
     return (
         <div className="Vacancy">

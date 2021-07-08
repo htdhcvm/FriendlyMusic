@@ -1,0 +1,16 @@
+.ItemSocial {
+    display: flex;
+    margin-bottom: 20px;
+    grid-gap: 40px;
+    gap: 40px;
+    .description {
+        min-width: 210px;
+        max-width: 250px;
+    }
+    .listSocial {
+        .socialImage {
+            max-height: 20px;
+            margin-right: 10px;
+        }
+    }
+}

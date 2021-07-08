@@ -1,6 +1,7 @@
 import { Reducer } from 'redux';
 import { UserAction, UserActionTypes } from './actionsDescription';
 import UserStatus from '../../types/UserStatus';
+import User from '../../types/User';
 
 interface IState {
     status: UserStatus;
@@ -10,6 +11,7 @@ interface IState {
     errors: {
         [key: string]: boolean;
     };
+    currentUser: User<string>;
 }
 
 const initialState: IState = {
@@ -20,6 +22,30 @@ const initialState: IState = {
     errors: {
         internalServerError: false,
         unauthorizedError: false,
+    },
+    currentUser: {
+        login: '',
+        fio: '',
+        dateBirthday: '',
+        gander: '',
+        telephone: '',
+        address: '',
+        email: '',
+        site: '',
+        profession: { type: '', description: '' },
+        musicInstrument: '',
+        experience: '',
+        aboutYourSelf: '',
+        avatar: '',
+        language: [],
+        skills: [],
+        quality: [],
+        listVideos: [],
+        socialList: [],
+        prevWorksList: [],
+        institutionList: [],
+        coursesList: [],
+        photos: [],
     },
 };
 
@@ -69,6 +95,41 @@ const userReducer: Reducer<IState, UserAction> = (
                     unauthorizedError: true,
                 },
             };
+        case UserActionTypes.CLEARCURRENTUSERDATA:
+            return {
+                ...state,
+                currentUser: {
+                    login: '',
+                    fio: '',
+                    dateBirthday: '',
+                    gander: '',
+                    telephone: '',
+                    address: '',
+                    email: '',
+                    site: '',
+                    profession: { type: '', description: '' },
+
+                    musicInstrument: '',
+                    experience: '',
+                    aboutYourSelf: '',
+                    avatar: '',
+                    language: [],
+                    skills: [],
+                    quality: [],
+                    listVideos: [],
+                    socialList: [],
+                    prevWorksList: [],
+                    institutionList: [],
+                    coursesList: [],
+                    photos: [],
+                },
+            };
+        case UserActionTypes.CURRENTUSER:
+            return {
+                ...state,
+                currentUser: action.payload,
+            };
+
         case UserActionTypes.TODEFAULTERRORS:
             return {
                 ...state,

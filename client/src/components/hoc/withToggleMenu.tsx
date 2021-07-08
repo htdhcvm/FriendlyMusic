@@ -16,7 +16,6 @@ interface Prop {
 const withToggleMenu = ({ Component }: Prop): FunctionComponent => {
     return function () {
         const { toggle } = useTypedSelector((state) => state.ui);
-
         const toggleClass = toggle ? 'close-menu-resize-main' : '';
 
         return <Component toggleMenuClass={toggleClass} />;

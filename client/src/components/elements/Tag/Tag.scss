@@ -1,0 +1,10 @@
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    .tag {
+        padding: 2px 7px;
+        background-color: #eaeaea;
+        border-radius: 30px;
+    }
+}

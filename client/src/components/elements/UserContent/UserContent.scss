@@ -2,6 +2,60 @@
 
 .UserContent {
     @include auth-main-content-padding;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+
+    .avatar {
+        max-width: 300px;
+        border-radius: 4px;
+    }
+
+    .content {
+        flex: 1;
+        .wrapper-text {
+            max-width: 960px;
+        }
+        .fio {
+            line-height: 46px;
+            margin-bottom: 40px;
+        }
+        .item {
+            margin-bottom: 40px;
+        }
+        .photo {
+            .list-photo {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                .item-photo {
+                    max-width: 250px;
+                }
+            }
+        }
+        .profession-info {
+            .divider {
+                width: 100%;
+                height: 1px;
+                background-color: #eaeaea;
+            }
+        }
+        .video {
+            .list-video {
+                display: flex;
+                flex-wrap: wrap;
+                .item-video {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .title {
+            margin-bottom: 20px;
+        }
+    }
 }
 .close-menu-resize-main {
     padding-left: 20px;

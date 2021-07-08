@@ -1,0 +1,14 @@
+.Courses {
+    .sub-title {
+        margin-bottom: 20px;
+    }
+    .list {
+        .item {
+            display: flex;
+            gap: 10px;
+            .name {
+                flex: 1;
+            }
+        }
+    }
+}

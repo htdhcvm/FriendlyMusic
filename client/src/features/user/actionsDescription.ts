@@ -1,5 +1,5 @@
 import DTOSuccessAuth from '../../DTO/visitor/SuccessAuth';
-
+import User from '../../types/User';
 export enum UserActionTypes {
     REGISTRATION = 'USER/REGISTRATION',
     SIGNINMUSICIAN = 'USER/SIGNINMUSICIAN',
@@ -8,11 +8,13 @@ export enum UserActionTypes {
     INTERNALSERVERERROR = 'USER/INTERNALSERVERERROR',
     TODEFAULTERRORS = 'USER/TODEFAULTERRORS',
     LOGOUT = 'USER/LOGOUT',
+    CLEARCURRENTUSERDATA = 'USER/CLEARCURRENTUSERDATA',
+    CURRENTUSER = 'USER/CURRENTUSER',
 }
 
 interface Actions {
     type: string;
-    payload?: string | DTOSuccessAuth;
+    payload?: string | DTOSuccessAuth | User<string>;
 }
 
 interface RegistrationActions extends Actions {
@@ -46,6 +48,15 @@ interface Logout {
     type: UserActionTypes.LOGOUT;
 }
 
+interface ClearUserData {
+    type: UserActionTypes.CLEARCURRENTUSERDATA;
+}
+
+interface GetCurrentUser extends Actions {
+    type: UserActionTypes.CURRENTUSER;
+    payload: User<string>;
+}
+
 export type UserAction =
     | RegistrationActions
     | SignInMusicianAction
@@ -53,4 +64,6 @@ export type UserAction =
     | SignInErrorUnauthorizated
     | InnternalServerError
     | ToDefaultErrors
+    | ClearUserData
+    | GetCurrentUser
     | Logout;

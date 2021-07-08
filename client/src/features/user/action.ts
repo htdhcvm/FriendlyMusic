@@ -6,6 +6,9 @@ import { Visitor, User } from '../../axios/axios-configuration';
 import DTOSignin from '../../DTO/visitor/Signin';
 import DTORegistration from '../../DTO/visitor/Registration';
 import DTOSuccessAuth from '../../DTO/visitor/SuccessAuth';
+import DTOUser from '../../DTO/group/User';
+
+import { createSocials } from '../../factoryComponents/Socials/Socials';
 
 export const registration = ({
     login,
@@ -106,14 +109,20 @@ export const getCurrentUser = (idUser: string) => {
     return async (dispatch: Dispatch<UserAction>) => {
         const response = await User.get(`/getCurrentUser/${idUser}`);
 
-        const user = response.data;
-        console.log(user);
+        const user: DTOUser<string> = response.data;
+
+        if (user && user.socialList) {
+            user.socialList = createSocials(user.socialList);
+        }
+
+        dispatch({ type: UserActionTypes.CURRENTUSER, payload: user });
     };
 };
 
-export const getUserOnId = (idUser: string) => {
-    return async (dispatch: Dispatch<UserAction>) => {};
-};
 export const clearUserData = () => {
-    return async (dispatch: Dispatch<UserAction>) => {};
+    return async (dispatch: Dispatch<UserAction>) => {
+        dispatch({
+            type: UserActionTypes.CLEARCURRENTUSERDATA,
+        });
+    };
 };

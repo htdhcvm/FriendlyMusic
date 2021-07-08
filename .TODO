@@ -134,6 +134,14 @@ layout
         [x] foure group have vacancy 
         
 [x] Relocate from dto files types which are entity business
+
+[x] Page user
+[] Page group
+[] Create resume
+[] Create vacancy
+[] Settings page
+
+
 [] bring order in scss
 [] hoc which show loading after load component page show it, if component undefined show user error and send to server message: ${namePage} not loading something went wrong
 [] handle errors

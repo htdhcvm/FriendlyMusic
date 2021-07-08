@@ -1,0 +1,94 @@
+.GroupPageContentAuth {
+    padding-left: 210px;
+    padding-right: 20px;
+
+    .group-content-header {
+        position: relative;
+        .name {
+            position: absolute;
+            z-index: 1;
+            color: white;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            top: 35%;
+        }
+        .group-background {
+            width: 100%;
+            margin-bottom: 40px;
+            filter: brightness(50%);
+        }
+    }
+
+    .wrapper-tab {
+        .MuiTabs-flexContainer {
+            gap: 5px;
+        }
+        .tab {
+            flex: 1;
+            max-width: none;
+        }
+    }
+
+    .item-content {
+        margin-top: 40px;
+        padding: 0px;
+
+        .participants-group {
+            .list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                a {
+                    text-decoration: none;
+                }
+                .item-participant {
+                    color: black;
+                    img {
+                        max-width: 200px;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        .title-info {
+            margin-bottom: 20px;
+        }
+        .box {
+            padding: 0px;
+        }
+        .wrapper-photo {
+            margin-bottom: 40px;
+            .title {
+                margin-bottom: 20px;
+            }
+            .list-photo {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                img {
+                    flex-basis: 250px;
+                    flex-grow: 1;
+                    overflow: hidden;
+                }
+            }
+
+            .list-video {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                .item {
+                    overflow: hidden;
+                    // flex: 250px 1;
+                    flex-basis: 250px;
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+}

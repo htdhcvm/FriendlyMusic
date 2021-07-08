@@ -4,6 +4,8 @@ import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import OnlyForVisitor from './components/elements/OnlyForVisitor/OnlyForVisitor';
+import ProtectedPage from './components/elements/ProtectedPage/ProtectedPage';
+
 import NotMatch from './components/pages/NotMatch/NotMatch';
 import About from './components/pages/About/About';
 import Preview from './components/pages/Preview/Preview';
@@ -14,27 +16,32 @@ import Main from './components/pages/Main/Main';
 import Resume from './components/pages/Resume/Resume';
 import Search from './components/pages/Search/Search';
 import Settings from './components/pages/Settings/Settings';
+import Group from './components/pages/Group/Group';
 
-import { getVideos } from './mirage/helpers/getVideos';
-
+// fetch(`/api/getAllModels`, { method: 'GET' })
+//     .then((r) => r.json())
+//     .then((data) => console.log(data.users));
 const App = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/settings">
+                <ProtectedPage path="/settings">
                     <Settings />
-                </Route>
-                <Route path="/about">
-                    <About />
-                </Route>
-                <Route path="/user/:idUser">
+                </ProtectedPage>
+                <ProtectedPage path="/user/:idUser">
                     <User />
-                </Route>
-                <Route path="/resume/:resumeId" exact>
+                </ProtectedPage>
+                <ProtectedPage path="/resume/:resumeId" exact>
                     <Resume />
-                </Route>
+                </ProtectedPage>
                 <Route path="/vacancy/:vacancyId" exact>
                     <Vacancy />
+                </Route>
+                <OnlyForVisitor path="/signInSignUp">
+                    <SignInSignUp />
+                </OnlyForVisitor>
+                <Route path="/group/:idGroup">
+                    <Group />
                 </Route>
                 <Route path="/search">
                     <Search />
@@ -42,9 +49,9 @@ const App = () => {
                 <Route path="/main">
                     <Main />
                 </Route>
-                <OnlyForVisitor path="/signInSignUp">
-                    <SignInSignUp />
-                </OnlyForVisitor>
+                <Route path="/about">
+                    <About />
+                </Route>
                 <Route path="/" exact>
                     <Preview />
                 </Route>

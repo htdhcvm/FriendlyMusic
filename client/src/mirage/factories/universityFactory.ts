@@ -15,7 +15,9 @@ const University = {
     },
 
     qualification() {
-        return [Math.floor(Math.random() * qualifications.length)];
+        return qualifications[
+            Math.floor(Math.random() * qualifications.length)
+        ];
     },
 
     start() {

@@ -4,12 +4,14 @@ import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMen
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { Typography } from '@material-ui/core';
 import ButtonsVacancy from '../ButtonsVacancy/ButtonsVacancy';
-import Social from '../../../types/Social';
 import LinkIcon from '@material-ui/icons/Link';
-import { Course, Work, Institution } from '../../../types/Resume';
 import { Link } from 'react-router-dom';
 import Skeleton from '@material-ui/lab/Skeleton';
-import { FunctionComponent } from 'react';
+import ItemTextDescription from '../ItemTextDescription/ItemTextDescription';
+import ItemSocial from '../ItemSocial/ItemSocial';
+import PrevWorkPlace from '../PrevWorkPlace/PrevWorkPlace';
+import EducationList from '../EducationList/EducationList';
+import Courses from '../Courses/Courses';
 
 const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     const {
@@ -76,30 +78,42 @@ const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
                     </Typography>
                     <div className="fill">
                         {kindActivity ? (
-                            <Item
+                            <ItemTextDescription
                                 data={kindActivity.description}
                                 descriptionText="Вид деятельности:"
                             />
                         ) : null}
-                        <Item
+                        <ItemTextDescription
                             data={dateBirthday}
                             descriptionText="Год рождения:"
                         />
 
-                        <Item data={gander} descriptionText="Пол:" />
+                        <ItemTextDescription
+                            data={gander}
+                            descriptionText="Пол:"
+                        />
 
-                        <Item data={skills} descriptionText="Умения:" />
-                        <Item data={language} descriptionText="Языки:" />
+                        <ItemTextDescription
+                            data={skills}
+                            descriptionText="Умения:"
+                        />
+                        <ItemTextDescription
+                            data={language}
+                            descriptionText="Языки:"
+                        />
 
-                        <Item data={site} descriptionText="Сайт:" />
+                        <ItemTextDescription
+                            data={site}
+                            descriptionText="Сайт:"
+                        />
                         {profession ? (
-                            <Item
+                            <ItemTextDescription
                                 data={profession.description}
                                 descriptionText="Профессия:"
                             />
                         ) : null}
 
-                        <Item
+                        <ItemTextDescription
                             data={musicInstrument}
                             descriptionText="Музыкальный инструмент:"
                         />
@@ -111,16 +125,19 @@ const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
                         Профессиональная информация
                     </Typography>
                     <div className="fill">
-                        <Item
+                        <ItemTextDescription
                             data={title}
                             descriptionText="Желаемая позиция:"
                         />
-                        <Item data={quality} descriptionText="Качества:" />
-                        <Item
+                        <ItemTextDescription
+                            data={quality}
+                            descriptionText="Качества:"
+                        />
+                        <ItemTextDescription
                             data={aboutYourSelf}
                             descriptionText="Описание:"
                         />
-                        <Item
+                        <ItemTextDescription
                             data={experience}
                             descriptionText="Опыт работы:"
                         />
@@ -137,186 +154,24 @@ const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
                     </Typography>
 
                     <div className="fill">
-                        <Item
+                        <ItemTextDescription
                             data={telephone}
                             descriptionText="Номер телефона:"
                         />
-                        <Item data={address} descriptionText="Адрес:" />
-                        <Item data={email} descriptionText="email:" />
+                        <ItemTextDescription
+                            data={address}
+                            descriptionText="Адрес:"
+                        />
+                        <ItemTextDescription
+                            data={email}
+                            descriptionText="email:"
+                        />
                         <ItemSocial
                             data={socialList}
                             descriptionText="Социальные сети:"
                         />
                     </div>
                 </div>
-            </div>
-        </div>
-    );
-};
-
-interface ItemSocialProp {
-    data: Array<Social> | undefined;
-    descriptionText: string;
-}
-const ItemSocial = ({ data, descriptionText }: ItemSocialProp) => {
-    return (
-        <div className="item" key={descriptionText}>
-            {data && data.length > 0 ? (
-                <>
-                    <span className="description">{descriptionText}</span>
-                    <div className="listSocial">
-                        {data.map((social) => (
-                            <a
-                                href={social.link}
-                                target="_blank"
-                                key={social.name}
-                            >
-                                <img
-                                    className="socialImage"
-                                    src={social.image}
-                                    alt="social"
-                                />
-                            </a>
-                        ))}
-                    </div>
-                </>
-            ) : null}
-        </div>
-    );
-};
-
-interface ItemProp {
-    data: string | undefined | Array<string>;
-    descriptionText: string;
-}
-const Item = ({ data, descriptionText }: ItemProp) => {
-    return (
-        <div className="item">
-            {data && data.length > 0 ? (
-                <>
-                    <span className="description">{descriptionText}</span>
-                    {Array.isArray(data) ? (
-                        <Tag list={data} />
-                    ) : (
-                        <span className="text">{data}</span>
-                    )}
-                </>
-            ) : null}
-        </div>
-    );
-};
-
-interface Prop {
-    list: Array<string>;
-}
-
-const Tag = ({ list }: Prop) => {
-    return (
-        <div className="tags">
-            {list.map((item) => {
-                return (
-                    <div key={item} className="tag">
-                        {item}
-                    </div>
-                );
-            })}
-        </div>
-    );
-};
-
-interface PrevWorkPlaceProp {
-    works: Array<Work> | undefined;
-}
-
-const PrevWorkPlace = ({ works }: PrevWorkPlaceProp) => {
-    return (
-        <div className="PrevWorkPlace item-resume">
-            <Typography variant="h4" className="sub-title">
-                Места работы
-            </Typography>
-            <div className="list">
-                {works
-                    ? works.map((work) => (
-                          <div className="item" key={work.name}>
-                              <span className="time">
-                                  {work.periodWork.start.substr(0, 4)}-
-                                  {work.periodWork.end.substr(0, 4)}
-                              </span>
-
-                              <span className="name">
-                                  <a
-                                      href={work.link}
-                                      target="_blank"
-                                      rel="noreferrer nofollow"
-                                  >
-                                      {work.name}
-                                  </a>
-                              </span>
-
-                              <span>{work.position}</span>
-                          </div>
-                      ))
-                    : null}
-            </div>
-        </div>
-    );
-};
-
-interface EducationListProp {
-    educations: Array<Institution> | undefined;
-}
-
-const EducationList = ({ educations }: EducationListProp) => {
-    return (
-        <div className="EducationList item-resume">
-            <Typography variant="h4" className="sub-title">
-                Образование
-            </Typography>
-            <div className="list">
-                {educations
-                    ? educations.map((education) => (
-                          <div className="item" key={education.name}>
-                              <span className="time">
-                                  {education.timeEducation.start.substr(0, 4)}-
-                                  {education.timeEducation.end.substr(0, 4)}
-                              </span>
-                              <span className="name">
-                                  {education.nameFaculty}
-                              </span>
-
-                              <span>{education.qualification}</span>
-                          </div>
-                      ))
-                    : null}
-            </div>
-        </div>
-    );
-};
-
-interface CoursesProp {
-    courses: Array<Course> | undefined;
-}
-
-const Courses = ({ courses }: CoursesProp) => {
-    return (
-        <div className="Courses item-resume">
-            <Typography variant="h4" className="sub-title">
-                Курсы
-            </Typography>
-            <div className="list">
-                {courses
-                    ? courses.map((course) => (
-                          <div className="item" key={course.name}>
-                              <span className="time">
-                                  {course.timeEducation.start.substr(0, 4)}-
-                                  {course.timeEducation.end.substr(0, 4)}
-                              </span>
-                              <span className="name">{course.name}</span>
-
-                              <span>{course.nameSchool}</span>
-                          </div>
-                      ))
-                    : null}
             </div>
         </div>
     );

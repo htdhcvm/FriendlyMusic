@@ -1,0 +1,22 @@
+.ItemTextDescription {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 40px;
+    .name {
+        line-height: 30px;
+    }
+    .description {
+        min-width: 210px;
+        max-width: 250px;
+    }
+    .text {
+        line-height: 27px;
+    }
+    .listSocial {
+        display: flex;
+        gap: 10px;
+        .socialImage {
+            width: 20px;
+        }
+    }
+}

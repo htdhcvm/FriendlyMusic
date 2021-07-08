@@ -1,4 +1,4 @@
-const seeds = (server: any) => {
+const seeds = async (server: any) => {
     server.createList('user', 8).forEach((user: any) => {
         server.createList('resume', Math.floor(Math.random() * 2) + 1, {
             user,

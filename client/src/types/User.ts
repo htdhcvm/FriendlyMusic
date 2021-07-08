@@ -27,9 +27,10 @@ export interface User<T> {
     institutionList?: Institution<T>[];
     coursesList?: Course<T>[];
     listVideos?: string[];
+    photos?: string[];
 }
 
-interface Work<T> {
+export interface Work<T> {
     name: string;
     position: string;
     link?: string;
