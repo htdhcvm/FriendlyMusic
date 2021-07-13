@@ -6,7 +6,7 @@
     flex-direction: column;
     position: fixed;
     height: 100%;
-    max-width: 190px;
+    max-width: 200px;
 
     .wrapperLogo {
         margin-top: 10px;
@@ -41,7 +41,14 @@
                 margin-left: 10px;
             }
         }
-
+        .active {
+            .icon {
+                color: #ed215e;
+            }
+            .text {
+                color: #ed215e;
+            }
+        }
         .item:last-child {
             margin-top: auto;
         }

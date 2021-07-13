@@ -11,8 +11,18 @@ import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import { useAction } from '../../../hooks/useAction';
 import { Link } from 'react-router-dom';
 
+import WorkIcon from '@material-ui/icons/Work';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
+import PermMediaIcon from '@material-ui/icons/PermMedia';
+
+import { useLocation } from 'react-router-dom';
+
 const LeftPanel = () => {
+    const location = useLocation();
+
     const { toggle } = useTypedSelector((state) => state.ui);
+    const { isAuth, status } = useTypedSelector((state) => state.user);
 
     const { logout } = useAction();
 
@@ -32,12 +42,60 @@ const LeftPanel = () => {
                     Icon={SettingsIcon}
                     text="Настройки"
                     link="/settings"
+                    statusActive={
+                        location.pathname === '/settings' ? true : false
+                    }
                 />
                 <ItemLeftPanel
                     Icon={GroupIcon}
                     text="Группа"
-                    link="/settings"
+                    link="/settings/group"
+                    statusActive={
+                        location.pathname === '/settings/group' ? true : false
+                    }
                 />
+
+                <ItemLeftPanel
+                    Icon={PermMediaIcon}
+                    text="Медиа"
+                    link="/settings/media"
+                    statusActive={
+                        location.pathname === '/settings/media' ? true : false
+                    }
+                />
+
+                {isAuth && status === 'user' ? (
+                    <ItemLeftPanel
+                        Icon={GroupAddIcon}
+                        text="Создать группу"
+                        link="/user/createGroup"
+                    />
+                ) : null}
+                {isAuth && status === 'user' ? (
+                    <ItemLeftPanel
+                        Icon={AssignmentIndIcon}
+                        text="Резюме"
+                        link="/user/createResume"
+                        statusActive={
+                            location.pathname === '/user/createResume'
+                                ? true
+                                : false
+                        }
+                    />
+                ) : null}
+                {isAuth && status === 'group' ? (
+                    <ItemLeftPanel
+                        Icon={WorkIcon}
+                        text="Вакансия"
+                        link="/group/createVacancy"
+                        statusActive={
+                            location.pathname === '/group/createVacancy'
+                                ? true
+                                : false
+                        }
+                    />
+                ) : null}
+
                 <ItemLeftPanel
                     Icon={ExitToAppIcon}
                     text="Выход"
