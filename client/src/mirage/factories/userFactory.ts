@@ -15,7 +15,7 @@ const User = {
         return faker.datatype.uuid();
     },
     fio() {
-        return `${faker.name.findName()}`;
+        return faker.name.findName();
     },
     dateBirthday() {
         const dateBirthday = faker.date
