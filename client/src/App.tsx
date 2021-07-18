@@ -1,11 +1,10 @@
-import React from 'react';
 import './App.scss';
 
+import { useTypedSelector } from './hooks/useTypedSelector';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import OnlyForVisitor from './components/elements/OnlyForVisitor/OnlyForVisitor';
+import OnlyForOnTypeUser from './components/elements/OnlyForOnTypeUser/OnlyForOnTypeUser';
 import ProtectedPage from './components/elements/ProtectedPage/ProtectedPage';
-
 import NotMatch from './components/pages/NotMatch/NotMatch';
 import About from './components/pages/About/About';
 import Preview from './components/pages/Preview/Preview';
@@ -17,15 +16,44 @@ import Resume from './components/pages/Resume/Resume';
 import Search from './components/pages/Search/Search';
 import Settings from './components/pages/Settings/Settings';
 import Group from './components/pages/Group/Group';
+import CreateResume from './components/pages/CreateResume/CreateResume';
+import CreateVacancy from './components/pages/CreateVacancy/CreateVacancy';
+import CreateGroup from './components/pages/CreateGroup/CreateGroup';
 
-// fetch(`/api/getAllModels`, { method: 'GET' })
-//     .then((r) => r.json())
-//     .then((data) => console.log(data.users));
 const App = () => {
+    const { status, isAuth } = useTypedSelector((state) => state.user);
+
+    // useEffect(() => {
+    //     fetch(`/api/getAllModels`, { method: 'GET' })
+    //         .then((r) => r.json())
+    //         .then((data) => console.log(data.users));
+    // }, []);
+
     return (
         <Router>
             <Switch>
-                <ProtectedPage path="/settings">
+                <OnlyForOnTypeUser
+                    status={status}
+                    isAuth={isAuth}
+                    path="/user/createGroup"
+                >
+                    <CreateGroup />
+                </OnlyForOnTypeUser>
+                <OnlyForOnTypeUser
+                    status={status}
+                    isAuth={isAuth}
+                    path="/user/createResume"
+                >
+                    <CreateResume />
+                </OnlyForOnTypeUser>
+                <OnlyForOnTypeUser
+                    status={status}
+                    isAuth={isAuth}
+                    path="/group/createVacancy"
+                >
+                    <CreateVacancy />
+                </OnlyForOnTypeUser>
+                <ProtectedPage path="/settings/:tab?">
                     <Settings />
                 </ProtectedPage>
                 <ProtectedPage path="/user/:idUser">
@@ -37,9 +65,13 @@ const App = () => {
                 <Route path="/vacancy/:vacancyId" exact>
                     <Vacancy />
                 </Route>
-                <OnlyForVisitor path="/signInSignUp">
+                <OnlyForOnTypeUser
+                    status={status}
+                    isAuth={isAuth}
+                    path="/signInSignUp"
+                >
                     <SignInSignUp />
-                </OnlyForVisitor>
+                </OnlyForOnTypeUser>
                 <Route path="/group/:idGroup">
                     <Group />
                 </Route>
