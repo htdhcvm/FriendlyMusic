@@ -13,7 +13,7 @@ const Groups = {
         return faker.datatype.uuid();
     },
     name() {
-        return faker.name.findName();
+        return faker.company.companyName();
     },
     login(i: number) {
         return group[i];
