@@ -1,0 +1,23 @@
+.SocialInputs {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    align-items: baseline;
+    .wrapper {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        .wrapper-inputs {
+            display: flex;
+            flex: 1;
+            align-items: baseline;
+            gap: 20px;
+            .FieldSelect {
+                flex: 1;
+            }
+            .FieldText {
+                flex: 2;
+            }
+        }
+    }
+}

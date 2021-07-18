@@ -1,0 +1,11 @@
+.FieldAdd {
+    flex: 1;
+    display: flex;
+    .add-btn {
+        cursor: pointer;
+    }
+
+    .input {
+        flex: 1;
+    }
+}

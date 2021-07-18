@@ -1,0 +1,17 @@
+@import '../../../scss/FieldTextStyle.scss';
+
+.FieldText {
+    @include FieldTextStyle;
+    flex: 1;
+    .input-field {
+        flex: 1;
+    }
+
+    .delete {
+        cursor: pointer;
+        margin-bottom: 7px;
+    }
+    .time {
+        flex: 1;
+    }
+}

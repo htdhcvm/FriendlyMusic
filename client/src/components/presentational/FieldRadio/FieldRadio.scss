@@ -1,0 +1,10 @@
+@import '../../../scss//FieldTextStyle.scss';
+
+.FieldRadio {
+    @include FieldTextStyle;
+    align-items: center;
+    flex: 1;
+    .RadioGroup {
+        flex-direction: row !important;
+    }
+}
