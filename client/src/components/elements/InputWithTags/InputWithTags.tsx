@@ -39,8 +39,6 @@ const InputWithTags = memo(({ title, description, placeholder }: Prop) => {
         }
     };
 
-    console.log('render');
-
     return (
         <div className="InputWithTags">
             <div className="input-text">
