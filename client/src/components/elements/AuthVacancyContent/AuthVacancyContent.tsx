@@ -6,10 +6,23 @@ import HeaderVacancy from '../HeaderVacancy/HeaderVacancy';
 import BarVacancy from '../BarVacancy/BarVacancy';
 import TextVacancy from '../TextVacancy/TextVacancy';
 import ButtonsVacancy from '../ButtonsVacancy/ButtonsVacancy';
+import { useAction } from '../../../hooks/useAction';
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
 
 import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
 
 const AuthVacancyContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
+    const { getVacancyOnId, clearCurrentVacancyData } = useAction();
+    const { vacancyId } = useParams<{ vacancyId: string }>();
+
+    useEffect(() => {
+        getVacancyOnId(vacancyId);
+        return () => {
+            clearCurrentVacancyData();
+        };
+    }, []);
+
     const {
         title,
         experience,
