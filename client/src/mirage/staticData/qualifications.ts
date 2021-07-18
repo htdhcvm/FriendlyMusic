@@ -1,9 +1,9 @@
 import Qualification from '../../types/Qualification';
 
 const qualifications: Array<Qualification> = [
-    'бакалавкр',
-    'магистр',
-    'специалист',
+    'Бакалавкр',
+    'Магистр',
+    'Специалист',
 ];
 
 export default qualifications;
