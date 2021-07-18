@@ -6,6 +6,7 @@ import ItemCountOnTypeMusician from '../ItemCountOnTypeMusician/ItemCountOnTypeM
 import { useAction } from '../../../hooks/useAction';
 
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import VacancyOnCategory from '../../../types/VacancyOnCategory';
 
 const CarouselContainer = () => {
     const { getCountOnTypeVacancy } = useAction();
@@ -21,7 +22,7 @@ const CarouselContainer = () => {
     return (
         <>
             <div className="CarouselContainer">
-                {listVacanciesOnType.map((vacancyType) => (
+                {listVacanciesOnType.map((vacancyType: VacancyOnCategory) => (
                     <ItemCountOnTypeMusician
                         key={vacancyType.type}
                         title={vacancyType.profession}
