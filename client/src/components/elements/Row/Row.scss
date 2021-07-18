@@ -1,0 +1,8 @@
+.Row {
+    display: flex;
+    gap: 40px;
+    align-items: baseline;
+    .FieldText {
+        flex: 1;
+    }
+}
