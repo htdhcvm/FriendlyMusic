@@ -197,13 +197,13 @@ const BeforeWork = () => {
     };
 
     return (
-        <div className="BeforeWork">
+        <div className='BeforeWork'>
             <h4>Предыдущие места работы</h4>
 
-            <div className="wrapper">
+            <div className='wrapper'>
                 <TextField
-                    className="item-text"
-                    type="text"
+                    className='item-text'
+                    type='text'
                     {...(errorCheck && !nameWork.checkField()
                         ? { error: true }
                         : null)}
@@ -212,11 +212,11 @@ const BeforeWork = () => {
                         nameWork.setField(e.target.value);
                         setName(e.target.value);
                     }}
-                    placeholder="Название"
+                    placeholder='Название'
                 />
                 <TextField
-                    className="item-text"
-                    type="text"
+                    className='item-text'
+                    type='text'
                     {...(errorCheck && !positionObject.checkField()
                         ? { error: true }
                         : null)}
@@ -225,11 +225,11 @@ const BeforeWork = () => {
                         positionObject.setField(e.target.value);
                         setPosition(e.target.value);
                     }}
-                    placeholder="Должность"
+                    placeholder='Должность'
                 />
                 <TextField
-                    className="item-text"
-                    type="text"
+                    className='item-text'
+                    type='text'
                     {...(errorCheck && !linkObject.checkField()
                         ? { error: true }
                         : null)}
@@ -239,7 +239,7 @@ const BeforeWork = () => {
 
                         setLink(e.target.value);
                     }}
-                    placeholder="Ссылка"
+                    placeholder='Ссылка'
                 />
                 <DateScope
                     start={start}
@@ -255,14 +255,14 @@ const BeforeWork = () => {
                 />
             </div>
             <Button
-                variant="contained"
+                variant='contained'
                 onClick={handleAddInListNewWork}
-                className="addPlaceWork"
+                className='addPlaceWork'
             >
                 Добавить место работы
             </Button>
             {listPrevWorks.length > 0 ? (
-                <div className="listBeforeWork">
+                <div className='listBeforeWork'>
                     <h4>Список предыдущих мест работы</h4>
                     {listPrevWorks.map((work) => (
                         <ItemWork
@@ -293,15 +293,15 @@ const ItemWork = memo(
         handleDeleteWork,
     }: ItemWorkProps) => {
         return (
-            <div className="item">
-                <div className="wrapper-text">
-                    <div className="text">
-                        <div className="date">
+            <div className='item'>
+                <div className='wrapper-text'>
+                    <div className='text'>
+                        <div className='date'>
                             <span>С {dateStart}</span>
                             <span> По {dateEnd}</span>
                         </div>
 
-                        <div className="info">
+                        <div className='info'>
                             <span>Название компании: {name}</span>
                             <span> Должность: {position}</span> <br />
                             <span>Ссылка: {link}</span>
@@ -316,7 +316,7 @@ const ItemWork = memo(
                     </IconButton>
                 </div>
 
-                <div className="divider"></div>
+                <div className='divider'></div>
             </div>
         );
     }
