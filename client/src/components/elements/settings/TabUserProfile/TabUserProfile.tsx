@@ -8,8 +8,7 @@ import BeforeWork from '../../BeforeWork/BeforeWork';
 import EducationItem from '../../EducationItem/EducationItem';
 import EducationItemCourses from '../../EducationItemCourses/EducationItemCourses';
 
-import { languages } from '../../../../listsSelect/listLanguage';
-// import { proffesions } from '../../../../listsSelect/professions';
+import { languages } from '../../../../staticData/listLanguage';
 
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -55,50 +54,50 @@ const TabUserProfile = (props: any) => {
 
     return (
         <div hidden={value !== index}>
-            <Box className="container-tab" p={3}>
-                <div className="photo">
-                    <div className="fake-avatar"></div>
-                    <img className="avatar" alt="avatar"></img>
+            <Box className='container-tab' p={3}>
+                <div className='photo'>
+                    <div className='fake-avatar'></div>
+                    <img className='avatar' alt='avatar'></img>
                     <Button
-                        className="load-photo"
-                        variant="contained"
-                        component="label"
+                        className='load-photo'
+                        variant='contained'
+                        component='label'
                     >
                         Загрузить фотографию
-                        <input type="file" hidden />
+                        <input type='file' hidden />
                     </Button>
                     <Button
-                        className="delete-photo"
-                        variant="contained"
-                        component="label"
+                        className='delete-photo'
+                        variant='contained'
+                        component='label'
                     >
                         Удалить
                     </Button>
                 </div>
-                <div className="divider"></div>
-                <div className="main-info">
+                <div className='divider'></div>
+                <div className='main-info'>
                     <form onSubmit={handleUpdateUserData}>
-                        <Typography variant="h5">
+                        <Typography variant='h5'>
                             Основная информация
                         </Typography>
-                        <div className="main-info-form">
-                            <div className="wrapper">
-                                <div className="wrapper-field-info">
-                                    <div className="description">
-                                        <span className="sub-title-info-form">
+                        <div className='main-info-form'>
+                            <div className='wrapper'>
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
+                                        <span className='sub-title-info-form'>
                                             ФИО
-                                            <span className="required">*</span>:
+                                            <span className='required'>*</span>:
                                         </span>
                                     </div>
-                                    <TextField className="fio" label="ФИО" />
+                                    <TextField className='fio' label='ФИО' />
                                 </div>
-                                <div className="wrapper-field-info">
-                                    <div className="description">
-                                        <span className="sub-title-info-form">
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
+                                        <span className='sub-title-info-form'>
                                             Язык:
                                         </span>
                                     </div>
-                                    <FormControl className="language-field">
+                                    <FormControl className='language-field'>
                                         <Select
                                             value={language}
                                             onChange={(e: ChangeEvent<any>) =>
@@ -122,17 +121,17 @@ const TabUserProfile = (props: any) => {
                                     </FormControl>
                                 </div>
                             </div>
-                            <div className="wrapper">
-                                <div className="wrapper-field-info">
-                                    <div className="description">
-                                        <span className="sub-title-info-form">
+                            <div className='wrapper'>
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
+                                        <span className='sub-title-info-form'>
                                             День рождения:
                                         </span>
                                     </div>
                                     <TextField
-                                        type="date"
+                                        type='date'
                                         value={birthday}
-                                        className="birthday-fields"
+                                        className='birthday-fields'
                                         onChange={(e) =>
                                             setBirthday(e.target.value)
                                         }
@@ -141,102 +140,102 @@ const TabUserProfile = (props: any) => {
                                         }}
                                     />
                                 </div>
-                                <div className="wrapper-field-info">
-                                    <div className="description">
-                                        <span className="sub-title-info-form">
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
+                                        <span className='sub-title-info-form'>
                                             Пол:
                                         </span>
                                     </div>
-                                    <FormControl component="fieldset">
+                                    <FormControl component='fieldset'>
                                         <RadioGroup
                                             value={ganderCheck}
-                                            className="gander"
+                                            className='gander'
                                             onChange={(
                                                 e: ChangeEvent<HTMLInputElement>
                                             ) => setGanderCheck(e.target.value)}
                                         >
                                             <FormControlLabel
-                                                value="male"
+                                                value='male'
                                                 control={<Radio />}
-                                                label="Мужской"
+                                                label='Мужской'
                                             />
                                             <FormControlLabel
-                                                value="female"
+                                                value='female'
                                                 control={<Radio />}
-                                                label="Женский"
+                                                label='Женский'
                                             />
                                         </RadioGroup>
                                     </FormControl>
                                 </div>
                             </div>
                         </div>
-                        <Typography variant="h5">
+                        <Typography variant='h5'>
                             Контактная информация
                         </Typography>
-                        <div className="contact-info-form">
-                            <div className="wrapper">
-                                <div className="wrapper-field-info">
-                                    <div className="description">
+                        <div className='contact-info-form'>
+                            <div className='wrapper'>
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
                                         <span>Телефон: </span>
                                     </div>
 
                                     <PhoneInput
-                                        country="RU"
-                                        placeholder="Enter phone number"
+                                        country='RU'
+                                        placeholder='Enter phone number'
                                         value={telephoneCustomers}
                                         onChange={setTelephoneCustomers}
                                     />
                                 </div>
-                                <div className="wrapper-field-info">
-                                    <div className="description">
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
                                         <span>Адресс: </span>
                                     </div>
                                     <TextField
-                                        className="input-max"
-                                        type="text"
+                                        className='input-max'
+                                        type='text'
                                     />
                                 </div>
                             </div>
 
-                            <div className="wrapper">
-                                <div className="wrapper-field-info">
-                                    <div className="description">
+                            <div className='wrapper'>
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
                                         <span>Почта: </span>
                                     </div>
                                     <TextField
-                                        className="input-max"
-                                        label="example@gmail.com"
-                                        type="email"
+                                        className='input-max'
+                                        label='example@gmail.com'
+                                        type='email'
                                     />
                                 </div>
-                                <div className="wrapper-field-info">
-                                    <div className="description">
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
                                         <span>Соцсети: </span>
                                     </div>
                                     <SocialInputTag />
                                 </div>
                             </div>
 
-                            <div className="wrapper">
-                                <div className="wrapper-field-info wrapper-field-info-half">
-                                    <div className="description">
+                            <div className='wrapper'>
+                                <div className='wrapper-field-info wrapper-field-info-half'>
+                                    <div className='description'>
                                         <span>Сайта: </span>
                                     </div>
                                     <TextField
-                                        className="input-max"
-                                        type="text"
+                                        className='input-max'
+                                        type='text'
                                     />
                                 </div>
                             </div>
                         </div>
-                        <Typography variant="h5">
+                        <Typography variant='h5'>
                             Профессиональная информация
                         </Typography>
 
-                        <div className="professional-info-form">
-                            <div className="wrapper">
-                                <div className="wrapper-field-info">
-                                    <div className="description">
+                        <div className='professional-info-form'>
+                            <div className='wrapper'>
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
                                         <span>Профессия: </span>
                                     </div>
                                     <FormControl>
@@ -257,22 +256,22 @@ const TabUserProfile = (props: any) => {
                                         </Select>
                                     </FormControl>
                                 </div>
-                                <div className="wrapper-field-info">
-                                    <div className="description">
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
                                         <span>Музыкальный инструмент: </span>
                                     </div>
                                     <TextField
-                                        label="crafter md058"
-                                        type="text"
+                                        label='crafter md058'
+                                        type='text'
                                     />
                                 </div>
                             </div>
-                            <div className="wrapper">
-                                <div className="wrapper-field-info">
-                                    <div className="description">
+                            <div className='wrapper'>
+                                <div className='wrapper-field-info'>
+                                    <div className='description'>
                                         <span>Музыкальная опыт: </span>
                                     </div>
-                                    <FormControl className="number">
+                                    <FormControl className='number'>
                                         <Select
                                             value={professionExpirince}
                                             onChange={(e: ChangeEvent<any>) => {
@@ -295,64 +294,64 @@ const TabUserProfile = (props: any) => {
                                                 );
                                             }}
                                         >
-                                            <MenuItem value="mounth">
+                                            <MenuItem value='mounth'>
                                                 Месяц / Месяца / Месяцев
                                             </MenuItem>
-                                            <MenuItem value="yaer">
+                                            <MenuItem value='yaer'>
                                                 Год / Года / Лет
                                             </MenuItem>
                                         </Select>
                                     </FormControl>
                                 </div>
-                                <div className="wrapper-field-info"></div>
+                                <div className='wrapper-field-info'></div>
                             </div>
-                            <div className="form-field about">
+                            <div className='form-field about'>
                                 <span>Расскажите о себе: </span>
                                 <TextareaAutosize
                                     rowsMax={4}
-                                    placeholder="О себе"
+                                    placeholder='О себе'
                                 />
                             </div>
-                            <div className="wrapper">
-                                <div className="wrapper-field-info">
+                            <div className='wrapper'>
+                                <div className='wrapper-field-info'>
                                     <InputWithTags
-                                        title="Навыки:"
-                                        placeholder="Название навыка"
-                                        description="Введите основные навыки, которыми вы владеете они будут представлены в виде тегов"
+                                        title='Навыки:'
+                                        placeholder='Название навыка'
+                                        description='Введите основные навыки, которыми вы владеете они будут представлены в виде тегов'
                                     />
                                 </div>
-                                <div className="wrapper-field-info">
+                                <div className='wrapper-field-info'>
                                     <InputWithTags
-                                        title="Качества:"
-                                        placeholder="Качество"
-                                        description="Набор выших качеств будут предствалены в виде тегов"
+                                        title='Качества:'
+                                        placeholder='Качество'
+                                        description='Набор выших качеств будут предствалены в виде тегов'
                                     />
                                 </div>
                             </div>
 
-                            <div className="form-field quality">
+                            <div className='form-field quality'>
                                 <BeforeWork />
                             </div>
                         </div>
 
-                        <Typography variant="h5">Образование</Typography>
+                        <Typography variant='h5'>Образование</Typography>
 
-                        <div className="education-form">
-                            <div className="wrapper">
-                                <div className="wrapper-field-info">
+                        <div className='education-form'>
+                            <div className='wrapper'>
+                                <div className='wrapper-field-info'>
                                     <EducationItem />
                                 </div>
-                                <div className="wrapper-field-info">
+                                <div className='wrapper-field-info'>
                                     <EducationItemCourses />
                                 </div>
                             </div>
                         </div>
-                        <div className="wrapperBtn">
+                        <div className='wrapperBtn'>
                             <Button
-                                className="btnUpdate"
-                                variant="contained"
-                                color="primary"
-                                type="submit"
+                                className='btnUpdate'
+                                variant='contained'
+                                color='primary'
+                                type='submit'
                             >
                                 Обновить
                             </Button>
