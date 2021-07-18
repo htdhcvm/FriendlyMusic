@@ -24,7 +24,7 @@ const VERY_SECRET_KEY = 'VERY_SECRET_KEY';
 const TIME_EXPIRE = 1000 * 60 * 60 * 24;
 
 export const createMockServer = async (environment = 'development') => {
-    const InitData = () => {
+    const InitData = async () => {
         return new Promise<void>((resolve) => {
             fetch(
                 `https://www.googleapis.com/youtube/v3/videos?key=${
