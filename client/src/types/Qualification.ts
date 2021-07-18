@@ -1,3 +1,3 @@
-type Qualification = 'бакалавкр' | 'магистр' | 'специалист';
+type Qualification = 'Бакалавкр' | 'Магистр' | 'Специалист';
 
 export default Qualification;
