@@ -1,4 +1,4 @@
-import { memo, ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 
 import { Typography } from '@material-ui/core';
 import ItemVacancy from '../ItemVacancy/ItemVacancy';
@@ -64,4 +64,4 @@ const ListVacancy = () => {
     );
 };
 
-export default memo(ListVacancy);
+export default ListVacancy;
