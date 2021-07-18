@@ -11,26 +11,28 @@ const ItemTextDescription = ({
     descriptionText,
 }: ItemTextDescriptionProp) => {
     return (
-        <div className="ItemTextDescription">
+        <div className='ItemTextDescription'>
             {typeof data === 'boolean' ? (
                 data ? (
                     <>
-                        <span className="description">{descriptionText}</span>
-                        <span className="text">Да</span>
+                        <span className='description'>{descriptionText}</span>
+                        <span className='text'>Да</span>
                     </>
                 ) : (
                     <>
-                        <span className="description">{descriptionText}</span>
-                        <span className="text">Нет</span>
+                        <span className='description'>{descriptionText}</span>
+                        <span className='text'>Нет</span>
                     </>
                 )
             ) : data && data.length > 0 ? (
                 <>
-                    <span className="description">{descriptionText}</span>
+                    <span className='description'>{descriptionText}</span>
                     {Array.isArray(data) ? (
-                        <Tag list={data} />
+                        data.map((item, index) => (
+                            <Tag id={index} name={item} />
+                        ))
                     ) : (
-                        <span className="text">{data}</span>
+                        <span className='text'>{data}</span>
                     )}
                 </>
             ) : null}
