@@ -75,7 +75,7 @@ const UserContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
                     </Typography>
                     <div className="list-photo">
                         {photos
-                            ? photos.map((photo, index) => (
+                            ? photos.map((photo: string, index) => (
                                   <img
                                       className="item-photo"
                                       alt={`own-${photo}`}
