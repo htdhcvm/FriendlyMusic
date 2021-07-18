@@ -1,0 +1,10 @@
+.DateFork {
+    .time-wrapper {
+        display: flex;
+        gap: 40px;
+        width: 100%;
+        .time {
+            flex: 1;
+        }
+    }
+}
