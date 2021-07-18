@@ -5,8 +5,21 @@ import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import HeaderVacancy from '../HeaderVacancy/HeaderVacancy';
 import BarVacancy from '../BarVacancy/BarVacancy';
 import TextVacancy from '../TextVacancy/TextVacancy';
+import { useAction } from '../../../hooks/useAction';
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
 
 const VacancyContent = () => {
+    const { getVacancyOnId, clearCurrentVacancyData } = useAction();
+    const { vacancyId } = useParams<{ vacancyId: string }>();
+
+    useEffect(() => {
+        getVacancyOnId(vacancyId);
+        return () => {
+            clearCurrentVacancyData();
+        };
+    }, []);
+
     const {
         title,
         experience,
