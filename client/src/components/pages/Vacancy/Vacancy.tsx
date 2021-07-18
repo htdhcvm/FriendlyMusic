@@ -1,17 +1,14 @@
 import { FunctionComponent } from 'react';
+
 import './Vacancy.scss';
 
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import { useAction } from '../../../hooks/useAction';
-import { useParams } from 'react-router';
 import UserStatus from '../../../types/UserStatus';
 import generatePageElements from '../../../factoryComponents/Builder/GeneratePage';
 
-import pageWithData from '../../hoc/pageWithData';
+import { memo } from 'react';
 
 const Vacancy = () => {
-    let { vacancyId } = useParams<{ vacancyId: string }>();
-
     const status: UserStatus = useTypedSelector((state) => state.user.status);
 
     const { Header, Content, LeftPanel } = generatePageElements(
@@ -19,22 +16,13 @@ const Vacancy = () => {
         status
     );
 
-    const { getVacancyOnId, clearCurrentVacancyData } = useAction();
-
-    const ContentWithData = pageWithData({
-        Component: Content,
-        loadData: getVacancyOnId,
-        clearDate: clearCurrentVacancyData,
-        id: vacancyId,
-    });
-
     return (
         <div className="Vacancy">
             {Header ? <Header /> : null}
             {LeftPanel ? <LeftPanel /> : null}
-            {ContentWithData ? <ContentWithData /> : null}
+            {Content ? <Content /> : null}
         </div>
     );
 };
 
-export default Vacancy;
+export default memo(Vacancy);
