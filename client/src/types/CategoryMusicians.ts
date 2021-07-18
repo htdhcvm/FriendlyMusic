@@ -56,4 +56,36 @@ type Category =
           description: '';
       };
 
+export type CategoryType =
+    | 'conductor'
+    | 'contrabass'
+    | 'drummer'
+    | 'electricGuitarBass'
+    | 'electricGuitarRitm'
+    | 'electricGuitarSolo'
+    | 'guitarClassic'
+    | 'musicTeacher'
+    | 'piano'
+    | 'singer'
+    | 'dj'
+    | 'violin'
+    | 'violinist'
+    | '';
+
+export type CategoryDescription =
+    | 'Дирижер'
+    | 'Контрабасист'
+    | 'Барабанщик'
+    | 'Басист'
+    | 'Ритм-гитарист'
+    | 'Соло-гитарист'
+    | 'Классический-гитарист'
+    | 'Учитель музыки'
+    | 'Пианист'
+    | 'Певец'
+    | 'Диджей'
+    | 'Скрипач'
+    | 'Виолончелист'
+    | '';
+
 export default Category;
