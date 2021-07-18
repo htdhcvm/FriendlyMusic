@@ -136,13 +136,17 @@ layout
 [x] Relocate from dto files types which are entity business
 
 [x] Page user
-[] Page group
+[x] Page group
 [] Create resume
 [] Create vacancy
+[] search
 [] Settings page
+[] handle errors
+[] split on page container and presentational component
 
-
+[] generic function class
+[] hoc for load data
 [] bring order in scss
 [] hoc which show loading after load component page show it, if component undefined show user error and send to server message: ${namePage} not loading something went wrong
-[] handle errors
+[] write tests
 
