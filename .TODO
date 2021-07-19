@@ -139,7 +139,7 @@ layout
 [x] Page group
 
 [x] Split on page container and presentational component
-[] alias
+[x] alias
 [] Create resume
 [] Create vacancy
 [] Search
