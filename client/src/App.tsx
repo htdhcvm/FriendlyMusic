@@ -3,8 +3,8 @@ import './App.scss';
 import { useTypedSelector } from './hooks/useTypedSelector';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import OnlyForOnTypeUser from './components/elements/OnlyForOnTypeUser/OnlyForOnTypeUser';
-import ProtectedPage from './components/elements/ProtectedPage/ProtectedPage';
+import OnlyForOnTypeUser from './components/route/OnlyForOnTypeUser/OnlyForOnTypeUser';
+import ProtectedPage from './components/route/ProtectedPage/ProtectedPage';
 import NotMatch from './components/pages/NotMatch/NotMatch';
 import About from './components/pages/About/About';
 import Preview from './components/pages/Preview/Preview';
@@ -35,59 +35,59 @@ const App = () => {
                 <OnlyForOnTypeUser
                     status={status}
                     isAuth={isAuth}
-                    path="/user/createGroup"
+                    path='/user/createGroup'
                 >
                     <CreateGroup />
                 </OnlyForOnTypeUser>
                 <OnlyForOnTypeUser
                     status={status}
                     isAuth={isAuth}
-                    path="/user/createResume"
+                    path='/user/createResume'
                 >
                     <CreateResume />
                 </OnlyForOnTypeUser>
                 <OnlyForOnTypeUser
                     status={status}
                     isAuth={isAuth}
-                    path="/group/createVacancy"
+                    path='/group/createVacancy'
                 >
                     <CreateVacancy />
                 </OnlyForOnTypeUser>
-                <ProtectedPage path="/settings/:tab?">
+                <ProtectedPage path='/settings/:tab?'>
                     <Settings />
                 </ProtectedPage>
-                <ProtectedPage path="/user/:idUser">
+                <ProtectedPage path='/user/:idUser'>
                     <User />
                 </ProtectedPage>
-                <ProtectedPage path="/resume/:resumeId" exact>
+                <ProtectedPage path='/resume/:resumeId' exact>
                     <Resume />
                 </ProtectedPage>
-                <Route path="/vacancy/:vacancyId" exact>
+                <Route path='/vacancy/:vacancyId' exact>
                     <Vacancy />
                 </Route>
                 <OnlyForOnTypeUser
                     status={status}
                     isAuth={isAuth}
-                    path="/signInSignUp"
+                    path='/signInSignUp'
                 >
                     <SignInSignUp />
                 </OnlyForOnTypeUser>
-                <Route path="/group/:idGroup">
+                <Route path='/group/:idGroup'>
                     <Group />
                 </Route>
-                <Route path="/search">
+                <Route path='/search'>
                     <Search />
                 </Route>
-                <Route path="/main">
+                <Route path='/main'>
                     <Main />
                 </Route>
-                <Route path="/about">
+                <Route path='/about'>
                     <About />
                 </Route>
-                <Route path="/" exact>
+                <Route path='/' exact>
                     <Preview />
                 </Route>
-                <Route path="*">
+                <Route path='*'>
                     <NotMatch />
                 </Route>
             </Switch>

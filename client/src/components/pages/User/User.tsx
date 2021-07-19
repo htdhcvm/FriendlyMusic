@@ -1,8 +1,8 @@
 import './User.scss';
 
-import AuthHeader from '../../elements/AuthHeader/AuthHeader';
-import LeftPanel from '../../elements/LeftPanel/LeftPanel';
-import UserContent from '../../elements/UserContent/UserContent';
+import AuthHeader from '../../container/AuthHeader/AuthHeader';
+import LeftPanel from '../../container/LeftPanel/LeftPanel';
+import UserContent from '../../container/UserContent/UserContent';
 
 import withToggleMenu from '../../hoc/withToggleMenu';
 import withUserData from '../../hoc/withUserData';
@@ -13,7 +13,7 @@ const User = () => {
     });
 
     return (
-        <div className="User">
+        <div className='User'>
             <AuthHeader />
             <LeftPanel />
             <Content />

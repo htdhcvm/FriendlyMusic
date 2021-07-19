@@ -7,27 +7,27 @@ import Button from '@material-ui/core/Button';
 import ClearIcon from '@material-ui/icons/Clear';
 import IconButton from '@material-ui/core/IconButton';
 
-import AuthHeader from '../../elements/AuthHeader/AuthHeader';
-import LeftPanel from '../../elements/LeftPanel/LeftPanel';
+import AuthHeader from '../../container/AuthHeader/AuthHeader';
+import LeftPanel from '../../container/LeftPanel/LeftPanel';
 import withToggleMenu from '../../hoc/withToggleMenu';
 import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
 
-import DateInput from '../../elements/DateInput/DateInput';
-import WrapperFieldAdd from '../../elements/WrapperFieldAdd/WrapperFieldAdd';
-import ListAddedElement from '../../elements/ListAddedElement/ListAddedElement';
-import Row from '../../elements/Row/Row';
+import DateInput from '../../presentational/DateInput/DateInput';
+import WrapperFieldAdd from '../../presentational/WrapperFieldAdd/WrapperFieldAdd';
+import ListAddedElement from '../../container/ListAddedElement/ListAddedElement';
+import Row from '../../presentational/Row/Row';
 import HalfRow from '../../presentational/HalfRow/HalfRow';
-import DateFork from '../../elements/DateFork/DateFork';
-import SalaryInput from '../../elements/SalaryInput/SalaryInput';
+import DateFork from '../../presentational/DateFork/DateFork';
+import SalaryInput from '../../presentational/SalaryInput/SalaryInput';
 
 import Field from '../../presentational/FieldText/FieldText';
 import FieldRadio from '../../presentational/FieldRadio/FieldRadio';
 import FieldSelect from '../../presentational/FieldSelect/FieldSelect';
 
-import ComponentWithAdd from '../../elements/ComponentWithAdd/ComponentWithAdd';
+import ComponentWithAdd from '../../presentational/ComponentWithAdd/ComponentWithAdd';
 import SocialInputs from '../../presentational/SocialInputs/SocialInputs';
-import LeftTextForField from '../../elements/LeftTextForField/LeftTextForField';
-import Tag from '../../elements/Tag/Tag';
+import LeftTextForField from '../../presentational/LeftTextForField/LeftTextForField';
+import Tag from '../../presentational/Tag/Tag';
 
 import categoryMusician from '../../../staticData/categoryMusician';
 import socials from '../../../staticData/socials';

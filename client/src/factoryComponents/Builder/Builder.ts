@@ -1,17 +1,17 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, MemoExoticComponent } from 'react';
 
-import Header from '../../components/elements/Header/Header';
-import AuthHeader from '../../components/elements/AuthHeader/AuthHeader';
-import LeftPanel from '../../components/elements/LeftPanel/LeftPanel';
-import MainContent from '../../components/elements/MainContent/MainContent';
-import VacancyContent from '../../components/elements/VacancyContent/VacancyContent';
-import AuthVacancyContent from '../../components/elements/AuthVacancyContent/AuthVacancyContent';
-import AuthMainContentUser from '../../components/elements/AuthMainContentUser/AuthMainContentUser';
-import AuthMainContentGroup from '../../components/elements/AuthMainContentGroup/AuthMainContentGroup';
-import GroupPageContent from '../../components/elements/GroupContentPage/GroupPageContent';
-import GroupPageContentAuth from '../../components/elements/GroupPageContentAuth/GroupPageContentAuth';
-import UserSettings from '../../components/elements/settings/UserSettings/UserSettings';
-import GroupSettings from '../../components/elements/settings/GroupSettings/GroupSettings';
+import Header from '../../components/container/Header/Header';
+import AuthHeader from '../../components/container/AuthHeader/AuthHeader';
+import LeftPanel from '../../components/container/LeftPanel/LeftPanel';
+import MainContent from '../../components/container/MainContent/MainContent';
+import VacancyContent from '../../components/container/VacancyContent/VacancyContent';
+import AuthVacancyContent from '../../components/container/AuthVacancyContent/AuthVacancyContent';
+import AuthMainContentUser from '../../components/container/AuthMainContentUser/AuthMainContentUser';
+import AuthMainContentGroup from '../../components/container/AuthMainContentGroup/AuthMainContentGroup';
+import GroupPageContent from '../../components/container/GroupContentPage/GroupPageContent';
+import GroupPageContentAuth from '../../components/container/GroupPageContentAuth/GroupPageContentAuth';
+import UserSettings from '../../components/container/UserSettings/UserSettings';
+import GroupSettings from '../../components/container/GroupSettings/GroupSettings';
 
 import withToggleMenu from '../../components/hoc/withToggleMenu';
 

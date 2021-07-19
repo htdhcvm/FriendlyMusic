@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import LeftTextForField from '../../elements/LeftTextForField/LeftTextForField';
+import LeftTextForField from '../LeftTextForField/LeftTextForField';
 import { FieldRadioProp } from '../../../types/component/Field';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';

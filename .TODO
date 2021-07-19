@@ -107,7 +107,7 @@ layout
 [] About
 [x] Preview
 [x] SignInSignUp
-[] User
+[x] User
 [x] Vacancy
 [x] Main
 [x] settings user
@@ -137,12 +137,14 @@ layout
 
 [x] Page user
 [x] Page group
+
+[] Split on page container and presentational component
+[] alias
 [] Create resume
 [] Create vacancy
-[] search
+[] Search
 [] Settings page
 [] handle errors
-[] split on page container and presentational component
 
 [] generic function class
 [] hoc for load data

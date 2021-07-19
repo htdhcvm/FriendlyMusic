@@ -1,0 +1,40 @@
+@import '../../../scss/default.scss';
+
+.SocialInputTag {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    .wrapper {
+        display: flex;
+        .type {
+            flex-grow: 1;
+        }
+        .link {
+            flex-grow: 1;
+        }
+    }
+
+    .listTags {
+        display: flex;
+        margin-left: 20px;
+        flex-wrap: wrap;
+        .tag {
+            background-color: $form-description-color;
+            border-radius: 20px;
+            font-size: 11px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            .text {
+                margin-right: 5px;
+            }
+            .MuiSvgIcon-root {
+                width: 0.7em;
+                height: 0.7em;
+                cursor: pointer;
+            }
+        }
+    }
+}

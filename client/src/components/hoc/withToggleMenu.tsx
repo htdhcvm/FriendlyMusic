@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 
-import AuthVacancyContent from '../../components/elements/AuthVacancyContent/AuthVacancyContent';
-import AuthMainContentUser from '../../components/elements/AuthMainContentUser/AuthMainContentUser';
-import AuthMainContentGroup from '../../components/elements/AuthMainContentGroup/AuthMainContentGroup';
+import AuthVacancyContent from '../container/AuthVacancyContent/AuthVacancyContent';
+import AuthMainContentUser from '../container/AuthMainContentUser/AuthMainContentUser';
+import AuthMainContentGroup from '../container/AuthMainContentGroup/AuthMainContentGroup';
 
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 

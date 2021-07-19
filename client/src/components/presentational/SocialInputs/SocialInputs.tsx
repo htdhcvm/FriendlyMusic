@@ -1,10 +1,10 @@
 import './SocialInputs.scss';
 import { ChangeEvent, ReactNode } from 'react';
-import AddBtnForSelect from '../../elements/AddBtnForSelect/AddBtnForSelect';
+import AddBtnForSelect from '../AddBtnForSelect/AddBtnForSelect';
 import FieldSelect from '../FieldSelect/FieldSelect';
 import { SocialSelect, Description, Type } from '../../../staticData/socials';
 import Field from '../FieldText/FieldText';
-import ListAddedElement from '../../elements/ListAddedElement/ListAddedElement';
+import ListAddedElement from '../../container/ListAddedElement/ListAddedElement';
 
 import { MenuItem } from '@material-ui/core';
 

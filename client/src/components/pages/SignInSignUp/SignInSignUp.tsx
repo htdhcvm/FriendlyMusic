@@ -5,27 +5,27 @@ import './SignInSignUp.scss';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import SignInForm from '../../elements/SignInForm/SignInForm';
-import SignUpForm from '../../elements/SignUpFrom/SignUpFrom';
+import SignInForm from '../../container/SignInForm/SignInForm';
+import SignUpForm from '../../container/SignUpFrom/SignUpFrom';
 
 const SignInSignUp = () => {
     const [rightPanel, setRightPanel] = useState(false);
 
     return (
-        <div className="SignInSignUp">
-            <div className="form-wrapper">
+        <div className='SignInSignUp'>
+            <div className='form-wrapper'>
                 {!rightPanel ? <SignInForm /> : null}
                 {rightPanel ? <SignUpForm /> : null}
             </div>
-            <div className="overlay-container">
+            <div className='overlay-container'>
                 {!rightPanel ? (
-                    <div className="sign-in">
-                        <Typography className="title" variant="h2" gutterBottom>
+                    <div className='sign-in'>
+                        <Typography className='title' variant='h2' gutterBottom>
                             Привет, музыкант
                         </Typography>
                         <Typography
-                            className="registration"
-                            variant="subtitle1"
+                            className='registration'
+                            variant='subtitle1'
                             gutterBottom
                         >
                             Рады видеть тебя снова на нашей площадке,
@@ -33,9 +33,9 @@ const SignInSignUp = () => {
                             работу с нами.
                         </Typography>
                         <Button
-                            className="btnSignUp"
-                            variant="contained"
-                            color="primary"
+                            className='btnSignUp'
+                            variant='contained'
+                            color='primary'
                             onClick={() => setRightPanel((prev) => !prev)}
                         >
                             Регистрация
@@ -43,13 +43,13 @@ const SignInSignUp = () => {
                     </div>
                 ) : null}
                 {rightPanel ? (
-                    <div className="sign-up">
-                        <Typography className="title" variant="h2" gutterBottom>
+                    <div className='sign-up'>
+                        <Typography className='title' variant='h2' gutterBottom>
                             Привет, музыкант
                         </Typography>
                         <Typography
-                            className="registration"
-                            variant="subtitle1"
+                            className='registration'
+                            variant='subtitle1'
                             gutterBottom
                         >
                             Добро пожаловать на площадку FriendlyMusic
@@ -57,9 +57,9 @@ const SignInSignUp = () => {
                             присоединяйся <br />и ищи работу с нами.
                         </Typography>
                         <Button
-                            className="btnSignIn"
-                            variant="contained"
-                            color="primary"
+                            className='btnSignIn'
+                            variant='contained'
+                            color='primary'
                             onClick={() => setRightPanel((prev) => !prev)}
                         >
                             Войти
