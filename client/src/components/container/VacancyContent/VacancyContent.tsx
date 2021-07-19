@@ -1,11 +1,12 @@
 import './VacancyContent.scss';
 
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
+import { useAction } from '@Hooks/useAction';
 
-import HeaderVacancy from '../../presentational/HeaderVacancy/HeaderVacancy';
-import BarVacancy from '../../presentational/BarVacancy/BarVacancy';
-import TextVacancy from '../TextVacancy/TextVacancy';
-import { useAction } from '../../../hooks/useAction';
+import HeaderVacancy from '@Presentational/HeaderVacancy/HeaderVacancy';
+import BarVacancy from '@Presentational/BarVacancy/BarVacancy';
+import TextVacancy from '@Container/TextVacancy/TextVacancy';
+
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 

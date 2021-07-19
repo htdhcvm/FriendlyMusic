@@ -1,7 +1,7 @@
 import './AuthMainContentGroup.scss';
 
-import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
-import ListResumes from '../ListResumes/ListResumes';
+import ComponentWithLeftMenu from '@Types/component/ComponentWithLeftMenu';
+import ListResumes from '@Container/ListResumes/ListResumes';
 
 const AuthMainContentGroup = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     return (

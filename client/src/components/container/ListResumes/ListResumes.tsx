@@ -1,10 +1,10 @@
 import { useEffect, ReactNode } from 'react';
 
 import './ListResumes.scss';
-import { useAction } from '../../../hooks/useAction';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useAction } from '@Hooks/useAction';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
 
-import ItemResume from '../../presentational/ItemResume/ItemResume';
+import ItemResume from '@Presentational/ItemResume/ItemResume';
 
 const ListResumes = () => {
     const { getListResumes } = useAction();

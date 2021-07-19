@@ -3,7 +3,7 @@ import { Button, TextField } from '@material-ui/core';
 
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import IconButton from '@material-ui/core/IconButton';
-import DateScope from '../../presentational/DateScope/DateScope';
+import DateScope from '@Presentational/DateScope/DateScope';
 
 import { v4 as uuidv4 } from 'uuid';
 

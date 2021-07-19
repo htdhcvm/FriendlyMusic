@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 
 import './CarouselContainer.scss';
 
-import ItemCountOnTypeMusician from '../../presentational/ItemCountOnTypeMusician/ItemCountOnTypeMusician';
-import { useAction } from '../../../hooks/useAction';
+import ItemCountOnTypeMusician from '@Presentational/ItemCountOnTypeMusician/ItemCountOnTypeMusician';
 
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import VacancyOnCategory from '../../../types/VacancyOnCategory';
+import { useAction } from '@Hooks/useAction';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
+import VacancyOnCategory from '@Types/VacancyOnCategory';
 
 const CarouselContainer = () => {
     const { getCountOnTypeVacancy } = useAction();

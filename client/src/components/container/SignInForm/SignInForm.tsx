@@ -1,12 +1,14 @@
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import { RootStateOrAny } from 'react-redux';
+
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { useAction } from '@Hooks/useAction';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
+
+import { FormControl, Select } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { useAction } from '../../../hooks/useAction';
-import { FormControl, Select } from '@material-ui/core';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import { RootStateOrAny } from 'react-redux';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
@@ -64,47 +66,47 @@ const SignInForm = () => {
 
     return (
         <div className={`form-container sign-in-container`}>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant='h4' gutterBottom>
                 Вход
             </Typography>
             <form onSubmit={handleSubmit(signInHandle)}>
-                <div className="form-field">
+                <div className='form-field'>
                     <TextField
                         {...register('login', {
                             required: true,
                         })}
                         {...(errors.login && { error: true })}
-                        label="Логин"
-                        variant="outlined"
-                        type="text"
+                        label='Логин'
+                        variant='outlined'
+                        type='text'
                         fullWidth={true}
                     />
                     {errors.login && (
-                        <Alert severity="error" className="error-alert">
+                        <Alert severity='error' className='error-alert'>
                             Необходимо заполнить поле логин
                         </Alert>
                     )}
                 </div>
 
-                <div className="form-field">
+                <div className='form-field'>
                     <TextField
                         {...register('password', {
                             required: true,
                         })}
                         {...(errors.password && { error: true })}
-                        label="Пароль"
-                        variant="outlined"
-                        type="password"
+                        label='Пароль'
+                        variant='outlined'
+                        type='password'
                         fullWidth={true}
                     />
                     {errors.password && (
-                        <Alert severity="error" className="error-alert">
+                        <Alert severity='error' className='error-alert'>
                             Необходимо заполнить поле пароль
                         </Alert>
                     )}
                 </div>
-                <div className="form-field">
-                    <FormControl variant="outlined" fullWidth={true}>
+                <div className='form-field'>
+                    <FormControl variant='outlined' fullWidth={true}>
                         <Select
                             native
                             value={selectType}
@@ -125,28 +127,28 @@ const SignInForm = () => {
                     </FormControl>
                 </div>
                 <Button
-                    className="btnSignIn"
-                    variant="contained"
-                    color="primary"
-                    type="submit"
+                    className='btnSignIn'
+                    variant='contained'
+                    color='primary'
+                    type='submit'
                 >
                     Войти
                 </Button>
             </form>
             {internalServerErrorLocal ? (
                 <Alert
-                    severity="error"
-                    className="error-message"
+                    severity='error'
+                    className='error-message'
                     action={
                         <IconButton
-                            aria-label="close"
-                            color="inherit"
-                            size="small"
+                            aria-label='close'
+                            color='inherit'
+                            size='small'
                             onClick={() => {
                                 setInternalServerErrorLocal(false);
                             }}
                         >
-                            <CloseIcon fontSize="inherit" />
+                            <CloseIcon fontSize='inherit' />
                         </IconButton>
                     }
                 >
@@ -157,18 +159,18 @@ const SignInForm = () => {
 
             {unauthorizedErrorLocal ? (
                 <Alert
-                    severity="error"
-                    className="error-message"
+                    severity='error'
+                    className='error-message'
                     action={
                         <IconButton
-                            aria-label="close"
-                            color="inherit"
-                            size="small"
+                            aria-label='close'
+                            color='inherit'
+                            size='small'
                             onClick={() => {
                                 setUnauthorizedErrorLocal(false);
                             }}
                         >
-                            <CloseIcon fontSize="inherit" />
+                            <CloseIcon fontSize='inherit' />
                         </IconButton>
                     }
                 >

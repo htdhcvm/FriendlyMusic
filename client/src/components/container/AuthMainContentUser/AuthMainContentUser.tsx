@@ -1,9 +1,9 @@
 import './AuthMainContentUser.scss';
 
-import CarouselContainer from '../CarouselContainer/CarouselContainer';
-import ListVacancy from '../../container/ListVacancy/ListVacancy';
+import CarouselContainer from '@Container/CarouselContainer/CarouselContainer';
+import ListVacancy from '@Container/ListVacancy/ListVacancy';
 
-import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
+import ComponentWithLeftMenu from '@Types/component/ComponentWithLeftMenu';
 
 const AuthMainContentUser = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     return (

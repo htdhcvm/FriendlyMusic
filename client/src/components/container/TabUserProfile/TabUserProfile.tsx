@@ -2,13 +2,13 @@ import React, { SyntheticEvent, ChangeEvent, useState } from 'react';
 
 import './TabUserProfile.scss';
 
-import SocialInputTag from '../SocialInputTag/SocialInputTag';
-import InputWithTags from '../../container/InputWithTags/InputWithTags';
-import BeforeWork from '../../container/BeforeWork/BeforeWork';
-import EducationItem from '../../presentational/EducationItem/EducationItem';
-import EducationItemCourses from '../../presentational/EducationItemCourses/EducationItemCourses';
+import SocialInputTag from '@Container/SocialInputTag/SocialInputTag';
+import InputWithTags from '@Container/InputWithTags/InputWithTags';
+import BeforeWork from '@Container/BeforeWork/BeforeWork';
+import EducationItem from '@Presentational/EducationItem/EducationItem';
+import EducationItemCourses from '@Presentational/EducationItemCourses/EducationItemCourses';
 
-import { languages } from '../../../staticData/listLanguage';
+import { languages } from '@StaticData/listLanguage';
 
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';

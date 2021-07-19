@@ -6,17 +6,17 @@ import { Typography } from '@material-ui/core';
 import LinkIcon from '@material-ui/icons/Link';
 import Skeleton from '@material-ui/lab/Skeleton';
 
-import { useAction } from '../../../hooks/useAction';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useAction } from '@Hooks/useAction';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
 
-import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
+import ComponentWithLeftMenu from '@Types/component/ComponentWithLeftMenu';
 
-import ItemTextDescription from '../../presentational/ItemTextDescription/ItemTextDescription';
-import ButtonsVacancy from '../../presentational/ButtonsVacancy/ButtonsVacancy';
-import ItemSocial from '../../presentational/ItemSocial/ItemSocial';
-import PrevWorkPlace from '../../presentational/PrevWorkPlace/PrevWorkPlace';
-import Courses from '../../presentational/Courses/Courses';
-import EducationList from '../EducationList/EducationList';
+import ItemTextDescription from '@Presentational/ItemTextDescription/ItemTextDescription';
+import ButtonsVacancy from '@Presentational/ButtonsVacancy/ButtonsVacancy';
+import ItemSocial from '@Presentational/ItemSocial/ItemSocial';
+import PrevWorkPlace from '@Presentational/PrevWorkPlace/PrevWorkPlace';
+import Courses from '@Presentational/Courses/Courses';
+import EducationList from '@Container/EducationList/EducationList';
 
 const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     let { resumeId } = useParams<{ resumeId: string }>();

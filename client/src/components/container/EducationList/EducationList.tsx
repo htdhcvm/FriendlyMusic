@@ -1,6 +1,7 @@
 import { Typography } from '@material-ui/core';
 import { memo } from 'react';
-import { Institution } from '../../../types/Resume';
+
+import { Institution } from '@Types/Resume';
 
 import './EducationList.scss';
 

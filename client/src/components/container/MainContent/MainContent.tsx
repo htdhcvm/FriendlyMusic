@@ -1,7 +1,7 @@
 import './MainContent.scss';
 
-import CarouselContainer from '../CarouselContainer/CarouselContainer';
-import ListVacancy from '../../container/ListVacancy/ListVacancy';
+import CarouselContainer from '@Container/CarouselContainer/CarouselContainer';
+import ListVacancy from '@Container/ListVacancy/ListVacancy';
 
 const MainContent = () => {
     return (

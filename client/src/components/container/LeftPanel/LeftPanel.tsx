@@ -6,9 +6,9 @@ import GroupIcon from '@material-ui/icons/Group';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-import ItemLeftPanel from '../../presentational/ItemLeftPanel/ItemLeftPanel';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import { useAction } from '../../../hooks/useAction';
+import ItemLeftPanel from '@Presentational/ItemLeftPanel/ItemLeftPanel';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
+import { useAction } from '@Hooks/useAction';
 import { Link } from 'react-router-dom';
 
 import WorkIcon from '@material-ui/icons/Work';

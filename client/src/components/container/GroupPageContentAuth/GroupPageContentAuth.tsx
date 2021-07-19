@@ -11,12 +11,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { Box, Typography } from '@material-ui/core';
 
-import { useAction } from '../../../hooks/useAction';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useAction } from '@Hooks/useAction';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
 
-import ItemTextDescription from '../../presentational/ItemTextDescription/ItemTextDescription';
-import ItemSocial from '../../presentational/ItemSocial/ItemSocial';
-import MapGoogle from '../../presentational/GoogleMap/GoogleMap';
+import ItemTextDescription from '@Presentational/ItemTextDescription/ItemTextDescription';
+import ItemSocial from '@Presentational/ItemSocial/ItemSocial';
+import MapGoogle from '@Presentational/GoogleMap/GoogleMap';
 
 const GroupPageContentAuth = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     const [value, setValue] = useState(0);

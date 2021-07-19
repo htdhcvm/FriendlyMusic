@@ -2,11 +2,12 @@ import './AuthVacancyContent.scss';
 
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
-import HeaderVacancy from '../../presentational/HeaderVacancy/HeaderVacancy';
-import BarVacancy from '../../presentational/BarVacancy/BarVacancy';
-import TextVacancy from '../TextVacancy/TextVacancy';
-import ButtonsVacancy from '../../presentational/ButtonsVacancy/ButtonsVacancy';
-import { useAction } from '../../../hooks/useAction';
+import HeaderVacancy from '@Presentational/HeaderVacancy/HeaderVacancy';
+import BarVacancy from '@Presentational/BarVacancy/BarVacancy';
+import ButtonsVacancy from '@Presentational/ButtonsVacancy/ButtonsVacancy';
+import TextVacancy from '@Container/TextVacancy/TextVacancy';
+import { useAction } from '@Hooks/useAction';
+
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 

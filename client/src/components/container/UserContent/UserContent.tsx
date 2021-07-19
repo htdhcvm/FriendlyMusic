@@ -2,18 +2,18 @@ import './UserContent.scss';
 
 import Typography from '@material-ui/core/Typography';
 
-import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
+import ComponentWithLeftMenu from '@Types/component/ComponentWithLeftMenu';
 
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
+import { useAction } from '@Hooks/useAction';
 
-import ItemTextDescription from '../../presentational/ItemTextDescription/ItemTextDescription';
-import ItemSocial from '../../presentational/ItemSocial/ItemSocial';
-import PrevWorkPlace from '../../presentational/PrevWorkPlace/PrevWorkPlace';
-import Courses from '../../presentational/Courses/Courses';
+import ItemTextDescription from '@Presentational/ItemTextDescription/ItemTextDescription';
+import ItemSocial from '@Presentational/ItemSocial/ItemSocial';
+import PrevWorkPlace from '@Presentational/PrevWorkPlace/PrevWorkPlace';
+import Courses from '@Presentational/Courses/Courses';
 
-import EducationList from '../EducationList/EducationList';
+import EducationList from '@Container/EducationList/EducationList';
 
-import { useAction } from '../../../hooks/useAction';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { memo } from 'react';

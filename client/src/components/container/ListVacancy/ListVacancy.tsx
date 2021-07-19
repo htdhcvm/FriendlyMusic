@@ -1,12 +1,12 @@
 import { ReactNode, useEffect } from 'react';
 
 import { Typography } from '@material-ui/core';
-import ItemVacancy from '../../presentational/ItemVacancy/ItemVacancy';
+import ItemVacancy from '@Presentational/ItemVacancy/ItemVacancy';
 
 import './ListVacancy.scss';
 
-import { useAction } from '../../../hooks/useAction';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useAction } from '@Hooks/useAction';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
 
 const ListVacancy = () => {
     const { getListVacancies } = useAction();

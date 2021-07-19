@@ -9,12 +9,12 @@ import Avatar from '@material-ui/core/Avatar';
 import './AuthHeader.scss';
 import { TextField } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-
-import { closeMenu, openMenu } from '../../../features/ui/action';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
+import { useAction } from '@Hooks/useAction';
 
 const Header = () => {
     const dispatch = useDispatch();
+    const { closeMenu, openMenu } = useAction();
     const [searchText, setSearchTest] = useState('');
 
     const login = useTypedSelector((state) => state.user.login);

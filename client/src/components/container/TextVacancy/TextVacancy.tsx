@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
-import MapGoogle from '../../presentational/GoogleMap/GoogleMap';
-import ItemContent from '../../presentational/ItemContent/ItemContent';
+import MapGoogle from '@Presentational/GoogleMap/GoogleMap';
+import ItemContent from '@Presentational/ItemContent/ItemContent';
 
 import './TextVacancy.scss';
 
