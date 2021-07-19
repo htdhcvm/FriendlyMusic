@@ -1,12 +1,12 @@
 import { FunctionComponent } from 'react';
 
-import AuthVacancyContent from '../container/AuthVacancyContent/AuthVacancyContent';
-import AuthMainContentUser from '../container/AuthMainContentUser/AuthMainContentUser';
-import AuthMainContentGroup from '../container/AuthMainContentGroup/AuthMainContentGroup';
-import ResumeContent from '../container/ResumeContent/ResumeContent';
-import UserContent from '../container/UserContent/UserContent';
+import AuthVacancyContent from '@Container/AuthVacancyContent/AuthVacancyContent';
+import AuthMainContentUser from '@Container/AuthMainContentUser/AuthMainContentUser';
+import AuthMainContentGroup from '@Container/AuthMainContentGroup/AuthMainContentGroup';
+import ResumeContent from '@Container/ResumeContent/ResumeContent';
+import UserContent from '@Container/UserContent/UserContent';
 
-import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
 
 interface Prop {
     Component:
