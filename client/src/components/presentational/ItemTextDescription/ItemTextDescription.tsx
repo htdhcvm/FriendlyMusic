@@ -43,4 +43,4 @@ const ItemTextDescription = ({
     );
 };
 
-export default memo(ItemTextDescription);
+export default ItemTextDescription;

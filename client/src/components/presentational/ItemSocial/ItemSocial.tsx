@@ -40,4 +40,4 @@ const ItemSocial = ({ data, descriptionText }: ItemSocialProp) => {
     );
 };
 
-export default memo(ItemSocial);
+export default ItemSocial;

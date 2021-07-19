@@ -42,38 +42,38 @@ const Header = () => {
                 toggle ? 'close-menu-resize-header' : ''
             }`}
         >
-            <div className="left">
+            <div className='left'>
                 <ZoomOutMapIcon
                     onClick={handleCloseLeftMenu}
-                    className="left-panel-toggle"
+                    className='left-panel-toggle'
                 />
-                <form className="formSearch" onSubmit={handleSearch}>
+                <form className='formSearch' onSubmit={handleSearch}>
                     <SearchIcon />
-                    <div className="form-field">
+                    <div className='form-field'>
                         <TextField
                             value={searchText}
                             onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                 setSearchTest(e.target.value)
                             }
-                            placeholder="Название вакансии"
+                            placeholder='Название вакансии'
                             InputProps={{ disableUnderline: true }}
-                            className="search-input"
-                            variant="standard"
+                            className='search-input'
+                            variant='standard'
                         />
                     </div>
                     {searchText.trim().length > 0 ? (
                         <ClearIcon
-                            className="clearText"
+                            className='clearText'
                             onClick={clearSearchText}
                         />
                     ) : null}
-                    <TuneIcon className="settingsSearch" />
+                    <TuneIcon className='settingsSearch' />
                 </form>
             </div>
 
-            <div className="right">
-                <span className="login">{login}</span>
-                <Avatar alt={login} src="/static/images/avatar/1.jpg" />
+            <div className='right'>
+                <span className='login'>{login}</span>
+                <Avatar alt={login} src='/static/images/avatar/1.jpg' />
             </div>
         </div>
     );

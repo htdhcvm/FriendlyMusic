@@ -1,20 +1,22 @@
 import './GroupPageContentAuth.scss';
 
+import { useState, useEffect, useRef, memo } from 'react';
+
 import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
+
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { useState } from 'react';
 import { Box, Typography } from '@material-ui/core';
+
+import { useAction } from '../../../hooks/useAction';
 import { useTypedSelector } from '../../../hooks/useTypedSelector';
+
 import ItemTextDescription from '../../presentational/ItemTextDescription/ItemTextDescription';
 import ItemSocial from '../../presentational/ItemSocial/ItemSocial';
 import MapGoogle from '../../presentational/GoogleMap/GoogleMap';
-import { Link } from 'react-router-dom';
-import { useAction } from '../../../hooks/useAction';
-import { useParams } from 'react-router';
-import { useEffect } from 'react';
-import { useRef } from 'react';
 
 const GroupPageContentAuth = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     const [value, setValue] = useState(0);
@@ -22,15 +24,13 @@ const GroupPageContentAuth = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
 
     const { getGroupOnId, clearGroupDate } = useAction();
 
-    const prev = useRef(toggleMenuClass);
-
     useEffect(() => {
         getGroupOnId(idGroup);
 
-        // return () => {
-        //     clearGroupDate();
-        // };
-    }, [idGroup, getGroupOnId]);
+        return () => {
+            clearGroupDate();
+        };
+    }, []);
 
     const {
         name,
@@ -123,7 +123,10 @@ const GroupPageContentAuth = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
                         </Typography>
                         <div className='list'>
                             {listParticipantsGroup.map((participant, index) => (
-                                <Link to={`/user/${participant.id}`}>
+                                <Link
+                                    to={`/user/${participant.id}`}
+                                    key={index}
+                                >
                                     <div
                                         className='item-participant'
                                         key={`participant-${participant}-${index}`}

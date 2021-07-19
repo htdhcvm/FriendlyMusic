@@ -4,6 +4,7 @@ import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import generatePageElements from '../../../factoryComponents/Builder/GeneratePage';
 
 import UserStatus from '../../../types/UserStatus';
+import { memo } from 'react';
 
 const Group = () => {
     const status: UserStatus = useTypedSelector((state) => state.user.status);
@@ -22,4 +23,4 @@ const Group = () => {
     );
 };
 
-export default Group;
+export default memo(Group);

@@ -1,4 +1,5 @@
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { memo } from 'react';
 import { useCallback } from 'react';
 
 interface MapGoogleProps {
