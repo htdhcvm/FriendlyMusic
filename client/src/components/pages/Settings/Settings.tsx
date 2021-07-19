@@ -1,9 +1,9 @@
 import './Settings.scss';
 
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import generatePageElements from '../../../factoryComponents/Builder/GeneratePage';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
+import generatePageElements from '@Factory/Builder/GeneratePage';
 
-import UserStatus from '../../../types/UserStatus';
+import UserStatus from '@Types/UserStatus';
 
 const Settings = () => {
     const status: UserStatus = useTypedSelector((state) => state.user.status);
@@ -14,7 +14,7 @@ const Settings = () => {
     );
 
     return (
-        <div className="Settings">
+        <div className='Settings'>
             {Header ? <Header /> : null}
             {LeftPanel ? <LeftPanel /> : null}
             {Content ? <Content /> : null}

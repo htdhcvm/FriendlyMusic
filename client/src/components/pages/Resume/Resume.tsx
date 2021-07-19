@@ -1,10 +1,10 @@
 import './Resume.scss';
 
-import AuthHeader from '../../container/AuthHeader/AuthHeader';
-import LeftPanel from '../../container/LeftPanel/LeftPanel';
-import ResumeContent from '../../container/ResumeContent/ResumeContent';
+import AuthHeader from '@Container/AuthHeader/AuthHeader';
+import LeftPanel from '@Container/LeftPanel/LeftPanel';
+import ResumeContent from '@Container/ResumeContent/ResumeContent';
+import withToggleMenu from '@Hoc/withToggleMenu';
 
-import withToggleMenu from '../../hoc/withToggleMenu';
 import { memo } from 'react';
 
 const Resume = () => {

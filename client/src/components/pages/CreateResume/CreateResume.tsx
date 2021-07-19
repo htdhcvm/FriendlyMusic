@@ -7,42 +7,41 @@ import Button from '@material-ui/core/Button';
 import ClearIcon from '@material-ui/icons/Clear';
 import IconButton from '@material-ui/core/IconButton';
 
-import AuthHeader from '../../container/AuthHeader/AuthHeader';
-import LeftPanel from '../../container/LeftPanel/LeftPanel';
-import withToggleMenu from '../../hoc/withToggleMenu';
-import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
+import AuthHeader from '@Container/AuthHeader/AuthHeader';
+import LeftPanel from '@Container/LeftPanel/LeftPanel';
+import ListAddedElement from '@Container/ListAddedElement/ListAddedElement';
 
-import DateInput from '../../presentational/DateInput/DateInput';
-import WrapperFieldAdd from '../../presentational/WrapperFieldAdd/WrapperFieldAdd';
-import ListAddedElement from '../../container/ListAddedElement/ListAddedElement';
-import Row from '../../presentational/Row/Row';
-import HalfRow from '../../presentational/HalfRow/HalfRow';
-import DateFork from '../../presentational/DateFork/DateFork';
-import SalaryInput from '../../presentational/SalaryInput/SalaryInput';
+import withToggleMenu from '@Hoc/withToggleMenu';
 
-import Field from '../../presentational/FieldText/FieldText';
-import FieldRadio from '../../presentational/FieldRadio/FieldRadio';
-import FieldSelect from '../../presentational/FieldSelect/FieldSelect';
+import DateInput from '@Presentational/DateInput/DateInput';
+import WrapperFieldAdd from '@Presentational/WrapperFieldAdd/WrapperFieldAdd';
+import Row from '@Presentational/Row/Row';
+import HalfRow from '@Presentational/HalfRow/HalfRow';
+import DateFork from '@Presentational/DateFork/DateFork';
+import SalaryInput from '@Presentational/SalaryInput/SalaryInput';
+import Field from '@Presentational/FieldText/FieldText';
+import FieldRadio from '@Presentational/FieldRadio/FieldRadio';
+import FieldSelect from '@Presentational/FieldSelect/FieldSelect';
+import ComponentWithAdd from '@Presentational/ComponentWithAdd/ComponentWithAdd';
+import SocialInputs from '@Presentational/SocialInputs/SocialInputs';
+import LeftTextForField from '@Presentational/LeftTextForField/LeftTextForField';
+import Tag from '@Presentational/Tag/Tag';
 
-import ComponentWithAdd from '../../presentational/ComponentWithAdd/ComponentWithAdd';
-import SocialInputs from '../../presentational/SocialInputs/SocialInputs';
-import LeftTextForField from '../../presentational/LeftTextForField/LeftTextForField';
-import Tag from '../../presentational/Tag/Tag';
+import categoryMusician from '@StaticData/categoryMusician';
+import socials from '@StaticData/socials';
+import expirenceResume from '@StaticData/expirenceResume';
+import qualifications from '@StaticData/qualifications';
+import { Description, Type } from '@StaticData/socials';
 
-import categoryMusician from '../../../staticData/categoryMusician';
-import socials from '../../../staticData/socials';
-import expirenceResume from '../../../staticData/expirenceResume';
-import qualifications from '../../../staticData/qualifications';
-import { Description, Type } from '../../../staticData/socials';
-
-import Qualification from '../../../types/Qualification';
+import Qualification from '@Types/Qualification';
+import ComponentWithLeftMenu from '@Types/component/ComponentWithLeftMenu';
 
 import {
     CategoryType,
     CategoryDescription,
-} from '../../../types/CategoryMusicians';
+} from '@Types/CategoryMusicians';
 
-import { languages } from '../../../staticData/listLanguage';
+import { languages } from '@StaticData/listLanguage';
 
 const CreateResume = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     const [currentQulifaction, setCurrentQulification] = useState(

@@ -1,9 +1,9 @@
 import './Group.scss';
 
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import generatePageElements from '../../../factoryComponents/Builder/GeneratePage';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
+import generatePageElements from '@Factory/Builder/GeneratePage';
+import UserStatus from '@Types/UserStatus';
 
-import UserStatus from '../../../types/UserStatus';
 import { memo } from 'react';
 
 const Group = () => {

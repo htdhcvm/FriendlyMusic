@@ -1,10 +1,10 @@
 import './User.scss';
 
-import AuthHeader from '../../container/AuthHeader/AuthHeader';
-import LeftPanel from '../../container/LeftPanel/LeftPanel';
-import UserContent from '../../container/UserContent/UserContent';
+import AuthHeader from '@Container/AuthHeader/AuthHeader';
+import LeftPanel from '@Container/LeftPanel/LeftPanel';
+import UserContent from '@Container/UserContent/UserContent';
 
-import withToggleMenu from '../../hoc/withToggleMenu';
+import withToggleMenu from '@Hoc/withToggleMenu';
 import { memo } from 'react';
 
 const User = () => {

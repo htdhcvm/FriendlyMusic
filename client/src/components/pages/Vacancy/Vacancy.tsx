@@ -2,9 +2,9 @@ import { FunctionComponent } from 'react';
 
 import './Vacancy.scss';
 
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import UserStatus from '../../../types/UserStatus';
-import generatePageElements from '../../../factoryComponents/Builder/GeneratePage';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
+import UserStatus from '@Types/UserStatus';
+import generatePageElements from '@Factory/Builder/GeneratePage';
 
 import { memo } from 'react';
 
@@ -17,7 +17,7 @@ const Vacancy = () => {
     );
 
     return (
-        <div className="Vacancy">
+        <div className='Vacancy'>
             {Header ? <Header /> : null}
             {LeftPanel ? <LeftPanel /> : null}
             {Content ? <Content /> : null}

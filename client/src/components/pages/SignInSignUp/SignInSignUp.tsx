@@ -5,8 +5,8 @@ import './SignInSignUp.scss';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import SignInForm from '../../container/SignInForm/SignInForm';
-import SignUpForm from '../../container/SignUpFrom/SignUpFrom';
+import SignInForm from '@Container/SignInForm/SignInForm';
+import SignUpForm from '@Container/SignUpFrom/SignUpFrom';
 
 const SignInSignUp = () => {
     const [rightPanel, setRightPanel] = useState(false);
