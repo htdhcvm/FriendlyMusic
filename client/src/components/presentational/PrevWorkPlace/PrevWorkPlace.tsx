@@ -1,6 +1,6 @@
 import { Typography } from '@material-ui/core';
 import { memo } from 'react';
-import { Work } from '../../../types/User';
+import { Work } from '@Types/User';
 
 import './PrevWorkPlace.scss';
 

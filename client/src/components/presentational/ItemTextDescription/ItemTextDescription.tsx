@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import Tag from '../../presentational/Tag/Tag';
+import Tag from '@Presentational/Tag/Tag';
 
 import './ItemTextDescription.scss';
 

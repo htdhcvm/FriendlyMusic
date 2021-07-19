@@ -1,6 +1,6 @@
 import { Typography } from '@material-ui/core';
 import { memo } from 'react';
-import { Course } from '../../../types/Resume';
+import { Course } from '@Types/Resume';
 
 import './Courses.scss';
 

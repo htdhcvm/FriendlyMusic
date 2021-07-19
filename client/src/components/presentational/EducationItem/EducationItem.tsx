@@ -8,7 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import IconButton from '@material-ui/core/IconButton';
 
-import DateScope from '../DateScope/DateScope';
+import DateScope from '@Presentational/DateScope/DateScope';
 
 import './EducationItem.scss';
 

@@ -2,8 +2,8 @@ import './FieldText.scss';
 import { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
-import { FieldTextProp } from '../../../types/component/Field';
-import LeftTextForField from '../LeftTextForField/LeftTextForField';
+import { FieldTextProp } from '@Types/component/Field';
+import LeftTextForField from '@Presentational/LeftTextForField/LeftTextForField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 

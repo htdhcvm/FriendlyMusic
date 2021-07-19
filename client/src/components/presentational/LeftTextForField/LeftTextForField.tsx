@@ -1,6 +1,6 @@
 import './LeftTextForField.scss';
 
-import { FieldTextProp } from '../../../types/component/Field';
+import { FieldTextProp } from '@Types/component/Field';
 
 function LeftTextForField<T>({ title, description }: FieldTextProp<T>) {
     return (

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './BarVacancy.scss';
 
-import Social from '../../../types/Social';
+import Social from '@Types/Social';
 
 interface Props {
     idGroup: string;
@@ -12,24 +12,24 @@ interface Props {
 
 const BarVacancy = ({ idGroup, groupName, socialLinks }: Props) => {
     return (
-        <div className="BarVacancy">
-            <div className="wrapper">
-                <div className="links">
-                    <Link to="/main">Главная</Link>
+        <div className='BarVacancy'>
+            <div className='wrapper'>
+                <div className='links'>
+                    <Link to='/main'>Главная</Link>
                     <span>{'>'}</span>
                     <Link to={`/group/${idGroup}`}>{groupName}</Link>
                 </div>
-                <div className="social">
+                <div className='social'>
                     {socialLinks
                         ? socialLinks.map((social) => (
                               <a
-                                  className="itemSocial"
+                                  className='itemSocial'
                                   key={social.name}
                                   href={social.link}
-                                  target="_blank"
+                                  target='_blank'
                               >
                                   <img
-                                      className="social-image"
+                                      className='social-image'
                                       src={social.image}
                                       alt={`social item ${social.name}`}
                                   />

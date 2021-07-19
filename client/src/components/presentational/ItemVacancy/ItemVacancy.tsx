@@ -7,15 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { Link } from 'react-router-dom';
 
-import VacancyItemList from '../../../types/VacancyItemList';
-// interface Prop {
-//     id: string;
-//     imageGroup?: string;
-//     title: string;
-//     groupName: string;
-//     price: number;
-//     data?: string;
-// }
+import VacancyItemList from '@Types/VacancyItemList';
 
 const ItemVacancy: FunctionComponent<VacancyItemList> = ({
     id,
@@ -26,31 +18,31 @@ const ItemVacancy: FunctionComponent<VacancyItemList> = ({
     price,
 }) => {
     return (
-        <Box className="ItemVacancy">
+        <Box className='ItemVacancy'>
             <Link to={`/vacancy/${id}`}>
                 {image ? (
-                    <img src={image} alt="vacancy group" />
+                    <img src={image} alt='vacancy group' />
                 ) : (
-                    <Skeleton variant="rect" width={'100%'} height={190} />
+                    <Skeleton variant='rect' width={'100%'} height={190} />
                 )}
 
-                <div className="title">
-                    <Typography gutterBottom variant="body2">
+                <div className='title'>
+                    <Typography gutterBottom variant='body2'>
                         {title}
                     </Typography>
-                    <Typography gutterBottom variant="body2">
+                    <Typography gutterBottom variant='body2'>
                         {price}
                     </Typography>
                 </div>
                 <Typography
-                    display="block"
-                    variant="caption"
-                    color="textSecondary"
+                    display='block'
+                    variant='caption'
+                    color='textSecondary'
                 >
                     {groupName}
                 </Typography>
                 {date ? (
-                    <Typography variant="caption" color="textSecondary">
+                    <Typography variant='caption' color='textSecondary'>
                         {date}
                     </Typography>
                 ) : null}

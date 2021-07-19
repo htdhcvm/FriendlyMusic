@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import Social from '../../../types/Social';
+import Social from '@Types/Social';
 import './ItemSocial.scss';
 
 interface ItemSocialProp {
