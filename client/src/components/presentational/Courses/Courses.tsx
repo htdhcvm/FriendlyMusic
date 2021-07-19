@@ -1,4 +1,5 @@
 import { Typography } from '@material-ui/core';
+import { memo } from 'react';
 import { Course } from '../../../types/Resume';
 
 import './Courses.scss';
@@ -9,19 +10,19 @@ interface CoursesProp {
 
 const Courses = ({ courses }: CoursesProp) => {
     return (
-        <div className="Courses item-resume">
-            <Typography variant="h4" className="sub-title">
+        <div className='Courses item-resume'>
+            <Typography variant='h4' className='sub-title'>
                 Курсы
             </Typography>
-            <div className="list">
+            <div className='list'>
                 {courses
                     ? courses.map((course) => (
-                          <div className="item" key={course.name}>
-                              <span className="time">
+                          <div className='item' key={course.name}>
+                              <span className='time'>
                                   {course.timeEducation.start.substr(0, 4)}-
                                   {course.timeEducation.end.substr(0, 4)}
                               </span>
-                              <span className="name">{course.name}</span>
+                              <span className='name'>{course.name}</span>
 
                               <span>{course.nameSchool}</span>
                           </div>
@@ -32,4 +33,4 @@ const Courses = ({ courses }: CoursesProp) => {
     );
 };
 
-export default Courses;
+export default memo(Courses);

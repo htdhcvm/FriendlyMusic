@@ -5,12 +5,10 @@ import LeftPanel from '../../container/LeftPanel/LeftPanel';
 import UserContent from '../../container/UserContent/UserContent';
 
 import withToggleMenu from '../../hoc/withToggleMenu';
-import withUserData from '../../hoc/withUserData';
+import { memo } from 'react';
 
 const User = () => {
-    const Content = withUserData({
-        Component: withToggleMenu({ Component: UserContent }),
-    });
+    const Content = withToggleMenu({ Component: UserContent });
 
     return (
         <div className='User'>
@@ -21,4 +19,4 @@ const User = () => {
     );
 };
 
-export default User;
+export default memo(User);

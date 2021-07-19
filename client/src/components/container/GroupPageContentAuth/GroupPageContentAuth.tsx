@@ -30,7 +30,7 @@ const GroupPageContentAuth = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
         // return () => {
         //     clearGroupDate();
         // };
-    }, [getGroupOnId, clearGroupDate]);
+    }, [idGroup, getGroupOnId]);
 
     const {
         name,

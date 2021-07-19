@@ -1,19 +1,36 @@
 import './ResumeContent.scss';
+import { useParams, Link } from 'react-router-dom';
+import { memo, useEffect } from 'react';
+
+import { Typography } from '@material-ui/core';
+import LinkIcon from '@material-ui/icons/Link';
+import Skeleton from '@material-ui/lab/Skeleton';
+
+import { useAction } from '../../../hooks/useAction';
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
 
 import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
-import { Typography } from '@material-ui/core';
-import ButtonsVacancy from '../../presentational/ButtonsVacancy/ButtonsVacancy';
-import LinkIcon from '@material-ui/icons/Link';
-import { Link } from 'react-router-dom';
-import Skeleton from '@material-ui/lab/Skeleton';
+
 import ItemTextDescription from '../../presentational/ItemTextDescription/ItemTextDescription';
+import ButtonsVacancy from '../../presentational/ButtonsVacancy/ButtonsVacancy';
 import ItemSocial from '../../presentational/ItemSocial/ItemSocial';
 import PrevWorkPlace from '../../presentational/PrevWorkPlace/PrevWorkPlace';
-import EducationList from '../EducationList/EducationList';
 import Courses from '../../presentational/Courses/Courses';
+import EducationList from '../EducationList/EducationList';
 
 const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
+    let { resumeId } = useParams<{ resumeId: string }>();
+
+    const { getResumeOnId, clearResumeData } = useAction();
+
+    useEffect(() => {
+        getResumeOnId(resumeId);
+
+        return () => {
+            clearResumeData();
+        };
+    }, []);
+
     const {
         idUser,
         fio,
@@ -40,7 +57,6 @@ const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
         avatar,
     } = useTypedSelector((state) => state.resumes.currentResume);
 
-    console.log();
     return (
         <div className={`MainContent ResumeContent ${toggleMenuClass}`}>
             <div className='photo'>
@@ -177,4 +193,4 @@ const ResumeContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     );
 };
 
-export default ResumeContent;
+export default memo(ResumeContent);

@@ -29,9 +29,11 @@ const ItemTextDescription = ({
                 <>
                     <span className='description'>{descriptionText}</span>
                     {Array.isArray(data) ? (
-                        data.map((item, index) => (
-                            <Tag id={index} name={item} />
-                        ))
+                        <div className='list-tags'>
+                            {data.map((item, index) => (
+                                <Tag id={index} name={item} />
+                            ))}
+                        </div>
                     ) : (
                         <span className='text'>{data}</span>
                     )}

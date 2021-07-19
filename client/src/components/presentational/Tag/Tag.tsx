@@ -11,12 +11,14 @@ function Tag<T, Q>({ id, name, handleDeleteElement }: Prop<T, Q>) {
     return (
         <div className='tag'>
             <span className='text'>{name}</span>{' '}
-            <HighlightOffIcon
-                onClick={() => {
-                    if (handleDeleteElement) handleDeleteElement(id);
-                }}
-                className='icon-delete'
-            />
+            {handleDeleteElement ? (
+                <HighlightOffIcon
+                    onClick={() => {
+                        handleDeleteElement(id);
+                    }}
+                    className='icon-delete'
+                />
+            ) : null}
         </div>
     );
 }

@@ -24,7 +24,7 @@ const OnlyForOnTypeUser = ({ children, ...rest }: any) => {
                   status === 'group' ? (
                     children
                 ) : (
-                    <Redirect to="/main" />
+                    <Redirect to='/main' />
                 )
             }
         />

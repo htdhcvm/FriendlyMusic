@@ -5,12 +5,11 @@ import LeftPanel from '../../container/LeftPanel/LeftPanel';
 import ResumeContent from '../../container/ResumeContent/ResumeContent';
 
 import withToggleMenu from '../../hoc/withToggleMenu';
-import withResumeData from '../../hoc/withResumeData';
+import { memo } from 'react';
 
 const Resume = () => {
-    const Content = withResumeData({
-        Component: withToggleMenu({ Component: ResumeContent }),
-    });
+    const Content = withToggleMenu({ Component: ResumeContent });
+
     return (
         <div className='Resume'>
             <AuthHeader />
@@ -20,4 +19,4 @@ const Resume = () => {
     );
 };
 
-export default Resume;
+export default memo(Resume);

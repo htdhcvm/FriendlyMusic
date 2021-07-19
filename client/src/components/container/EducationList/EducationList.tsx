@@ -1,4 +1,5 @@
 import { Typography } from '@material-ui/core';
+import { memo } from 'react';
 import { Institution } from '../../../types/Resume';
 
 import './EducationList.scss';
@@ -9,19 +10,19 @@ interface EducationListProp {
 
 const EducationList = ({ educations }: EducationListProp) => {
     return (
-        <div className="EducationList item-resume">
-            <Typography variant="h4" className="sub-title">
+        <div className='EducationList item-resume'>
+            <Typography variant='h4' className='sub-title'>
                 Образование
             </Typography>
-            <div className="list">
+            <div className='list'>
                 {educations
                     ? educations.map((education) => (
-                          <div className="item" key={education.name}>
-                              <span className="time">
+                          <div className='item' key={education.name}>
+                              <span className='time'>
                                   {education.timeEducation.start.substr(0, 4)}-
                                   {education.timeEducation.end.substr(0, 4)}
                               </span>
-                              <span className="name">
+                              <span className='name'>
                                   {education.nameFaculty}
                               </span>
 
@@ -34,4 +35,4 @@ const EducationList = ({ educations }: EducationListProp) => {
     );
 };
 
-export default EducationList;
+export default memo(EducationList);

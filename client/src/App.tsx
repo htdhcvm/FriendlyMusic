@@ -56,7 +56,7 @@ const App = () => {
                 <ProtectedPage path='/settings/:tab?'>
                     <Settings />
                 </ProtectedPage>
-                <ProtectedPage path='/user/:idUser'>
+                <ProtectedPage path='/user/:idUser' exact>
                     <User />
                 </ProtectedPage>
                 <ProtectedPage path='/resume/:resumeId' exact>

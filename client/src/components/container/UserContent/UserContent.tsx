@@ -1,15 +1,36 @@
 import './UserContent.scss';
 
-import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
 import Typography from '@material-ui/core/Typography';
+
+import ComponentWithLeftMenu from '../../../types/component/ComponentWithLeftMenu';
+
+import { useTypedSelector } from '../../../hooks/useTypedSelector';
+
 import ItemTextDescription from '../../presentational/ItemTextDescription/ItemTextDescription';
 import ItemSocial from '../../presentational/ItemSocial/ItemSocial';
 import PrevWorkPlace from '../../presentational/PrevWorkPlace/PrevWorkPlace';
-import EducationList from '../EducationList/EducationList';
 import Courses from '../../presentational/Courses/Courses';
 
+import EducationList from '../EducationList/EducationList';
+
+import { useAction } from '../../../hooks/useAction';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { memo } from 'react';
+
 const UserContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
+    let { idUser } = useParams<{ idUser: string }>();
+
+    const { getCurrentUser, clearUserData } = useAction();
+
+    useEffect(() => {
+        getCurrentUser(idUser);
+
+        return () => {
+            clearUserData();
+        };
+    }, []);
+
     const {
         login,
         fio,
@@ -36,7 +57,7 @@ const UserContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     } = useTypedSelector((state) => state.user.currentUser);
 
     return (
-        <div className={`UserContent ${toggleMenuClass}`}>
+        <div className={`UserContent`}>
             <img src={avatar} alt='user avatar' className='avatar' />
             <div className='content'>
                 <Typography variant='h2' className='fio'>
@@ -164,4 +185,4 @@ const UserContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     );
 };
 
-export default UserContent;
+export default memo(UserContent);
