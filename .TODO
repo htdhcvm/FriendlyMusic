@@ -138,7 +138,7 @@ layout
 [x] Page user
 [x] Page group
 
-[] Split on page container and presentational component
+[x] Split on page container and presentational component
 [] alias
 [] Create resume
 [] Create vacancy
