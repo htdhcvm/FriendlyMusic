@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router';
-import { useTypedSelector } from '../../../hooks/useTypedSelector';
+import { useTypedSelector } from '@Hooks/useTypedSelector';
 
 const ProtectedPage = ({ children, ...rest }: any) => {
     const { isAuth } = useTypedSelector((state) => state.user);
@@ -7,7 +7,7 @@ const ProtectedPage = ({ children, ...rest }: any) => {
     return (
         <Route
             {...rest}
-            render={() => (isAuth ? children : <Redirect to="/main" />)}
+            render={() => (isAuth ? children : <Redirect to='/main' />)}
         />
     );
 };
