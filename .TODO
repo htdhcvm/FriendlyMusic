@@ -142,13 +142,22 @@ layout
 [x] alias
 [x] Create resume
 [x] Create vacancy
+[] Settings page User
+[] Settings page Group
+[] Create group
+
+
+action 
+    [] create resume
+    [] create vacancy
+    [] create group 
+
 [] Search
-[] Settings page
 [] handle errors
 
 [] generic function class
-[] hoc for load data
 [] bring order in scss
+[] hoc for load data
 [] hoc which show loading after load component page show it, if component undefined show user error and send to server message: ${namePage} not loading something went wrong
 [] write tests
 
