@@ -140,8 +140,8 @@ layout
 
 [x] Split on page container and presentational component
 [x] alias
-[] Create resume
-[] Create vacancy
+[x] Create resume
+[x] Create vacancy
 [] Search
 [] Settings page
 [] handle errors
