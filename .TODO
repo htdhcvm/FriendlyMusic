@@ -155,7 +155,7 @@ action
 [] Search
 [] handle errors
 
-[] generic function class
+[x] generic function class
 [] bring order in scss
 [] hoc for load data
 [] hoc which show loading after load component page show it, if component undefined show user error and send to server message: ${namePage} not loading something went wrong
