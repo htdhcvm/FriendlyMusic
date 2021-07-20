@@ -1,0 +1,178 @@
+@import '../../../scss/FieldTextStyle.scss';
+@import '../../../scss/Description.scss';
+
+.close-menu-resize-main {
+    padding-left: 20px !important;
+}
+
+.CreateResumeContent {
+    .MainContent {
+        margin-top: 40px;
+        padding-left: 220px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 40px;
+        .save-published {
+            margin-left: auto;
+            margin-top: 40px;
+        }
+        .title {
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            gap: 40px;
+
+            .image {
+                position: relative;
+
+                .input-file {
+                    position: absolute;
+                    width: 100%;
+                    height: 350px;
+                    display: block;
+                    opacity: 0;
+                    z-index: 1;
+                    cursor: pointer;
+                }
+                .wrapper-react {
+                    width: 280px;
+                    height: 350px;
+
+                    rect {
+                        stroke-width: 3px;
+                        fill: transparent;
+                        stroke: black;
+                        stroke-dasharray: 12;
+                        width: 100%;
+                        height: 350px;
+                    }
+                }
+
+                .inner {
+                    position: absolute;
+                    margin-left: auto;
+                    margin-right: auto;
+                    left: 0;
+                    right: 0;
+                    top: 100px;
+                    text-align: center;
+
+                    img {
+                        width: 100px;
+                    }
+                }
+            }
+
+            .info {
+                flex: 1;
+
+                .item-content {
+                    margin-bottom: 40px;
+                }
+
+                .about-yourself {
+                    .description {
+                        @include Description;
+                    }
+                    .text {
+                        padding: 10px;
+                        margin-top: 20px;
+                        width: 100%;
+                        height: 300px;
+                        resize: none;
+                    }
+                }
+                .skills {
+                    flex: 1;
+                    .description {
+                        @include Description;
+                    }
+                }
+                .quality {
+                    flex: 1;
+                    .description {
+                        @include Description;
+                    }
+                }
+
+                .education {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: baseline;
+                    .list {
+                        width: 100%;
+                        margin-bottom: 20px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .education-list-added {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 40px;
+                    }
+                    .button-add {
+                        margin-left: auto;
+                    }
+                    .devider {
+                        width: 100%;
+                        height: 1px;
+                        background-color: rgb(233, 233, 233);
+                        margin: 20px 0px;
+                        border-radius: 4px;
+                    }
+
+                    .item-eduaction {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 40px;
+                        flex: 1;
+                        .main-text {
+                            flex: 1;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+
+                    .education-select {
+                        margin-bottom: 10px;
+                    }
+                }
+                .courses {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: baseline;
+                    .list {
+                        width: 100%;
+                        margin-bottom: 20px;
+                    }
+                    .button-add {
+                        margin-left: auto;
+                    }
+                    .devider {
+                        width: 100%;
+                        height: 1px;
+                        background-color: rgb(233, 233, 233);
+                        margin: 20px 0px;
+                        border-radius: 4px;
+                    }
+                    .list-added-courses {
+                        flex-direction: column;
+                        .item-course {
+                            display: flex;
+                            justify-content: space-between;
+                            gap: 40px;
+                            flex: 1;
+                            .main-text {
+                                flex: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

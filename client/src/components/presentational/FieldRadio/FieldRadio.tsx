@@ -12,7 +12,9 @@ const FieldRadio = ({ title, description }: FieldRadioProp) => {
 
     return (
         <div className='FieldRadio'>
-            <LeftTextForField title={title} description={description} />
+            {title ? (
+                <LeftTextForField title={title} description={description} />
+            ) : null}
             <RadioGroup
                 className='RadioGroup'
                 value={value}

@@ -1,0 +1,5 @@
+@import '../../../scss/headerMenu.scss';
+
+.CreateVacancy {
+    @include header-menu;
+}

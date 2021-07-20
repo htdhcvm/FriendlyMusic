@@ -10,11 +10,11 @@ import './AuthHeader.scss';
 import { TextField } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '@Hooks/useTypedSelector';
-import { useAction } from '@Hooks/useAction';
+
+import { openMenu, closeMenu } from '../../../features/ui/action';
 
 const Header = () => {
     const dispatch = useDispatch();
-    const { closeMenu, openMenu } = useAction();
     const [searchText, setSearchTest] = useState('');
 
     const login = useTypedSelector((state) => state.user.login);
@@ -38,7 +38,7 @@ const Header = () => {
 
     return (
         <div
-            className={`header-main auth-header ${
+            className={`header header-main auth-header ${
                 toggle ? 'close-menu-resize-header' : ''
             }`}
         >

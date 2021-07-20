@@ -1,4 +1,4 @@
-const expirenceResume = [
+const experience = [
     'Нет опыта',
     'Пол года',
     'Год',
@@ -6,4 +6,4 @@ const expirenceResume = [
     'От 3 до 6 лет',
 ];
 
-export default expirenceResume;
+export default experience;

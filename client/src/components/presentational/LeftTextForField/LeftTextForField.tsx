@@ -1,12 +1,16 @@
 import './LeftTextForField.scss';
 
-import { FieldTextProp } from '@Types/component/Field';
+import { ILeftTextForField } from '@Types/component/Field';
 
-function LeftTextForField<T>({ title, description }: FieldTextProp<T>) {
+function LeftTextForField<T>({
+    title,
+    description,
+    className,
+}: ILeftTextForField<T>) {
     return (
         <>
             {title ? (
-                <div className='LeftTextForField'>
+                <div className={`LeftTextForField ${className}`}>
                     <span className='title'>{title}</span>
                     <br />
                     {description ? (

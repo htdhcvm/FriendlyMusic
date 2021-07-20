@@ -1,19 +1,19 @@
 import { FunctionComponent, MemoExoticComponent } from 'react';
 
-import Header from '../../components/container/Header/Header';
-import AuthHeader from '../../components/container/AuthHeader/AuthHeader';
-import LeftPanel from '../../components/container/LeftPanel/LeftPanel';
-import MainContent from '../../components/container/MainContent/MainContent';
-import VacancyContent from '../../components/container/VacancyContent/VacancyContent';
-import AuthVacancyContent from '../../components/container/AuthVacancyContent/AuthVacancyContent';
-import AuthMainContentUser from '../../components/container/AuthMainContentUser/AuthMainContentUser';
-import AuthMainContentGroup from '../../components/container/AuthMainContentGroup/AuthMainContentGroup';
-import GroupPageContent from '../../components/container/GroupContentPage/GroupPageContent';
-import GroupPageContentAuth from '../../components/container/GroupPageContentAuth/GroupPageContentAuth';
-import UserSettings from '../../components/container/UserSettings/UserSettings';
-import GroupSettings from '../../components/container/GroupSettings/GroupSettings';
+import Header from '@Container/Header/Header';
+import AuthHeader from '@Container/AuthHeader/AuthHeader';
+import LeftPanel from '@Container/LeftPanel/LeftPanel';
+import MainContent from '@Container/MainContent/MainContent';
+import VacancyContent from '@Container/VacancyContent/VacancyContent';
+import AuthVacancyContent from '@Container/AuthVacancyContent/AuthVacancyContent';
+import AuthMainContentUser from '@Container/AuthMainContentUser/AuthMainContentUser';
+import AuthMainContentGroup from '@Container/AuthMainContentGroup/AuthMainContentGroup';
+import GroupPageContent from '@Container/GroupContentPage/GroupPageContent';
+import GroupPageContentAuth from '@Container/GroupPageContentAuth/GroupPageContentAuth';
+import UserSettings from '@Container/UserSettings/UserSettings';
+import GroupSettings from '@Container/GroupSettings/GroupSettings';
 
-import withToggleMenu from '../../components/hoc/withToggleMenu';
+import withToggleMenu from '@Hoc/withToggleMenu';
 
 import { Page, MainPage, SettingsPage, VacancyPage, GroupPage } from './Page';
 

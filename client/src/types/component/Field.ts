@@ -12,6 +12,13 @@ export interface FieldTextProp<T> extends Field {
     handleOnChange?: (value: ChangeEvent<HTMLInputElement>) => void;
     handleClearValue?: () => void;
     type?: string;
+    classNameLeftText?: string;
+}
+
+export interface ILeftTextForField<T> {
+    title: string;
+    description?: string;
+    className?: string;
 }
 
 export interface FieldSelectProp extends Field {

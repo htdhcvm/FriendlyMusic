@@ -28,6 +28,7 @@ function FieldText<T>({
     handleOnChange,
     handleClearValue,
     type,
+    classNameLeftText,
 }: FieldTextProp<T>) {
     const [deleteIcon, setDeleteIcon] = useState(false);
     useEffect(() => {
@@ -39,7 +40,13 @@ function FieldText<T>({
 
     return (
         <div className='FieldText'>
-            <LeftTextForField title={title} description={description} />
+            {title ? (
+                <LeftTextForField
+                    title={title}
+                    description={description}
+                    className={classNameLeftText}
+                />
+            ) : null}
             {children ? (
                 { ...children }
             ) : (
