@@ -18,6 +18,7 @@ import ItemContentVacancyAddWithList from '@Presentational/ItemContentVacancyAdd
 import { MenuItem } from '@material-ui/core';
 import ListAddedElement from '@Container/ListAddedElement/ListAddedElement';
 import { Button } from '@material-ui/core';
+import SalaryInput from '@Presentational/SalaryInput/SalaryInput';
 
 const CreateVacancyContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
     const [title, setTitle] = useState('');
@@ -94,6 +95,9 @@ const CreateVacancyContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
         }>
     >([]);
 
+    const [currency, setCurrency] = useState('EUR');
+    const [salaryStart, setSalaryStart] = useState('');
+    const [salaryEnd, setEndStart] = useState('');
     return (
         <div className={`CreateVacancyContent MainContent ${toggleMenuClass}`}>
             <Typography variant='h2'>Создание вакансии</Typography>
@@ -129,6 +133,25 @@ const CreateVacancyContent = ({ toggleMenuClass }: ComponentWithLeftMenu) => {
                                     handleClearValue={() => setTitle('')}
                                     classNameLeftText='vacancy-half'
                                 />
+                                <Field
+                                    description='Можно указать зарплатную вилку или стартовую зарплату'
+                                    title='Зарплата:'
+                                >
+                                    <SalaryInput
+                                        currency={currency}
+                                        salaryStart={salaryStart}
+                                        salaryEnd={salaryEnd}
+                                        handleChangeCurrency={(e) =>
+                                            setCurrency(e.target.value)
+                                        }
+                                        handleChangeSalaryStart={(e) =>
+                                            setSalaryStart(e.target.value)
+                                        }
+                                        handleChangeSalaryEnd={(e) =>
+                                            setEndStart(e.target.value)
+                                        }
+                                    />
+                                </Field>
                                 <Row>
                                     <Field
                                         title='Опыт работы:'
