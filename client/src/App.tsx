@@ -3,22 +3,22 @@ import './App.scss';
 import { useTypedSelector } from './hooks/useTypedSelector';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import OnlyForOnTypeUser from './components/route/OnlyForOnTypeUser/OnlyForOnTypeUser';
-import ProtectedPage from './components/route/ProtectedPage/ProtectedPage';
-import NotMatch from './components/pages/NotMatch/NotMatch';
-import About from './components/pages/About/About';
-import Preview from './components/pages/Preview/Preview';
-import SignInSignUp from './components/pages/SignInSignUp/SignInSignUp';
-import User from './components/pages/User/User';
-import Vacancy from './components/pages/Vacancy/Vacancy';
-import Main from './components/pages/Main/Main';
-import Resume from './components/pages/Resume/Resume';
-import Search from './components/pages/Search/Search';
-import Settings from './components/pages/Settings/Settings';
-import Group from './components/pages/Group/Group';
-import CreateResume from './components/pages/CreateResume/CreateResume';
-import CreateVacancy from './components/pages/CreateVacancy/CreateVacancy';
-import CreateGroup from './components/pages/CreateGroup/CreateGroup';
+import OnlyForOnTypeUser from '@Route/OnlyForOnTypeUser/OnlyForOnTypeUser';
+import ProtectedPage from '@Route/ProtectedPage/ProtectedPage';
+import NotMatch from '@Pages/NotMatch/NotMatch';
+import About from '@Pages/About/About';
+import Preview from '@Pages/Preview/Preview';
+import SignInSignUp from '@Pages/SignInSignUp/SignInSignUp';
+import User from '@Pages/User/User';
+import Vacancy from '@Pages/Vacancy/Vacancy';
+import Main from '@Pages/Main/Main';
+import Resume from '@Pages/Resume/Resume';
+import Search from '@Pages/Search/Search';
+import Settings from '@Pages/Settings/Settings';
+import Group from '@Pages/Group/Group';
+import CreateResume from '@Pages/CreateResume/CreateResume';
+import CreateVacancy from '@Pages/CreateVacancy/CreateVacancy';
+import CreateGroup from '@Pages/CreateGroup/CreateGroup';
 
 const App = () => {
     const { status, isAuth } = useTypedSelector((state) => state.user);
