@@ -205,7 +205,9 @@ export class SettingsContentUser implements Content {
     }
 }
 export class SettingsContentGroup implements Content {
-    private component: FunctionComponent = GroupSettings;
+    private component: FunctionComponent = withToggleMenu({
+        Component: GroupSettings,
+    });
 
     getComponent(): FunctionComponent {
         return this.component;
