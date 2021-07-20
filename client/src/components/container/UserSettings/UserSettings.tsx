@@ -7,13 +7,13 @@ import { useTypedSelector } from '@Hooks/useTypedSelector';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
+import AddIcon from '@material-ui/icons/Add';
 
 import TabUserProfile from '@Container/TabUserProfile/TabUserProfile';
 import TabUserGroup from '@Container/TabUserGroup/TabUserGroup';
 import TabUserMedia from '@Container/TabUserMedia/TabUserMedia';
 
 import { Link } from 'react-router-dom';
-import AddIcon from '@material-ui/icons/Add';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 

@@ -10,7 +10,7 @@ const TabUserGroup = (props: any) => {
     return (
         <div hidden={value !== index}>
             <Box p={3}>
-                <Typography>TabUserGroup</Typography>
+                <Typography variant='h3'>TabUserGroup</Typography>
             </Box>
         </div>
     );
